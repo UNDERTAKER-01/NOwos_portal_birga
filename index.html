@@ -3,72 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ТЕХ-ПАСПОРТ :: РЕАЛЬНОЕ ВРЕМЯ :: v7.3.4</title>
+  <title>ТЕХ-ПАСПОРТ :: ЧЁРНЫЙ РЕЖИМ</title>
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<link rel="stylesheet" href="style.css">
 <body>
 
-  <audio id="generator-hum" loop preload="auto">
-    <source src="data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQQAAAA=" type="audio/wav">
-  </audio>
+  <!-- Аудио -->
   <audio id="click-sound">
-    <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YToFAGNsaWNr" type="audio/wav">
+    <source src="audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YToFAGNsaWNr" type="audio/wav">
   </audio>
-  <audio id="switch-sound">
-    <source src="data:audio/wav;base64,UklGRiQGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YToFAHN3aXRjaA==" type="audio/wav">
-  </audio>
-
-  <div id="boot-screen">
-    <div class="boot-logo">OMNISIAH.EXE</div>
-    <div class="boot-text">ИНИЦИАЛИЗАЦИЯ ПОДСИСТЕМ...</div>
-    <div class="boot-text">РАЗВЁРТЫВАНИЕ РЕЖИМА РЕАЛЬНОГО ВРЕМЕНИ...</div>
-    <div class="boot-text">ЗАГРУЗКА ГЛУБИНЫ СТАКАНА...</div>
-    <div class="progress-bar"><div class="progress"></div></div>
-    <div class="status">СТАТУС: ЗЕЛЁНЫЙ ▸ РЕЖИМ: ON-LINE</div>
-  </div>
-
-  <div id="modal-overlay">
-    <div class="modal">
-      <div class="modal-header">
-        <div class="modal-title">
-          <svg class="modal-icon" viewBox="0 0 24 24">
-            <path d="M12 2L2 7v10c0 5.55 3.84 9.73 9 11 5.16-1.27 9-5.45 9-11V7l-10-5z"/>
-          </svg>
-          <span id="modal-title">ЗАГРУЗКА...</span>
-        </div>
-        <button class="close-btn" id="close-modal">×</button>
-      </div>
-      <div class="modal-body">
-        <div class="modal-image" id="modal-image">
-          <svg viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="40" stroke="#0a0" stroke-width="1" fill="none"/>
-            <text x="50" y="55" text-anchor="middle" font-family="Orbitron" font-size="8" fill="#050">DATA</text>
-          </svg>
-        </div>
-        <div class="modal-meta" id="modal-meta">14.12.25 │ 09:48 │ ИСТОЧНИК: ЦБ РФ / REUTERS</div>
-        <div class="modal-content" id="modal-content">
-          <p>Содержимое загружается...</p>
-        </div>
-        <div class="modal-status" id="modal-status">СТАТУС: ЗЕЛЁНЫЙ</div>
-      </div>
-    </div>
-  </div>
 
   <header>
-    <h1>ТЕХ-ПАСПОРТ v7.3.4</h1>
-    <div class="subtitle">СИСТЕМА ФОНДОВОГО МОНИТОРИНГА :: РАЗРЕШЕНИЕ: ПРИНЦИПИЙ :: <span class="rt-indicator"></span></div>
+    <h1>ТЕХ-ПАСПОРТ v7.5.0</h1>
+    <div style="font-size:0.9rem;color:#777;margin-top:0.5rem;font-family:'Share Tech Mono',monospace;">
+      СИСТЕМА ФОНДОВОГО МОНИТОРИНГА :: РЕЖИМ: ЧЁРНЫЙ <span class="rt-indicator"></span>
+    </div>
   </header>
 
   <div class="container">
+    <!-- Новости -->
     <section>
-      <h2>📡 ПОТОК НОВОСТЕЙ (12 ЭЛЕМЕНТОВ)</h2>
-      <div class="news-panel" id="news-panel"></div>
+      <h2>📡 ПОТОК НОВОСТЕЙ (LIVE)</h2>
+      <div class="news-panel" id="news-panel">
+        <!-- Новости генерируются скриптом -->
+      </div>
     </section>
 
-    <div class="right-col">
+    <!-- Правая колонка -->
+    <div>
+      <!-- Курсы -->
       <section>
-        <h2>📊 КУРСЫ (ЦБ РФ)</h2>
+        <h2>💱 КУРСЫ ВАЛЮТ (ЦБ РФ)</h2>
         <ul class="rates">
           <li class="rate">
             <span class="currency-pair">USD/RUB</span>
@@ -86,59 +52,77 @@
             <span class="currency-pair">GBP/RUB</span>
             <span class="rate-value up" id="gbp-rub">117.80 ₽</span>
           </li>
-          <li class="rate">
-            <span class="currency-pair">JPY/RUB</span>
-            <span class="rate-value up">0.59 ₽</span>
-          </li>
-          <li class="rate">
-            <span class="currency-pair">CHF/RUB</span>
-            <span class="rate-value down">105.30 ₽</span>
-          </li>
         </ul>
       </section>
 
+      <!-- Графики -->
       <section>
-        <h2>📈 МОНИТОРИНГ АКТИВА <small>РЕАЛЬНОЕ ВРЕМЯ</small></h2>
+        <h2>📈 МОНИТОРИНГ АКТИВА</h2>
         <div class="graph-panel">
-          <!-- Линейный -->
-          <div class="crt-screen" style="height: 100px; border-radius: 4px;">
+          <div class="crt-screen" style="height:90px;border-radius:0;">
             <div class="scanline"></div>
-            <div class="graph-title">РЕЖИМ: АНАЛИЗ ▸ ЛИНИЯ ▸ ON-LINE</div>
-            <svg id="line-chart" viewBox="0 0 400 70" preserveAspectRatio="none" style="display:block;width:100%;height:calc(100% - 24px);">
+            <div class="graph-title">РЕЖИМ: ЛИНИЯ ▸ ON-LINE</div>
+            <svg viewBox="0 0 400 60" style="display:block;width:100%;height:calc(100% - 24px);">
               <line x1="0" y1="15" x2="400" y2="15" stroke="#050" stroke-width="0.4"/>
-              <line x1="0" y1="35" x2="400" y2="35" stroke="#050" stroke-width="0.4"/>
-              <line x1="0" y1="55" x2="400" y2="55" stroke="#050" stroke-width="0.4"/>
-              <polyline id="line-path" fill="none" stroke="#0f0" stroke-width="1.4" stroke-dasharray="4,2" points=""/>
-              <circle id="line-point" cx="0" cy="0" r="3" fill="#0f0" stroke="#000" stroke-width="0.5"/>
-              <text id="line-value" x="340" y="30" font-family="Share Tech Mono" font-size="6" fill="#0f0">--.--</text>
+              <line x1="0" y1="30" x2="400" y2="30" stroke="#050" stroke-width="0.4"/>
+              <line x1="0" y1="45" x2="400" y2="45" stroke="#050" stroke-width="0.4"/>
+              <polyline fill="none" stroke="#0f0" stroke-width="1.5" stroke-dasharray="4,2" points="0,50 80,47 160,43 240,40 320,35 400,32"/>
+              <circle cx="400" cy="32" r="3" fill="#0f0"/>
+              <text x="340" y="26" font-family="Share Tech Mono" font-size="8" fill="#0f0">92.45</text>
             </svg>
           </div>
 
-          <!-- Столбцовый -->
-          <div class="crt-screen" style="height: 85px; border-radius: 4px;">
+          <div class="crt-screen" style="height:75px;border-radius:0;">
             <div class="scanline"></div>
-            <div class="graph-title">РЕЖИМ: АНАЛИЗ ▸ СТОЛБЦЫ ▸ ON-LINE</div>
-            <svg id="bar-chart" viewBox="0 0 400 60" preserveAspectRatio="none" style="display:block;width:100%;height:calc(100% - 24px);"></svg>
+            <div class="graph-title">РЕЖИМ: СТОЛБЦЫ ▸ ON-LINE</div>
+            <svg viewBox="0 0 400 50" style="display:block;width:100%;height:calc(100% - 24px);">
+              <rect x="30" y="32" width="18" height="18" fill="none" stroke="#0f0" stroke-width="1"/>
+              <rect x="70" y="30" width="18" height="20" fill="none" stroke="#0f0" stroke-width="1"/>
+              <rect x="110" y="28" width="18" height="22" fill="none" stroke="#0f0" stroke-width="1"/>
+              <rect x="150" y="25" width="18" height="25" fill="none" stroke="#0f0" stroke-width="1"/>
+              <rect x="190" y="22" width="18" height="28" fill="none" stroke="#0f0" stroke-width="1"/>
+              <rect x="230" y="20" width="18" height="30" fill="none" stroke="#0f0" stroke-width="1"/>
+              <rect x="270" y="18" width="18" height="32" fill="none" stroke="#0f0" stroke-width="1"/>
+              <rect x="310" y="15" width="20" height="35" fill="#0f0" fill-opacity="0.2" stroke="#0f0" stroke-width="1.5"/>
+              <text x="315" y="10" font-family="Share Tech Mono" font-size="8" fill="#0f0">92.45</text>
+            </svg>
           </div>
 
-          <!-- Ордера -->
-          <div class="crt-screen" style="height: 85px; border-radius: 4px;">
+          <div class="crt-screen" style="height:75px;border-radius:0;">
             <div class="scanline"></div>
-            <div class="graph-title">РЕЖИМ: АНАЛИЗ ▸ ОРДЕРА ▸ ON-LINE</div>
-            <svg id="order-chart" viewBox="0 0 400 60" preserveAspectRatio="none" style="display:block;width:100%;height:calc(100% - 24px);"></svg>
+            <div class="graph-title">РЕЖИМ: ОРДЕРА ▸ ON-LINE</div>
+            <svg viewBox="0 0 400 50" style="display:block;width:100%;height:calc(100% - 24px);">
+              <line x1="200" y1="0" x2="200" y2="50" stroke="#0a0" stroke-width="0.8" stroke-dasharray="2,2"/>
+              <rect x="180" y="5" width="20" height="8" fill="none" stroke="#f44" stroke-width="1"/>
+              <rect x="160" y="15" width="40" height="8" fill="none" stroke="#f44" stroke-width="1"/>
+              <rect x="130" y="25" width="70" height="8" fill="none" stroke="#f44" stroke-width="1"/>
+              <rect x="100" y="35" width="100" height="8" fill="none" stroke="#f44" stroke-width="1"/>
+              <rect x="200" y="5" width="30" height="8" fill="none" stroke="#0f0" stroke-width="1"/>
+              <rect x="200" y="15" width="50" height="8" fill="none" stroke="#0f0" stroke-width="1"/>
+              <rect x="200" y="25" width="70" height="8" fill="none" stroke="#0f0" stroke-width="1"/>
+              <rect x="200" y="35" width="95" height="8" fill="#0f0" fill-opacity="0.2" stroke="#0f0" stroke-width="1.5"/>
+              <text x="5" y="12" font-family="Share Tech Mono" font-size="8" fill="#f44">ПРОД</text>
+              <text x="350" y="12" font-family="Share Tech Mono" font-size="8" fill="#0f0">ПОКУП</text>
+              <text x="180" y="48" font-family="Share Tech Mono" font-size="7" fill="#f44">245</text>
+              <text x="260" y="48" font-family="Share Tech Mono" font-size="7" fill="#0f0">312</text>
+            </svg>
           </div>
 
-          <!-- Глубина стакана -->
-          <div class="crt-screen" style="height: 110px; border-radius: 4px;">
+          <div class="crt-screen" style="height:100px;border-radius:0;">
             <div class="scanline"></div>
-            <div class="graph-title">РЕЖИМ: АНАЛИЗ ▸ ГЛУБИНА СТАКАНА ▸ ON-LINE</div>
-            <svg id="depth-chart" viewBox="0 0 400 80" preserveAspectRatio="none" style="display:block;width:100%;height:calc(100% - 24px);">
-              <!-- Рендерится динамически -->
+            <div class="graph-title">РЕЖИМ: ГЛУБИНА СТАКАНА ▸ ON-LINE</div>
+            <svg viewBox="0 0 400 70" style="display:block;width:100%;height:calc(100% - 24px);">
+              <line x1="200" y1="0" x2="200" y2="70" stroke="#0a0" stroke-width="0.8" stroke-dasharray="2,2"/>
+              <path d="M200,70 H180 V55 H160 V40 H145 V25 H130 V10 H200 Z" fill="rgba(0,255,0,0.15)" stroke="#0f0" stroke-width="0.8"/>
+              <path d="M200,70 H220 V55 H240 V40 H255 V25 H270 V10 H200 Z" fill="rgba(255,0,0,0.1)" stroke="#f44" stroke-width="0.8"/>
+              <text x="200" y="25" text-anchor="middle" font-family="Orbitron" font-size="10" fill="#fff">92.45</text>
+              <text x="200" y="38" text-anchor="middle" font-family="Share Tech Mono" font-size="6" fill="#0a0">ЦЕНА</text>
             </svg>
           </div>
         </div>
       </section>
 
+      <!-- Обменник -->
       <section>
         <h2>🔄 ОБМЕННЫЙ МОДУЛЬ</h2>
         <div class="converter">
@@ -163,381 +147,109 @@
   </div>
 
   <footer>
-    &lt;СИСТЕМА РАБОТАЕТ В ШТАТНОМ РЕЖИМЕ&gt; │ ДАННЫЕ: РЕАЛЬНОЕ ВРЕМЯ │ ОМНИССИАХ ВЕЧЕН
+    &lt;РЕЖИМ: ЧЁРНЫЙ&gt; │ ДАННЫЕ: РЕАЛЬНОЕ ВРЕМЯ │ ИНТЕРФЕЙС ОДОБРЁН МЕХАНИКУМОМ
   </footer>
 
   <script>
-    // === СОСТОЯНИЕ ===
-    let usdRate = 92.45;
-    let history = [90.10, 90.85, 91.20, 91.75, 92.10, 92.30, 92.45];
-    const volatility = 0.3;
-
-    // Ордера и стакан
-    let orders = { sell: 245, buy: 312 };
-    let orderBook = {
-      bids: [ // покупка (цена ниже)
-        {price: 92.40, size: 120},
-        {price: 92.35, size: 95},
-        {price: 92.30, size: 180},
-        {price: 92.25, size: 140},
-        {price: 92.20, size: 210}
-      ],
-      asks: [ // продажа (цена выше)
-        {price: 92.50, size: 90},
-        {price: 92.55, size: 130},
-        {price: 92.60, size: 160},
-        {price: 92.65, size: 110},
-        {price: 92.70, size: 175}
-      ]
-    };
-
-    // === РЕНДЕР ГРАФИКОВ ===
-    function renderLineChart() {
-      const width = 400, height = 70;
-      const padY = 10;
-      const minVal = 88, maxVal = 95;
-      const normalize = (val) => 1 - (val - minVal) / (maxVal - minVal);
-      const y = (val) => normalize(val) * (height - 2 * padY) + padY;
-
-      if (history.length > 10) history.shift();
-      const points = history.map((val, i) => {
-        const x = (i / (history.length - 1)) * width;
-        return `${x},${y(val)}`;
-      }).join(' ');
-
-      document.getElementById('line-path').setAttribute('points', points);
-      const lastY = y(usdRate);
-      document.getElementById('line-point').setAttribute('cx', width);
-      document.getElementById('line-point').setAttribute('cy', lastY);
-      document.getElementById('line-value').textContent = usdRate.toFixed(2);
-    }
-
-    function renderBarChart() {
-      const svg = document.getElementById('bar-chart');
-      svg.innerHTML = '';
-      const width = 400, height = 60, pad = 15, barWidth = 20, gap = 6;
-      const minVal = 88, maxVal = 95;
-      const normalize = (val) => (val - minVal) / (maxVal - minVal);
-      const h = (val) => normalize(val) * (height - 2 * pad);
-
-      const data = [...history.slice(-7), usdRate];
-      data.forEach((val, i) => {
-        const x = pad + i * (barWidth + gap);
-        const barHeight = h(val);
-        const y = height - pad - barHeight;
-        const isLast = i === data.length - 1;
-
-        const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-        rect.setAttribute('x', x);
-        rect.setAttribute('y', y);
-        rect.setAttribute('width', barWidth);
-        rect.setAttribute('height', barHeight);
-        rect.setAttribute('fill', isLast ? 'rgba(0,255,0,0.2)' : 'none');
-        rect.setAttribute('stroke', '#0f0');
-        rect.setAttribute('stroke-width', isLast ? '1.5' : '1');
-        svg.appendChild(rect);
-
-        if (isLast) {
-          const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-          text.setAttribute('x', x + barWidth / 2);
-          text.setAttribute('y', y - 3);
-          text.setAttribute('text-anchor', 'middle');
-          text.setAttribute('font-family', 'Share Tech Mono');
-          text.setAttribute('font-size', '6');
-          text.setAttribute('fill', '#0f0');
-          text.textContent = usdRate.toFixed(2);
-          svg.appendChild(text);
-        }
-      });
-    }
-
-    function renderOrderChart() {
-      const svg = document.getElementById('order-chart');
-      svg.innerHTML = '';
-      const width = 400, height = 60, zeroX = 200;
-
-      const axis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-      axis.setAttribute('x1', zeroX); axis.setAttribute('y1', 0);
-      axis.setAttribute('x2', zeroX); axis.setAttribute('y2', height);
-      axis.setAttribute('stroke', '#0a0'); axis.setAttribute('stroke-width', '0.8');
-      axis.setAttribute('stroke-dasharray', '2,2');
-      svg.appendChild(axis);
-
-      const sellBars = [
-        { len: Math.min(20, orders.sell * 0.08), y: 8 },
-        { len: Math.min(40, orders.sell * 0.16), y: 18 },
-        { len: Math.min(70, orders.sell * 0.28), y: 28 },
-        { len: Math.min(100, orders.sell * 0.4), y: 38 }
-      ];
-      sellBars.forEach(bar => {
-        const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-        rect.setAttribute('x', zeroX - bar.len); rect.setAttribute('y', bar.y);
-        rect.setAttribute('width', bar.len); rect.setAttribute('height', 8);
-        rect.setAttribute('fill', 'none'); rect.setAttribute('stroke', '#f44'); rect.setAttribute('stroke-width', '1');
-        svg.appendChild(rect);
-      });
-
-      const buyBars = [
-        { len: Math.min(30, orders.buy * 0.1), y: 8 },
-        { len: Math.min(50, orders.buy * 0.16), y: 18 },
-        { len: Math.min(70, orders.buy * 0.22), y: 28 },
-        { len: Math.min(95, orders.buy * 0.3), y: 38 }
-      ];
-      buyBars.forEach(bar => {
-        const isLast = bar.y === 38;
-        const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-        rect.setAttribute('x', zeroX); rect.setAttribute('y', bar.y);
-        rect.setAttribute('width', bar.len); rect.setAttribute('height', 8);
-        rect.setAttribute('fill', isLast ? 'rgba(0,255,0,0.2)' : 'none');
-        rect.setAttribute('stroke', '#0f0');
-        rect.setAttribute('stroke-width', isLast ? '1.5' : '1');
-        svg.appendChild(rect);
-      });
-
-      ['ПРОД', 'ПОКУП', orders.sell, orders.buy].forEach((txt, i) => {
-        const x = [5, 350, 185, 255][i];
-        const y = [10, 10, 52, 52][i];
-        const col = ['#f44', '#0f0', '#f44', '#0f0'][i];
-        const el = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-        el.setAttribute('x', x); el.setAttribute('y', y);
-        el.setAttribute('font-family', 'Share Tech Mono');
-        el.setAttribute('font-size', '5'); el.setAttribute('fill', col);
-        el.textContent = txt;
-        svg.appendChild(el);
-      });
-    }
-
-    function renderDepthChart() {
-      const svg = document.getElementById('depth-chart');
-      svg.innerHTML = '';
-      const width = 400, height = 80;
-      const zeroX = 200;
-      const maxVol = 300;
-
-      // Ось цены
-      const axis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-      axis.setAttribute('x1', zeroX); axis.setAttribute('y1', 0);
-      axis.setAttribute('x2', zeroX); axis.setAttribute('y2', height);
-      axis.setAttribute('stroke', '#0a0'); axis.setAttribute('stroke-width', '0.8');
-      axis.setAttribute('stroke-dasharray', '2,2');
-      svg.appendChild(axis);
-
-      // Накопленный объём
-      let cumBuy = 0;
-      let cumSell = 0;
-
-      // Покупка (bids) — слева
-      const buyPath = ['M', zeroX, height];
-      orderBook.bids.forEach((level, i) => {
-        cumBuy += level.size;
-        const w = Math.min((cumBuy / maxVol) * 180, 180);
-        const y = height - (i + 1) * 12;
-        buyPath.push('H', zeroX - w, 'V', y);
-      });
-      buyPath.push('H', zeroX, 'Z');
-
-      const buyArea = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-      buyArea.setAttribute('d', buyPath.join(' '));
-      buyArea.setAttribute('fill', 'rgba(0,255,0,0.15)');
-      buyArea.setAttribute('stroke', '#0f0');
-      buyArea.setAttribute('stroke-width', '0.8');
-      svg.appendChild(buyArea);
-
-      // Продажа (asks) — справа
-      const sellPath = ['M', zeroX, height];
-      orderBook.asks.forEach((level, i) => {
-        cumSell += level.size;
-        const w = Math.min((cumSell / maxVol) * 180, 180);
-        const y = height - (i + 1) * 12;
-        sellPath.push('H', zeroX + w, 'V', y);
-      });
-      sellPath.push('H', zeroX, 'Z');
-
-      const sellArea = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-      sellArea.setAttribute('d', sellPath.join(' '));
-      sellArea.setAttribute('fill', 'rgba(255,0,0,0.1)');
-      sellArea.setAttribute('stroke', '#f44');
-      sellArea.setAttribute('stroke-width', '0.8');
-      svg.appendChild(sellArea);
-
-      // Цена в центре
-      const priceText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-      priceText.setAttribute('x', zeroX);
-      priceText.setAttribute('y', 20);
-      priceText.setAttribute('text-anchor', 'middle');
-      priceText.setAttribute('font-family', 'Orbitron');
-      priceText.setAttribute('font-size', '8');
-      priceText.setAttribute('fill', '#fff');
-      priceText.textContent = usdRate.toFixed(2);
-      svg.appendChild(priceText);
-
-      const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-      label.setAttribute('x', zeroX);
-      label.setAttribute('y', 32);
-      label.setAttribute('text-anchor', 'middle');
-      label.setAttribute('font-family', 'Share Tech Mono');
-      label.setAttribute('font-size', '5');
-      label.setAttribute('fill', '#0a0');
-      label.textContent = 'ЦЕНА';
-      svg.appendChild(label);
-    }
-
-    // === РЕАЛЬНОЕ ВРЕМЯ ===
-    function updateData() {
-      // Изменяем курс
-      const change = (Math.random() - 0.5) * volatility * 2;
-      usdRate = parseFloat((usdRate + change).toFixed(2));
-      usdRate = Math.max(88.1, Math.min(94.9, usdRate));
-      history.push(usdRate);
-
-      // Обновляем курсы
-      document.getElementById('usd-rub').textContent = usdRate.toFixed(2) + ' ₽';
-      document.getElementById('eur-rub').textContent = (usdRate * 1.095).toFixed(2) + ' ₽';
-      document.getElementById('cny-rub').textContent = (usdRate * 0.137).toFixed(2) + ' ₽';
-      document.getElementById('gbp-rub').textContent = (usdRate * 1.274).toFixed(2) + ' ₽';
-
-      // Ордера
-      orders.sell = Math.max(200, orders.sell + Math.floor((Math.random() - 0.5) * 6));
-      orders.buy = Math.max(250, orders.buy + Math.floor((Math.random() - 0.5) * 8));
-
-      // Обновляем стакан относительно новой цены
-      const step = 0.05;
-      orderBook.bids = orderBook.bids.map((b, i) => ({
-        price: parseFloat((usdRate - step * (i + 1)).toFixed(2)),
-        size: Math.max(50, b.size + Math.floor((Math.random() - 0.5) * 40))
-      }));
-      orderBook.asks = orderBook.asks.map((a, i) => ({
-        price: parseFloat((usdRate + step * (i + 1)).toFixed(2)),
-        size: Math.max(50, a.size + Math.floor((Math.random() - 0.5) * 40))
-      }));
-
-      // Рендерим всё
-      renderLineChart();
-      renderBarChart();
-      renderOrderChart();
-      renderDepthChart();
-    }
-
-    // Первый рендер
-    [renderLineChart, renderBarChart, renderOrderChart, renderDepthChart].forEach(f => f());
-
-    // Запуск RT
-    setInterval(updateData, 3000);
-
-    // === ОСТАЛЬНАЯ ЛОГИКА (без изменений) ===
+    // Данные новостей
     const newsData = [
-      {id:1,icon:"M12 2L2 7v10c0 5.55 3.84 9.73 9 11 5.16-1.27 9-5.45 9-11V7l-10-5z",title:"ИНДЕКС ММВБ: +2.1%",date:"14.12.25 │ 09:48",desc:"Рост на фоне увеличения экспорта нефти. СИСТЕМА: СТАБИЛЬНА.",full:"Индекс Московской биржи вырос на 2.1% за сутки, достигнув 3 820 пунктов. Рост обусловлен повышением цен на нефть марки Brent выше $85 за баррель и ослаблением рубля к корзине валют. Объём торгов вырос на 18% относительно среднего значения. Акции нефтегазового сектора (+3.4%) и металлургии (+2.8%) показали максимальный рост.",imageType:"radar",status:"СТАТУС: ЗЕЛЁНЫЙ"},
-      {id:2,icon:"M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4 6h-4v2h4v-2zm0 3h-4v2h4v-2zm-4 3h-2v2h2v-2zm-4-9h12v2H7V6z",title:"ФРС: СТАВКА БЕЗ ИЗМЕНЕНИЙ",date:"14.12.25 │ 08:30",desc:"Реакция рынков: S&P +0.9%. ПОДТВЕРЖДЕНО: ЗЕЛЁНЫЙ СТАТУС.",full:"Федеральная резервная система США сохранила ключевую ставку в диапазоне 5.25–5.50%, как и ожидалось. Джером Пауэлл отметил умеренное замедление инфляции и готовность к корректировке в 2026 году. Рынки отреагировали ростом: S&P 500 +0.9%, Nasdaq +1.2%. Доллар ослаб к евро и иене. Российские активы получили косвенную поддержку через рост глобального аппетита к риску.",imageType:"chart",status:"СТАТУС: ЗЕЛЁНЫЙ"},
-      {id:3,icon:"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z",title:"КИТАЙ: НОВЫЙ ПАКЕТ СТИМУЛОВ",date:"13.12.25 │ 18:15",desc:"Шанхайский индекс: +2.3%. СИНХРОНИЗАЦИЯ ПРОТОКОЛОВ…",full:"Правительство КНР объявил о новом пакете мер поддержки экономики на ₽2.3 трлн: субсидии для производителей электромобилей, льготное кредитование малого бизнеса, ускорение строительства «умных городов». Шанхайский композитный индекс вырос на 2.3%, HKEX — на 1.8%. Акции китайских производителей полупроводников показали рост до +5.2%. Российские экспортёры оборудования фиксируют рост запросов.",imageType:"check",status:"СТАТУС: ЗЕЛЁНЫЙ"},
-      {id:4,icon:"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z",title:"GAZP: ДИВИДЕНДЫ УТВЕРЖДЕНЫ",date:"13.12.25 │ 16:40",desc:"Совет директоров утвердил дивиденды в размере 52.30 ₽/акция.",full:"Совет директоров ПАО «Газпром» утвердил рекомендации по дивидендам за 9 месяцев 2025 года: 52.30 рубля на акцию. Выплата состоится до 28 февраля 2026 года. Дивидендная доходность — 9.1% годовых. Акции выросли на 1.7% после закрытия основной сессии. Рынок расценил решение как сигнал стабильности денежных потоков компании.",imageType:"star",status:"СТАТУС: ЗЕЛЁНЫЙ"},
-      {id:5,icon:"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z",title:"ЦБ РФ СНИЗИЛ СТАВКУ НА 25 Б.П.",date:"12.12.25 │ 13:00",desc:"Ключевая ставка: 15.75%. СИГНАЛ: СМЯГЧЕНИЕ ДЕН.ПОЛИТИКИ.",full:"Банк России снизил ключевую ставку на 25 базовых пунктов — до 15.75%. Решение принято на фоне замедления инфляции (5.8% г/г) и снижения инфляционных ожиданий. Прогноз по инфляции на 2026 год пересмотрен вниз — до 4.2–4.7%. Рубль ослаб после объявления, но рынки восприняли шаг как запланированный и контролируемый.",imageType:"check",status:"СТАТУС: ЗЕЛЁНЫЙ"},
-      {id:6,icon:"M2 18h20v-2H2v2zM2 14h20v-2H2v2zM2 10h20V8H2v2zM2 6h20V4H2v2z",title:"MOEX ЗАПУСКАЕТ НОВЫЙ СЕГМЕНТ",date:"12.12.25 │ 10:15",desc:"«ТЕХ-ИНДЕКС» для IT- и биотех-компаний. СТАРТ: 01.01.26.",full:"Московская биржа анонсировала запуск нового индекса — MOEX TECH, включающего 30 компаний из секторов IT, биотехнологий, квантовых вычислений и нейроинтерфейсов. Базовый период — 2025 год. Индекс будет рассчитываться в реальном времени, с ежеквартальной ребалансировкой. Участие открыто для акций, прошедших аудит на соответствие стандартам «Цифровой Эры».",imageType:"list",status:"СТАТУС: ЗЕЛЁНЫЙ"},
-      {id:7,icon:"M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 2v2H4V6h16zm0 4v8H4v-8h16z",title:"⚠️ ПРЕДУПРЕЖДЕНИЕ: ВОЛУНТАТИЛЬНОСТЬ",date:"11.12.25 │ 17:30",desc:"VIX ↑ до 24.5. ОЖИДАЕТСЯ РОСТ ДИАПАЗОНА КОЛЕБАНИЙ.",full:"Индекс волатильности CBOE (VIX) вырос до 24.5 — максимум с сентября 2025 года. Причина — геополитическая напряжённость и неопределённость по поводу налоговой реформы в ЕС. Трейдеры наращивают хеджирование. В ближайшие 5 дней ожидается увеличение амплитуды колебаний на 30–40%. Рекомендация: избегать рыночных ордеров в период выхода макростатистики.",imageType:"alert",status:"СТАТУС: ЖЁЛТЫЙ"},
-      {id:8,icon:"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z",title:"СДЕЛКА ПО АРЕСТУ СРЕДСТВ СНЯТА",date:"10.12.25 │ 14:22",desc:"Евроазиатская палата отменила санкции против 3 эмитентов.",full:"Евроазиатская торговая палата сняла ограничения с акций «Норникеля», «Полюса» и «АЛРОСА» в связи с выполнением условий по урегулированию спора. Это открывает доступ к международным клиринговым системам и ETF-фондам. Объёмы заявок на покупку выросли на 200% за 2 часа. Ликвидность по бумагам ожидается на уровне Q2 2024.",imageType:"check",status:"СТАТУС: ЗЕЛЁНЫЙ"},
-      {id:9,icon:"M10 20v-6l6-6V4l-6-6",title:"RUB УСИЛИЛСЯ К КОРЗИНЕ +0.8%",date:"09.12.25 │ 11:05",desc:"После данных по бюджетному профициту (+2.4% ВВП).",full:"Рубль укрепился на 0.8% к валютной корзине после публикации данных Минфина: профицит федерального бюджета за 11 месяцев 2025 года составил 2.4% ВВП. Это выше прогноза (1.7%). Резервы ЦБ выросли до $612 млрд. Спрос на ОФЗ со стороны нерезидентов вырос на 12% за неделю. Краткосрочный прогноз: боковое движение в диапазоне 91–93 по USD/RUB.",imageType:"arrow",status:"СТАТУС: ЗЕЛЁНЫЙ"},
-      {id:10,icon:"M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z",title:"ОБЪЁМЫ ТОРГОВ ВЫШЕ НОРМЫ НА 22%",date:"08.12.25 │ 19:00",desc:"Среднесуточный оборот: ₽312 млрд. СИГНАЛ: АКТИВНОСТЬ ↑.",full:"Среднесуточный объём торгов на Мосбирже за декабрь (первые 8 дней) составил 312 млрд рублей — на 22% выше ноябрьского значения и на 35% выше годового среднего. Наибольший рост — в сегменте ОФЗ (+41%) и деривативов (+29%). Прирост обеспечили как институциональные, так и розничные инвесторы (доля последних — 34%).",imageType:"bars",status:"СТАТУС: ЗЕЛЁНЫЙ"},
-      {id:11,icon:"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z",title:"СПУТНИКОВЫЙ МОНИТОРИНГ ПОДТВЕРДИЛ",date:"07.12.25 │ 08:10",desc:"Экспорт нефти через Балтику: +6.2% к ноябрю.",full:"Данные спутникового мониторинга (OrbitalScan v4.1) подтвердили рост экспорта нефти через порты Приморск и Усть-Луга: +6.2% по сравнению с ноябрём. Среднесуточный отгрузочный объём — 2.1 млн баррелей. Это соответствует 98% от максимальной пропускной способности терминалов. Наблюдается увеличение доли крупнотоннажных танкеров (VLCC).",imageType:"check",status:"СТАТУС: ЗЕЛЁНЫЙ"},
-      {id:12,icon:"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z",title:"КВАНТОВЫЙ АЛГОРИТМ ЗАПУЩЕН",date:"05.12.25 │ 15:30",desc:"«СИГМА-7» начал тестовый прогон на биржевых данных.",full:"Квантовый вычислитель «СИГМА-7» (72 кубита) запущен в тестовом режиме для анализа корреляций между фьючерсами и спот-рынком. Первая итерация завершена за 47 миллисекунд (классический аналог — 3.2 сек). Точность прогноза на 15-минутный интервал — 88.4%. Полномасштабное внедрение запланировано на Q2 2026 после прохождения аудита Механикумом.",imageType:"quantum",status:"СТАТУС: ЗЕЛЁНЫЙ"}
+      {
+        id: 1,
+        title: "ИНДЕКС ММВБ: +2.1%",
+        date: "14.12.25 │ 09:48",
+        desc: "Рост на фоне увеличения экспорта нефти. СИСТЕМА: СТАБИЛЬНА.",
+        full: "Индекс Московской биржи вырос на 2.1% за сутки, достигнув 3 820 пунктов. Рост обусловлен повышением цен на нефть марки Brent выше $85 за баррель и ослаблением рубля к корзине валют. Объём торгов вырос на 18% относительно среднего значения. Акции нефтегазового сектора (+3.4%) и металлургии (+2.8%) показали максимальный рост.",
+        status: "СТАТУС: ЗЕЛЁНЫЙ"
+      },
+      {
+        id: 2,
+        title: "ФРС: СТАВКА БЕЗ ИЗМЕНЕНИЙ",
+        date: "14.12.25 │ 08:30",
+        desc: "Реакция рынков: S&P +0.9%. ПОДТВЕРЖДЕНО: ЗЕЛЁНЫЙ СТАТУС.",
+        full: "Федеральная резервная система США сохранила ключевую ставку в диапазоне 5.25–5.50%, как и ожидалось. Джером Пауэлл отметил умеренное замедление инфляции и готовность к корректировке в 2026 году. Рынки отреагировали ростом: S&P 500 +0.9%, Nasdaq +1.2%. Доллар ослаб к евро и иене. Российские активы получили косвенную поддержку через рост глобального аппетита к риску.",
+        status: "СТАТУС: ЗЕЛЁНЫЙ"
+      },
+      {
+        id: 3,
+        title: "КИТАЙ: НОВЫЙ ПАКЕТ СТИМУЛОВ",
+        date: "13.12.25 │ 18:15",
+        desc: "Шанхайская биржа отреагировала ростом на 2.3%.",
+        full: "Правительство КНР объявил о новом пакете мер поддержки экономики на ₽2.3 трлн: субсидии для производителей электромобилей, льготное кредитование малого бизнеса, ускорение строительства «умных городов». Шанхайский композитный индекс вырос на 2.3%, HKEX — на 1.8%. Акции китайских производителей полупроводников показали рост до +5.2%. Российские экспортёры оборудования фиксируют рост запросов.",
+        status: "СТАТУС: ЗЕЛЁНЫЙ"
+      },
+      {
+        id: 4,
+        title: "ЦБ РФ СНИЗИЛ СТАВКУ НА 25 Б.П.",
+        date: "12.12.25 │ 13:00",
+        desc: "Ключевая ставка: 15.75%. СИГНАЛ: СМЯГЧЕНИЕ ДЕН.ПОЛИТИКИ.",
+        full: "Банк России снизил ключевую ставку на 25 базовых пунктов — до 15.75%. Решение принято на фоне замедления инфляции (5.8% г/г) и снижения инфляционных ожиданий. Прогноз по инфляции на 2026 год пересмотрен вниз — до 4.2–4.7%. Рубль ослаб после объявления, но рынки восприняли шаг как запланированный и контролируемый.",
+        status: "СТАТУС: ЖЁЛТЫЙ"
+      },
+      {
+        id: 5,
+        title: "MOEX ЗАПУСКАЕТ ТЕХ-ИНДЕКС",
+        date: "12.12.25 │ 10:15",
+        desc: "СТАРТ: 01.01.26. СЕГМЕНТ: IT, БИОТЕХ, КВАНТ.",
+        full: "Московская биржа анонсировала запуск нового индекса — MOEX TECH, включающего 30 компаний из секторов IT, биотехнологий, квантовых вычислений и нейроинтерфейсов. Базовый период — 2025 год. Индекс будет рассчитываться в реальном времени, с ежеквартальной ребалансировкой. Участие открыто для акций, прошедших аудит на соответствие стандартам «Цифровой Эры».",
+        status: "СТАТУС: ЗЕЛЁНЫЙ"
+      },
+      {
+        id: 6,
+        title: "⚠️ ВОЛУНТАТИЛЬНОСТЬ РАСТЁТ",
+        date: "11.12.25 │ 17:30",
+        desc: "VIX ↑ до 24.5. ОЖИДАЕТСЯ РОСТ ДИАПАЗОНА КОЛЕБАНИЙ.",
+        full: "Индекс волатильности CBOE (VIX) вырос до 24.5 — максимум с сентября 2025 года. Причина — геополитическая напряжённость и неопределённость по поводу налоговой реформы в ЕС. Трейдеры наращивают хеджирование. В ближайшие 5 дней ожидается увеличение амплитуды колебаний на 30–40%. Рекомендация: избегать рыночных ордеров в период выхода макростатистики.",
+        status: "СТАТУС: ЖЁЛТЫЙ"
+      }
     ];
 
+    // Генерация новостей
     function renderNews() {
       const panel = document.getElementById('news-panel');
       panel.innerHTML = '';
+      
       newsData.forEach(item => {
         const el = document.createElement('div');
         el.className = 'news-item';
         el.dataset.id = item.id;
         el.innerHTML = `
-          <div class="news-title">
-            <svg class="news-icon" viewBox="0 0 24 24">
-              <path d="${item.icon}"/>
-            </svg>
-            ${item.title}
+          <div class="news-header">
+            <div class="news-title">${item.title}</div>
+            <button class="close-btn" style="display:none;">×</button>
           </div>
           <div class="news-date">${item.date}</div>
           <div class="news-desc">${item.desc}</div>
+          <div class="news-full">${item.full}</div>
+          <div class="news-status ${item.status.includes('ЖЁЛТЫЙ') ? 'warn' : ''}">${item.status}</div>
         `;
-        el.addEventListener('click', () => openModal(item));
         panel.appendChild(el);
+
+        // Клик по заголовку — переключение
+        const header = el.querySelector('.news-title');
+        const closeBtn = el.querySelector('.close-btn');
+
+        header.addEventListener('click', () => {
+          el.classList.toggle('expanded');
+          closeBtn.style.display = el.classList.contains('expanded') ? 'flex' : 'none';
+          
+          const snd = document.getElementById('click-sound');
+          snd.currentTime = 0;
+          snd.play().catch(() => {});
+        });
+
+        closeBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          el.classList.remove('expanded');
+          closeBtn.style.display = 'none';
+          
+          const snd = document.getElementById('click-sound');
+          snd.currentTime = 0;
+          snd.play().catch(() => {});
+        });
       });
     }
 
-    function openModal(data) {
-      const overlay = document.getElementById('modal-overlay');
-      const titleEl = document.getElementById('modal-title');
-      const metaEl = document.getElementById('modal-meta');
-      const contentEl = document.getElementById('modal-content');
-      const statusEl = document.getElementById('modal-status');
-      const imgEl = document.getElementById('modal-image');
-
-      const iconPath = document.querySelector('.modal-icon path');
-      if (iconPath) iconPath.setAttribute('d', data.icon);
-
-      titleEl.textContent = data.title;
-      metaEl.textContent = data.date + " │ ИСТОЧНИК: ЦБ РФ / REUTERS";
-      contentEl.innerHTML = `<p>${data.full}</p>`;
-      statusEl.textContent = data.status;
-      statusEl.style.borderColor = data.status.includes('ЖЁЛТЫЙ') ? '#ff0' : '#0f0';
-      statusEl.style.color = data.status.includes('ЖЁЛТЫЙ') ? '#ff0' : '#0f0';
-
-      let svgContent = `<circle cx="50" cy="50" r="40" stroke="#0a0" stroke-width="1" fill="none"/>`;
-      switch(data.imageType) {
-        case 'radar':
-          svgContent += `<circle cx="50" cy="50" r="30" stroke="#080" stroke-width="0.5" fill="none"/>
-            <path d="M50 15 L65 50 L50 85" stroke="#0f0" stroke-width="1" fill="none"/>
-            <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="4s" repeatCount="indefinite"/>`;
-          break;
-        case 'chart':
-          svgContent += `<polyline points="20,70 40,60 60,55 80,45 100,50" fill="none" stroke="#0f0" stroke-width="1.5"/>`;
-          break;
-        case 'alert':
-          svgContent += `<path d="M50 20 L65 70 L35 70 Z" fill="none" stroke="#f44" stroke-width="2"/>
-            <line x1="50" y1="40" x2="50" y2="55" stroke="#f44" stroke-width="2"/>
-            <circle cx="50" cy="62" r="3" fill="#f44"/>`;
-          break;
-        case 'quantum':
-          svgContent += `<circle cx="50" cy="50" r="25" stroke="#0a0" stroke-width="1" fill="none"/>
-            <circle cx="50" cy="50" r="15" stroke="#0f0" stroke-width="0.8" fill="none"/>
-            <circle cx="50" cy="50" r="5" fill="#0f0" fill-opacity="0.3"/>
-            <line x1="25" y1="50" x2="75" y2="50" stroke="#080" stroke-width="0.5"/>
-            <line x1="50" y1="25" x2="50" y2="75" stroke="#080" stroke-width="0.5"/>`;
-          break;
-        default:
-          svgContent += `<text x="50" y="55" text-anchor="middle" font-family="Orbitron" font-size="8" fill="#050">DATA</text>`;
-      }
-      imgEl.innerHTML = `<svg viewBox="0 0 100 100">${svgContent}</svg>`;
-
-      const click = document.getElementById('click-sound');
-      click.currentTime = 0;
-      click.play().catch(() => {});
-
-      setTimeout(() => overlay.classList.add('active'), 10);
-    }
-
-    document.getElementById('close-modal').addEventListener('click', () => {
-      document.getElementById('modal-overlay').classList.remove('active');
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && document.getElementById('modal-overlay').classList.contains('active')) {
-        document.getElementById('modal-overlay').classList.remove('active');
-      }
-    });
-
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        document.getElementById('boot-screen').style.display = 'none';
-        renderNews();
-        document.body.addEventListener('click', () => {
-          const hum = document.getElementById('generator-hum');
-          if (hum.paused) {
-            hum.volume = 0.07;
-            hum.play().catch(() => {});
-          }
-        }, { once: true });
-      }, 3200);
-    });
-
+    // Обменник
     function convert() {
       const amount = parseFloat(document.getElementById('amount').value) || 0;
       const rate = parseFloat(document.getElementById('from').value);
@@ -547,13 +259,13 @@
 
     document.getElementById('amount').addEventListener('input', convert);
     document.getElementById('from').addEventListener('change', convert);
-    document.getElementById('exchange-btn').addEventListener('click', () => {
-      const snd = document.getElementById('switch-sound');
-      snd.currentTime = 0;
-      snd.play().catch(() => {});
+    document.getElementById('exchange-btn').addEventListener('click', convert);
+
+    // Инициализация
+    document.addEventListener('DOMContentLoaded', () => {
+      renderNews();
       convert();
     });
-    convert();
   </script>
 
 </body>
