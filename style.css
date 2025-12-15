@@ -1,4 +1,4 @@
-/* === ИЗНАЧАЛЬНАЯ ЭКСПОЗИЦИЯ + ЧЁРНЫЙ ФОН + МОДАЛЬНОЕ ОКНО === */
+/* === ИЗНАЧАЛЬНАЯ ЭКСПОЗИЦИЯ + ЛЕНТЫ + КАРТА МИРА === */
 
 :root {
   --bg: #000000;
@@ -60,9 +60,9 @@ h2 {
   padding-bottom: 0.5rem;
 }
 
-/* === НОВОСТИ — СПИСОК === */
+/* === НОВОСТИ === */
 .news-panel {
-  height: calc(100vh - 220px);
+  height: calc(100vh - 520px); /* Уменьшено для лент и карты */
   overflow-y: auto;
   padding-right: 8px;
 }
@@ -108,7 +108,7 @@ h2 {
   margin-top: 0.3rem;
 }
 
-/* === МОДАЛЬНОЕ ОКНО (ВСПЛЫВАЮЩЕЕ) === */
+/* === МОДАЛЬНОЕ ОКНО === */
 #modal-overlay {
   position: fixed;
   top: 0; left: 0;
@@ -227,6 +227,171 @@ h2 {
   color: #ff0;
 }
 
+/* === ЛЕНТЫ ФОТОГРАФИЙ === */
+.photo-strip {
+  display: flex;
+  overflow: hidden;
+  height: 80px;
+  margin: 0.8rem 0;
+  background: #050505;
+  border: 1px solid #222;
+  position: relative;
+}
+
+.photo-strip::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: 
+    repeating-linear-gradient(
+      rgba(0,30,0,0.05) 0px,
+      transparent 1px,
+      transparent 2px
+    );
+  pointer-events: none;
+}
+
+.strip-content {
+  display: flex;
+  animation: scroll 40s linear infinite;
+}
+
+.strip-content.reverse {
+  animation-direction: reverse;
+  animation-duration: 35s;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.strip-item {
+  width: 120px;
+  height: 100%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  color: #888;
+  text-align: center;
+}
+
+.strip-item img {
+  width: 100%;
+  height: 50px;
+  object-fit: cover;
+  border: 1px solid #333;
+  background: #000;
+}
+
+/* === КАРТА МИРА (СРЕДНИЙ ЭКРАН) === */
+.map-panel {
+  height: 300px;
+  background: #000;
+  border: 1px solid #222;
+  position: relative;
+  overflow: hidden;
+  margin-top: 0.8rem;
+}
+
+.map-panel::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: 
+    repeating-linear-gradient(
+      rgba(0,25,0,0.03) 0px,
+      transparent 1px,
+      transparent 2px
+    ),
+    radial-gradient(ellipse at center, rgba(0,60,0,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.scanline-map {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 2px;
+  background: rgba(0, 200, 0, 0.1);
+  animation: scanline 6s linear infinite;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.map-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.map-title {
+  position: absolute;
+  top: 8px; left: 0; width: 100%;
+  text-align: center;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.85rem;
+  color: #0f0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Точки месторождений */
+.mineral-point {
+  cursor: pointer;
+}
+
+.mineral-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 6px;
+  fill: #f44;
+  text-anchor: middle;
+}
+
+.mineral-name {
+  font-weight: bold;
+}
+
+/* === РЕЛЕ (ПЕРЕКЛЮЧАТЕЛИ) === */
+.relays {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.relay {
+  flex: 1;
+  background: #0c0c0c;
+  border: 1px solid #444;
+  padding: 0.6rem;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.9rem;
+}
+
+.relay-label {
+  display: block;
+  color: #999;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.relay-select {
+  width: 100%;
+  background: #151515;
+  color: var(--fg);
+  border: 1px solid #444;
+  padding: 0.4rem;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.95rem;
+}
+
 /* === КУРСЫ === */
 .rates {
   list-style: none;
@@ -327,11 +492,6 @@ button:hover {
   pointer-events: none;
 }
 
-@keyframes scanline {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100vh); }
-}
-
 .graph-title {
   font-size: 0.85rem;
   color: #0f0;
@@ -377,5 +537,8 @@ footer {
   .container {
     grid-template-columns: 1fr;
   }
-  .modal { width: 96%; }
+  .relays { flex-direction: column; }
+  .photo-strip { height: 70px; }
+  .strip-item { width: 110px; font-size: 0.7rem; }
+  .map-panel { height: 250px; }
 }
