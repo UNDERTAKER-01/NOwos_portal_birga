@@ -1,4 +1,4 @@
-/* === ИЗНАЧАЛЬНАЯ ЭКСПОЗИЦИЯ + УВЕЛИЧЕННАЯ КАРТА + ПОЛНЫЙ БЛОК НОВОСТЕЙ === */
+/* === ИЗНАЧАЛЬНАЯ ЭКСПОЗИЦИЯ (как в первом ответе) + КАРТА МИРА === */
 
 :root {
   --bg: #000000;
@@ -60,12 +60,11 @@ h2 {
   padding-bottom: 0.5rem;
 }
 
-/* === НОВОСТИ (12 элементов, компактно) === */
+/* === НОВОСТИ (12 элементов) === */
 .news-panel {
-  height: 200px; /* Восстановлено — как раньше, но компактнее */
+  height: calc(100vh - 480px); /* Оптимизировано под карту + ленты */
   overflow-y: auto;
   padding-right: 8px;
-  margin-bottom: 1rem;
 }
 
 .news-panel::-webkit-scrollbar {
@@ -82,16 +81,15 @@ h2 {
 }
 
 .news-item {
-  margin-bottom: 0.9rem;
-  padding-bottom: 0.7rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 1rem;
   border-bottom: 1px dashed var(--border);
   cursor: pointer;
-  font-size: 0.88rem;
 }
 
 .news-item:last-child {
-  margin-bottom: 0;
   border-bottom: none;
+  margin-bottom: 0;
 }
 
 .news-item:hover {
@@ -101,19 +99,17 @@ h2 {
 .news-title {
   font-weight: bold;
   color: #fff;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1rem;
 }
 
 .news-date {
-  font-size: 0.75rem;
-  color: #777;
-  margin: 0.2rem 0;
+  font-size: 0.85rem;
+  color: #888;
 }
 
 .news-desc {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: #aaa;
+  margin-top: 0.3rem;
 }
 
 /* === МОДАЛЬНОЕ ОКНО === */
@@ -122,7 +118,6 @@ h2 {
   top: 0; left: 0;
   width: 100%; height: 100%;
   background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(1px);
   display: none;
   justify-content: center;
   align-items: center;
@@ -135,14 +130,13 @@ h2 {
 
 .modal {
   width: 90%;
-  max-width: 720px;
+  max-width: 700px;
   background: var(--panel);
   border: 2px solid var(--accent);
   border-radius: 0;
   position: relative;
-  max-height: 92vh;
+  max-height: 90vh;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(176, 0, 0, 0.6);
 }
 
 .modal-header {
@@ -156,55 +150,31 @@ h2 {
 
 .modal-title {
   font-family: 'Orbitron', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 .close-btn {
   background: none;
   border: 1px solid var(--accent);
   color: var(--accent);
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   font-family: 'Share Tech Mono', monospace;
   font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.2s;
 }
 
 .close-btn:hover {
   background: var(--accent);
   color: #000;
-  box-shadow: 0 0 8px var(--accent);
 }
 
 .modal-body {
-  padding: 1.6rem;
-  max-height: calc(92vh - 110px);
+  padding: 1.5rem;
+  max-height: calc(90vh - 100px);
   overflow-y: auto;
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #ddd;
-}
-
-.modal-body::-webkit-scrollbar {
-  width: 6px;
-}
-
-.modal-body::-webkit-scrollbar-track {
-  background: #080808;
-}
-
-.modal-body::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 3px;
 }
 
 .modal-date {
@@ -214,15 +184,22 @@ h2 {
   font-family: 'Share Tech Mono', monospace;
 }
 
+.modal-content {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #ddd;
+}
+
 .modal-status {
   display: inline-block;
   margin-top: 1.2rem;
-  padding: 0.45rem 1.1rem;
+  padding: 0.4rem 1rem;
   background: rgba(0, 30, 0, 0.4);
   border: 1px solid #0f0;
   color: #0f0;
   font-family: 'Share Tech Mono', monospace;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -237,28 +214,19 @@ h2 {
   display: flex;
   overflow: hidden;
   height: 70px;
-  margin: 0.7rem 0;
+  margin: 0.8rem 0;
   background: #050505;
   border: 1px solid #222;
-  position: relative;
-}
-
-.photo-strip::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: repeating-linear-gradient(rgba(0,30,0,0.05) 0px, transparent 1px, transparent 2px);
-  pointer-events: none;
 }
 
 .strip-content {
   display: flex;
-  animation: scroll 42s linear infinite;
+  animation: scroll 40s linear infinite;
 }
 
 .strip-content.reverse {
   animation-direction: reverse;
-  animation-duration: 36s;
+  animation-duration: 35s;
 }
 
 @keyframes scroll {
@@ -274,9 +242,9 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 3px;
+  padding: 4px;
   font-family: 'Share Tech Mono', monospace;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   color: #888;
   text-align: center;
 }
@@ -297,40 +265,17 @@ h2 {
   color: #050;
   font-family: 'Share Tech Mono', monospace;
   font-size: 8px;
-  text-align: center;
   height: 44px;
 }
 
-/* === УВЕЛИЧЕННАЯ КАРТА МИРА === */
+/* === НЕБОЛЬШАЯ КАРТА МИРА (220px) === */
 .map-panel {
-  height: 420px; /* ← УВЕЛИЧЕНО */
+  height: 220px;
   background: #000;
   border: 1px solid #222;
   position: relative;
   overflow: hidden;
-  margin-top: 0.7rem;
-}
-
-.map-panel::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: 
-    repeating-linear-gradient(rgba(0,25,0,0.03) 0px, transparent 1px, transparent 2px),
-    radial-gradient(ellipse at center, rgba(0,60,0,0.05) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.scanline-map {
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 2px;
-  background: rgba(0, 200, 0, 0.12);
-  animation: scanline 5.5s linear infinite;
-}
-
-@keyframes scanline {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100vh); }
+  margin-top: 0.8rem;
 }
 
 .map-svg {
@@ -341,18 +286,31 @@ h2 {
 
 .map-title {
   position: absolute;
-  top: 8px; left: 0; width: 100%;
+  top: 8px;
+  left: 0;
+  width: 100%;
   text-align: center;
   font-family: 'Share Tech Mono', monospace;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #0f0;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-.mineral-point {
-  cursor: pointer;
+/* Контур континента */
+.continent-outline {
+  fill: none;
+  stroke: #0f0;
+  stroke-width: 1;
+  stroke-dasharray: 4, 2;
+  opacity: 0.6;
 }
+
+/* Точки ресурсов */
+.mineral-circle { fill: #f44; }     /* Нефть */
+.mineral-triangle { fill: #ff0; }   /* Газ */
+.mineral-square { fill: #0ff; }     /* Металлы */
+.mineral-diamond { fill: #f0f; }    /* Редкозёмы */
 
 .mineral-label {
   font-family: 'Share Tech Mono', monospace;
@@ -361,11 +319,7 @@ h2 {
   text-anchor: middle;
 }
 
-.mineral-name {
-  font-weight: bold;
-}
-
-/* === РЕЛЕ === */
+/* === РЕЛЕ ПОД КАРТОЙ === */
 .relays {
   display: flex;
   gap: 1rem;
@@ -376,9 +330,9 @@ h2 {
   flex: 1;
   background: #0c0c0c;
   border: 1px solid #444;
-  padding: 0.65rem;
+  padding: 0.6rem;
   font-family: 'Share Tech Mono', monospace;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
 }
 
 .relay-label {
@@ -394,56 +348,23 @@ h2 {
   background: #151515;
   color: var(--fg);
   border: 1px solid #444;
-  padding: 0.45rem;
+  padding: 0.4rem;
   font-family: 'Share Tech Mono', monospace;
-  font-size: 0.98rem;
+  font-size: 0.95rem;
 }
 
-/* === КУРСЫ === */
-.rates {
-  list-style: none;
-}
-
-.rate {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.6rem 0;
-  border-bottom: 1px solid #2a2a2a;
-}
-
-.rate:last-child {
-  border-bottom: none;
-}
-
-.currency-pair {
-  font-weight: bold;
-}
-
-.rate-value {
-  font-family: 'Courier New', monospace;
-}
-
+/* === ОСТАЛЬНОЕ (курсы, графики, обменник) — без изменений === */
+.rates { list-style: none; }
+.rate { display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #2a2a2a; }
+.rate:last-child { border-bottom: none; }
+.currency-pair { font-weight: bold; }
+.rate-value { font-family: 'Courier New', monospace; }
 .up { color: #4caf50; }
 .down { color: #f44336; }
 
-/* === ОБМЕННИК === */
-.converter {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-label {
-  font-size: 0.9rem;
-  color: #aaa;
-}
-
+.converter { display: flex; flex-direction: column; gap: 1rem; }
+.input-group { display: flex; flex-direction: column; gap: 0.4rem; }
+label { font-size: 0.9rem; color: #aaa; }
 input, select, button {
   background: #1a1a1a;
   color: white;
@@ -452,38 +373,27 @@ input, select, button {
   font-size: 1rem;
   border-radius: 4px;
 }
-
-input:focus, select:focus {
-  outline: none;
-  border-color: var(--accent);
-}
-
+input:focus, select:focus { outline: none; border-color: var(--accent); }
 button {
   background: var(--accent);
   cursor: pointer;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
-  transition: background 0.3s;
 }
-
-button:hover {
-  background: #a00;
-}
+button:hover { background: #a00; }
 
 .result {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
-  padding: 0.85rem;
+  padding: 0.8rem;
   background: rgba(0, 30, 0, 0.4);
   border-radius: 4px;
   margin-top: 0.5rem;
   color: #0f0;
-  font-family: 'Orbitron', sans-serif;
 }
 
-/* === ГРАФИКИ === */
 .crt-screen {
   position: relative;
   background: #000;
@@ -500,6 +410,11 @@ button:hover {
   pointer-events: none;
 }
 
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
 .graph-title {
   font-size: 0.85rem;
   color: #0f0;
@@ -510,11 +425,7 @@ button:hover {
   font-family: 'Share Tech Mono', monospace;
 }
 
-.graph-panel {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
+.graph-panel { display: flex; flex-direction: column; gap: 0.8rem; }
 
 .rt-indicator {
   display: inline-block;
@@ -536,18 +447,12 @@ footer {
   padding: 1rem;
   font-size: 0.9rem;
   color: #666;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   border-top: 1px solid var(--border);
   font-family: 'Share Tech Mono', monospace;
 }
 
 @media (max-width: 768px) {
-  .container {
-    grid-template-columns: 1fr;
-  }
+  .container { grid-template-columns: 1fr; }
   .relays { flex-direction: column; }
-  .photo-strip { height: 65px; }
-  .strip-item { width: 100px; font-size: 0.7rem; }
-  .map-panel { height: 340px; }
-  .news-panel { height: 180px; }
 }
