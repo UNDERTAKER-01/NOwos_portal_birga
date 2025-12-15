@@ -3,22 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>МОНИТОРИНГ :: ЧЁРНЫЙ РЕЖИМ</title>
+  <title>ТЕХ-ПАСПОРТ :: ЧЁРНЫЙ РЕЖИМ</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    /* Только для placeholder-изображений */
-    .placeholder-img {
-      background: #0a0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #050;
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 8px;
-      text-align: center;
-    }
-  </style>
 </head>
 <body>
 
@@ -44,23 +31,23 @@
   </div>
 
   <header>
-    <h1>ТЕХ-ПАСПОРТ v7.7.0</h1>
+    <h1>ТЕХ-ПАСПОРТ v7.8.0</h1>
     <div style="font-size:0.9rem;color:#777;margin-top:0.5rem;font-family:'Share Tech Mono',monospace;">
-      СИСТЕМА МОНИТОРИНГА :: РЕЖИМ: ЧЁРНЫЙ <span class="rt-indicator"></span>
+      СИСТЕМА ГЛОБАЛЬНОГО МОНИТОРИНГА :: РЕЖИМ: ЧЁРНЫЙ <span class="rt-indicator"></span>
     </div>
   </header>
 
   <div class="container">
-    <!-- Левая колонка: Новости + Ленты + Карта -->
+    <!-- Левая колонка -->
     <div>
-      <!-- Новости -->
+      <!-- Новости (12 элементов) -->
       <section>
-        <h2>📡 ПОТОК НОВОСТЕЙ (LIVE)</h2>
+        <h2>📡 ПОТОК НОВОСТЕЙ (12 ЭЛЕМЕНТОВ)</h2>
         <div class="news-panel" id="news-panel">
           <div class="news-item" data-id="1">
             <div class="news-title">ИНДЕКС ММВБ: +2.1%</div>
             <div class="news-date">14.12.25 │ 09:48</div>
-            <div class="news-desc">Рост на фоне увеличения экспорта нефти. СИСТЕМА: СТАБИЛЬНА.</div>
+            <div class="news-desc">Рост на фоне экспорта нефти. СИСТЕМА: СТАБИЛЬНА.</div>
           </div>
           <div class="news-item" data-id="2">
             <div class="news-title">ФРС: СТАВКА БЕЗ ИЗМЕНЕНИЙ</div>
@@ -70,224 +57,155 @@
           <div class="news-item" data-id="3">
             <div class="news-title">КИТАЙ: НОВЫЙ ПАКЕТ СТИМУЛОВ</div>
             <div class="news-date">13.12.25 │ 18:15</div>
-            <div class="news-desc">Шанхайская биржа отреагировала ростом на 2.3%.</div>
+            <div class="news-desc">Шанхайский индекс: +2.3%. СИНХРОНИЗАЦИЯ ПРОТОКОЛОВ…</div>
+          </div>
+          <div class="news-item" data-id="4">
+            <div class="news-title">GAZP: ДИВИДЕНДЫ УТВЕРЖДЕНЫ</div>
+            <div class="news-date">13.12.25 │ 16:40</div>
+            <div class="news-desc">52.30 ₽/акция. СИГНАЛ: СТАБИЛЬНОСТЬ ДЕН.ПОТОКА.</div>
+          </div>
+          <div class="news-item" data-id="5">
+            <div class="news-title">ЦБ РФ СНИЗИЛ СТАВКУ НА 25 Б.П.</div>
+            <div class="news-date">12.12.25 │ 13:00</div>
+            <div class="news-desc">Ключевая ставка: 15.75%. СМЯГЧЕНИЕ ДЕН.ПОЛИТИКИ.</div>
+          </div>
+          <div class="news-item" data-id="6">
+            <div class="news-title">MOEX ЗАПУСКАЕТ ТЕХ-ИНДЕКС</div>
+            <div class="news-date">12.12.25 │ 10:15</div>
+            <div class="news-desc">СТАРТ: 01.01.26. СЕГМЕНТ: IT, БИОТЕХ, КВАНТ.</div>
+          </div>
+          <div class="news-item" data-id="7">
+            <div class="news-title">⚠️ ПРЕДУПРЕЖДЕНИЕ: ВОЛУНТАТИЛЬНОСТЬ</div>
+            <div class="news-date">11.12.25 │ 17:30</div>
+            <div class="news-desc">VIX ↑ до 24.5. ОЖИДАЕТСЯ РОСТ ДИАПАЗОНА КОЛЕБАНИЙ.</div>
+          </div>
+          <div class="news-item" data-id="8">
+            <div class="news-title">СДЕЛКА ПО АРЕСТУ СРЕДСТВ СНЯТА</div>
+            <div class="news-date">10.12.25 │ 14:22</div>
+            <div class="news-desc">Евроазиатская палата отменила санкции против 3 эмитентов.</div>
+          </div>
+          <div class="news-item" data-id="9">
+            <div class="news-title">RUB УСИЛИЛСЯ К КОРЗИНЕ +0.8%</div>
+            <div class="news-date">09.12.25 │ 11:05</div>
+            <div class="news-desc">После данных по бюджетному профициту (+2.4% ВВП).</div>
+          </div>
+          <div class="news-item" data-id="10">
+            <div class="news-title">ОБЪЁМЫ ТОРГОВ ВЫШЕ НОРМЫ НА 22%</div>
+            <div class="news-date">08.12.25 │ 19:00</div>
+            <div class="news-desc">Среднесуточный оборот: ₽312 млрд. СИГНАЛ: АКТИВНОСТЬ ↑.</div>
+          </div>
+          <div class="news-item" data-id="11">
+            <div class="news-title">СПУТНИКОВЫЙ МОНИТОРИНГ ПОДТВЕРДИЛ</div>
+            <div class="news-date">07.12.25 │ 08:10</div>
+            <div class="news-desc">Экспорт нефти через Балтику: +6.2% к ноябрю.</div>
+          </div>
+          <div class="news-item" data-id="12">
+            <div class="news-title">КВАНТОВЫЙ АЛГОРИТМ ЗАПУЩЕН</div>
+            <div class="news-date">05.12.25 │ 15:30</div>
+            <div class="news-desc">«СИГМА-7» начал тестовый прогон на биржевых данных.</div>
           </div>
         </div>
       </section>
 
-      <!-- Лента 1: Инфраструктура -->
+      <!-- Лента 1 -->
       <section>
         <h2>📸 ЛЕНТА: ИНФРАСТРУКТУРА</h2>
         <div class="photo-strip">
           <div class="strip-content">
-            <!-- 20 элементов (10 × 2) для плавной бесконечной прокрутки -->
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">МОНЕТА</div>
-              <div>РУДНИК</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">⚙️</div>
-              <div>ЗАВОД</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🛢️</div>
-              <div>НЕФТЬ</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🔋</div>
-              <div>ЭЛЕКТРО</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🚢</div>
-              <div>ПОРТ</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🚂</div>
-              <div>Ж/Д</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">📡</div>
-              <div>СВЯЗЬ</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">📊</div>
-              <div>БИРЖА</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🏭</div>
-              <div>ПРОМ</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">⛏️</div>
-              <div>КАРЬЕР</div>
-            </div>
-            <!-- Повтор для бесконечности -->
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">МОНЕТА</div>
-              <div>РУДНИК</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">⚙️</div>
-              <div>ЗАВОД</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🛢️</div>
-              <div>НЕФТЬ</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🔋</div>
-              <div>ЭЛЕКТРО</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🚢</div>
-              <div>ПОРТ</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🚂</div>
-              <div>Ж/Д</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">📡</div>
-              <div>СВЯЗЬ</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">📊</div>
-              <div>БИРЖА</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🏭</div>
-              <div>ПРОМ</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">⛏️</div>
-              <div>КАРЬЕР</div>
-            </div>
+            <div class="strip-item"><div class="placeholder-img">МОНЕТА</div><div>РУДНИК</div></div>
+            <div class="strip-item"><div class="placeholder-img">⚙️</div><div>ЗАВОД</div></div>
+            <div class="strip-item"><div class="placeholder-img">🛢️</div><div>НЕФТЬ</div></div>
+            <div class="strip-item"><div class="placeholder-img">🔋</div><div>ЭЛЕКТРО</div></div>
+            <div class="strip-item"><div class="placeholder-img">🚢</div><div>ПОРТ</div></div>
+            <div class="strip-item"><div class="placeholder-img">🚂</div><div>Ж/Д</div></div>
+            <div class="strip-item"><div class="placeholder-img">📡</div><div>СВЯЗЬ</div></div>
+            <div class="strip-item"><div class="placeholder-img">📊</div><div>БИРЖА</div></div>
+            <div class="strip-item"><div class="placeholder-img">🏭</div><div>ПРОМ</div></div>
+            <div class="strip-item"><div class="placeholder-img">⛏️</div><div>КАРЬЕР</div></div>
+            <!-- Повтор -->
+            <div class="strip-item"><div class="placeholder-img">МОНЕТА</div><div>РУДНИК</div></div>
+            <div class="strip-item"><div class="placeholder-img">⚙️</div><div>ЗАВОД</div></div>
+            <div class="strip-item"><div class="placeholder-img">🛢️</div><div>НЕФТЬ</div></div>
+            <div class="strip-item"><div class="placeholder-img">🔋</div><div>ЭЛЕКТРО</div></div>
+            <div class="strip-item"><div class="placeholder-img">🚢</div><div>ПОРТ</div></div>
+            <div class="strip-item"><div class="placeholder-img">🚂</div><div>Ж/Д</div></div>
+            <div class="strip-item"><div class="placeholder-img">📡</div><div>СВЯЗЬ</div></div>
+            <div class="strip-item"><div class="placeholder-img">📊</div><div>БИРЖА</div></div>
+            <div class="strip-item"><div class="placeholder-img">🏭</div><div>ПРОМ</div></div>
+            <div class="strip-item"><div class="placeholder-img">⛏️</div><div>КАРЬЕР</div></div>
           </div>
         </div>
       </section>
 
-      <!-- Лента 2: Рынки -->
+      <!-- Лента 2 -->
       <section>
         <h2>📈 ЛЕНТА: РЫНКИ</h2>
         <div class="photo-strip">
           <div class="strip-content reverse">
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🇺🇸</div>
-              <div>NYSE</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🇬🇧</div>
-              <div>LSE</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🇯🇵</div>
-              <div>TSE</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🇨🇳</div>
-              <div>SSE</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🇷🇺</div>
-              <div>MOEX</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🇩🇪</div>
-              <div>XETRA</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🇫🇷</div>
-              <div>EURONEXT</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🇨🇦</div>
-              <div>TSX</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🇦🇺</div>
-              <div>ASX</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🇧🇷</div>
-              <div>B3</div>
-            </div>
+            <div class="strip-item"><div class="placeholder-img">🇺🇸</div><div>NYSE</div></div>
+            <div class="strip-item"><div class="placeholder-img">🇬🇧</div><div>LSE</div></div>
+            <div class="strip-item"><div class="placeholder-img">🇯🇵</div><div>TSE</div></div>
+            <div class="strip-item"><div class="placeholder-img">🇨🇳</div><div>SSE</div></div>
+            <div class="strip-item"><div class="placeholder-img">🇷🇺</div><div>MOEX</div></div>
+            <div class="strip-item"><div class="placeholder-img">🇩🇪</div><div>XETRA</div></div>
+            <div class="strip-item"><div class="placeholder-img">🇫🇷</div><div>EURONEXT</div></div>
+            <div class="strip-item"><div class="placeholder-img">🇨🇦</div><div>TSX</div></div>
+            <div class="strip-item"><div class="placeholder-img">🇦🇺</div><div>ASX</div></div>
+            <div class="strip-item"><div class="placeholder-img">🇧🇷</div><div>B3</div></div>
             <!-- Повтор -->
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🇺🇸</div>
-              <div>NYSE</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🇬🇧</div>
-              <div>LSE</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🇯🇵</div>
-              <div>TSE</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🇨🇳</div>
-              <div>SSE</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🇷🇺</div>
-              <div>MOEX</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🇩🇪</div>
-              <div>XETRA</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🇫🇷</div>
-              <div>EURONEXT</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🇨🇦</div>
-              <div>TSX</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🇦🇺</div>
-              <div>ASX</div>
-            </div>
-            <div class="strip-item">
-              <div class="placeholder-img" style="height:50px;">🇧🇷</div>
-              <div>B3</div>
-            </div>
+            <div class="strip-item"><div class="placeholder-img">🇺🇸</div><div>NYSE</div></div>
+            <div class="strip-item"><div class="placeholder-img">🇬🇧</div><div>LSE</div></div>
+            <div class="strip-item"><div class="placeholder-img">🇯🇵</div><div>TSE</div></div>
+            <div class="strip-item"><div class="placeholder-img">🇨🇳</div><div>SSE</div></div>
+            <div class="strip-item"><div class="placeholder-img">🇷🇺</div><div>MOEX</div></div>
+            <div class="strip-item"><div class="placeholder-img">🇩🇪</div><div>XETRA</div></div>
+            <div class="strip-item"><div class="placeholder-img">🇫🇷</div><div>EURONEXT</div></div>
+            <div class="strip-item"><div class="placeholder-img">🇨🇦</div><div>TSX</div></div>
+            <div class="strip-item"><div class="placeholder-img">🇦🇺</div><div>ASX</div></div>
+            <div class="strip-item"><div class="placeholder-img">🇧🇷</div><div>B3</div></div>
           </div>
         </div>
       </section>
 
-      <!-- Карта мира -->
+      <!-- УВЕЛИЧЕННАЯ КАРТА -->
       <section>
-        <h2>🌍 ГЛОБАЛЬНЫЙ МОНИТОРИНГ</h2>
+        <h2>🌍 ГЛОБАЛЬНЫЙ МОНИТОР (CRT-РЕЖИМ)</h2>
         <div class="map-panel">
           <div class="scanline-map"></div>
-          <div class="map-title">РЕЖИМ: АНАЛИЗ ▸ ИСКОПАЕМЫЕ</div>
-          <svg class="map-svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
-            <!-- Упрощённая карта мира (контуры не нужны — только точки) -->
-            <!-- Точки месторождений -->
-            <!-- Россия: нефть -->
-            <circle cx="580" cy="140" r="4" fill="#f44" class="mineral-point" data-name="Нефть" data-reserves="140 млрд барр." data-type="нефть"/>
-            <text x="580" y="134" class="mineral-label"><tspan class="mineral-name">RU</tspan> 140 млрд</text>
-            
-            <!-- Саудовская Аравия: нефть -->
-            <circle cx="620" cy="180" r="5" fill="#f44" class="mineral-point" data-name="Нефть" data-reserves="267 млрд барр." data-type="нефть"/>
-            <text x="620" y="174" class="mineral-label"><tspan class="mineral-name">SA</tspan> 267 млрд</text>
-            
-            <!-- ДР Конго: кобальт -->
-            <circle cx="520" cy="220" r="4" fill="#f44" class="mineral-point" data-name="Кобальт" data-reserves="3.5 млн т" data-type="кобальт"/>
-            <text x="520" y="214" class="mineral-label"><tspan class="mineral-name">CD</tspan> 3.5 млн т</text>
-            
-            <!-- Австралия: литий -->
-            <circle cx="760" cy="250" r="4" fill="#f44" class="mineral-point" data-name="Литий" data-reserves="6.2 млн т" data-type="литий"/>
-            <text x="760" y="244" class="mineral-label"><tspan class="mineral-name">AU</tspan> 6.2 млн т</text>
-            
-            <!-- Чили: медь -->
-            <circle cx="320" cy="240" r="5" fill="#f44" class="mineral-point" data-name="Медь" data-reserves="200 млн т" data-type="медь"/>
-            <text x="320" y="234" class="mineral-label"><tspan class="mineral-name">CL</tspan> 200 млн т</text>
-            
-            <!-- Китай: редкозёмы -->
-            <circle cx="660" cy="160" r="4" fill="#f44" class="mineral-point" data-name="Редкозёмы" data-reserves="44 млн т" data-type="редкозёмы"/>
-            <text x="660" y="154" class="mineral-label"><tspan class="mineral-name">CN</tspan> 44 млн т</text>
+          <div class="map-title">РЕЖИМ: АНАЛИЗ ▸ ГЕОЛОГИЧЕСКИЕ ДАННЫЕ</div>
+          <svg class="map-svg" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet">
+            <!-- Точки месторождений (увеличен масштаб → больше места для подписей) -->
+            <circle cx="650" cy="180" r="5" fill="#f44" class="mineral-point" data-name="Нефть" data-reserves="267 млрд барр."/>
+            <text x="650" y="172" class="mineral-label"><tspan class="mineral-name">SA</tspan> Нефть</text>
+            <text x="650" y="182" class="mineral-label" font-size="6px">267 млрд</text>
+
+            <circle cx="580" cy="150" r="5" fill="#f44" class="mineral-point" data-name="Нефть" data-reserves="140 млрд барр."/>
+            <text x="580" y="142" class="mineral-label"><tspan class="mineral-name">RU</tspan> Нефть</text>
+            <text x="580" y="152" class="mineral-label" font-size="6px">140 млрд</text>
+
+            <circle cx="340" cy="270" r="5" fill="#f44" class="mineral-point" data-name="Медь" data-reserves="200 млн т"/>
+            <text x="340" y="262" class="mineral-label"><tspan class="mineral-name">CL</tspan> Медь</text>
+            <text x="340" y="272" class="mineral-label" font-size="6px">200 млн т</text>
+
+            <circle cx="780" cy="320" r="5" fill="#f44" class="mineral-point" data-name="Литий" data-reserves="6.2 млн т"/>
+            <text x="780" y="312" class="mineral-label"><tspan class="mineral-name">AU</tspan> Литий</text>
+            <text x="780" y="322" class="mineral-label" font-size="6px">6.2 млн т</text>
+
+            <circle cx="520" cy="250" r="5" fill="#f44" class="mineral-point" data-name="Кобальт" data-reserves="3.5 млн т"/>
+            <text x="520" y="242" class="mineral-label"><tspan class="mineral-name">CD</tspan> Кобальт</text>
+            <text x="520" y="252" class="mineral-label" font-size="6px">3.5 млн т</text>
+
+            <circle cx="670" cy="170" r="5" fill="#f44" class="mineral-point" data-name="Редкозёмы" data-reserves="44 млн т"/>
+            <text x="670" y="162" class="mineral-label"><tspan class="mineral-name">CN</tspan> Редкозёмы</text>
+            <text x="670" y="172" class="mineral-label" font-size="6px">44 млн т</text>
+
+            <circle cx="280" cy="220" r="4" fill="#f44" class="mineral-point" data-name="Железо" data-reserves="30 млрд т"/>
+            <text x="280" y="212" class="mineral-label"><tspan class="mineral-name">BR</tspan> Железо</text>
+            <text x="280" y="222" class="mineral-label" font-size="6px">30 млрд т</text>
+
+            <circle cx="420" cy="200" r="4" fill="#f44" class="mineral-point" data-name="Алмазы" data-reserves="800 млн карат"/>
+            <text x="420" y="192" class="mineral-label"><tspan class="mineral-name">RU</tspan> Алмазы</text>
+            <text x="420" y="202" class="mineral-label" font-size="6px">800 млн карат</text>
           </svg>
         </div>
 
@@ -316,6 +234,8 @@
               <option>ЛИТИЙ</option>
               <option>КОБАЛЬТ</option>
               <option>РЕДКОЗЁМЫ</option>
+              <option>ЖЕЛЕЗО</option>
+              <option>АЛМАЗЫ</option>
             </select>
           </div>
         </div>
@@ -324,7 +244,6 @@
 
     <!-- Правая колонка (без изменений) -->
     <div>
-      <!-- Курсы -->
       <section>
         <h2>💱 КУРСЫ ВАЛЮТ (ЦБ РФ)</h2>
         <ul class="rates">
@@ -347,7 +266,6 @@
         </ul>
       </section>
 
-      <!-- Графики -->
       <section>
         <h2>📈 МОНИТОРИНГ АКТИВА</h2>
         <div class="graph-panel">
@@ -414,7 +332,6 @@
         </div>
       </section>
 
-      <!-- Обменник -->
       <section>
         <h2>🔄 ОБМЕННЫЙ МОДУЛЬ</h2>
         <div class="converter">
@@ -443,13 +360,23 @@
   </footer>
 
   <script>
-    // Новости — как раньше
+    // Полные новости (12 шт.)
     const newsData = {
-      1: { title: "ИНДЕКС ММВБ: +2.1%", date: "14.12.25 │ 09:48", content: "Индекс Московской биржи вырос на 2.1%...", status: "СТАТУС: ЗЕЛЁНЫЙ" },
-      2: { title: "ФРС: СТАВКА БЕЗ ИЗМЕНЕНИЙ", date: "14.12.25 │ 08:30", content: "Федеральная резервная система...", status: "СТАТУС: ЗЕЛЁНЫЙ" },
-      3: { title: "КИТАЙ: НОВЫЙ ПАКЕТ СТИМУЛОВ", date: "13.12.25 │ 18:15", content: "Правительство КНР объявил...", status: "СТАТУС: ЗЕЛЁНЫЙ" }
+      1: { title: "ИНДЕКС ММВБ: +2.1%", date: "14.12.25 │ 09:48", content: "Индекс Московской биржи вырос на 2.1% за сутки, достигнув 3 820 пунктов. Рост обусловлен повышением цен на нефть марки Brent выше $85 за баррель и ослаблением рубля к корзине валют. Объём торгов вырос на 18% относительно среднего значения. Акции нефтегазового сектора (+3.4%) и металлургии (+2.8%) показали максимальный рост.", status: "СТАТУС: ЗЕЛЁНЫЙ" },
+      2: { title: "ФРС: СТАВКА БЕЗ ИЗМЕНЕНИЙ", date: "14.12.25 │ 08:30", content: "Федеральная резервная система США сохранила ключевую ставку в диапазоне 5.25–5.50%, как и ожидалось. Джером Пауэлл отметил умеренное замедление инфляции и готовность к корректировке в 2026 году. Рынки отреагировали ростом: S&P 500 +0.9%, Nasdaq +1.2%. Доллар ослаб к евро и иене. Российские активы получили косвенную поддержку через рост глобального аппетита к риску.", status: "СТАТУС: ЗЕЛЁНЫЙ" },
+      3: { title: "КИТАЙ: НОВЫЙ ПАКЕТ СТИМУЛОВ", date: "13.12.25 │ 18:15", content: "Правительство КНР объявил о новом пакете мер поддержки экономики на ₽2.3 трлн: субсидии для производителей электромобилей, льготное кредитование малого бизнеса, ускорение строительства «умных городов». Шанхайский композитный индекс вырос на 2.3%, HKEX — на 1.8%. Акции китайских производителей полупроводников показали рост до +5.2%. Российские экспортёры оборудования фиксируют рост запросов.", status: "СТАТУС: ЗЕЛЁНЫЙ" },
+      4: { title: "GAZP: ДИВИДЕНДЫ УТВЕРЖДЕНЫ", date: "13.12.25 │ 16:40", content: "Совет директоров ПАО «Газпром» утвердил рекомендации по дивидендам за 9 месяцев 2025 года: 52.30 рубля на акцию. Выплата состоится до 28 февраля 2026 года. Дивидендная доходность — 9.1% годовых. Акции выросли на 1.7% после закрытия основной сессии. Рынок расценил решение как сигнал стабильности денежных потоков компании.", status: "СТАТУС: ЗЕЛЁНЫЙ" },
+      5: { title: "ЦБ РФ СНИЗИЛ СТАВКУ НА 25 Б.П.", date: "12.12.25 │ 13:00", content: "Банк России снизил ключевую ставку на 25 базовых пунктов — до 15.75%. Решение принято на фоне замедления инфляции (5.8% г/г) и снижения инфляционных ожиданий. Прогноз по инфляции на 2026 год пересмотрен вниз — до 4.2–4.7%. Рубль ослаб после объявления, но рынки восприняли шаг как запланированный и контролируемый.", status: "СТАТУС: ЗЕЛЁНЫЙ" },
+      6: { title: "MOEX ЗАПУСКАЕТ ТЕХ-ИНДЕКС", date: "12.12.25 │ 10:15", content: "Московская биржа анонсировала запуск нового индекса — MOEX TECH, включающего 30 компаний из секторов IT, биотехнологий, квантовых вычислений и нейроинтерфейсов. Базовый период — 2025 год. Индекс будет рассчитываться в реальном времени, с ежеквартальной ребалансировкой. Участие открыто для акций, прошедших аудит на соответствие стандартам «Цифровой Эры».", status: "СТАТУС: ЗЕЛЁНЫЙ" },
+      7: { title: "⚠️ ПРЕДУПРЕЖДЕНИЕ: ВОЛУНТАТИЛЬНОСТЬ", date: "11.12.25 │ 17:30", content: "Индекс волатильности CBOE (VIX) вырос до 24.5 — максимум с сентября 2025 года. Причина — геополитическая напряжённость и неопределённость по поводу налоговой реформы в ЕС. Трейдеры наращивают хеджирование. В ближайшие 5 дней ожидается увеличение амплитуды колебаний на 30–40%. Рекомендация: избегать рыночных ордеров в период выхода макростатистики.", status: "СТАТУС: ЖЁЛТЫЙ" },
+      8: { title: "СДЕЛКА ПО АРЕСТУ СРЕДСТВ СНЯТА", date: "10.12.25 │ 14:22", content: "Евроазиатская торговая палата сняла ограничения с акций «Норникеля», «Полюса» и «АЛРОСА» в связи с выполнением условий по урегулированию спора. Это открывает доступ к международным клиринговым системам и ETF-фондам. Объёмы заявок на покупку выросли на 200% за 2 часа. Ликвидность по бумагам ожидается на уровне Q2 2024.", status: "СТАТУС: ЗЕЛЁНЫЙ" },
+      9: { title: "RUB УСИЛИЛСЯ К КОРЗИНЕ +0.8%", date: "09.12.25 │ 11:05", content: "Рубль укрепился на 0.8% к валютной корзине после публикации данных Минфина: профицит федерального бюджета за 11 месяцев 2025 года составил 2.4% ВВП. Это выше прогноза (1.7%). Резервы ЦБ выросли до $612 млрд. Спрос на ОФЗ со стороны нерезидентов вырос на 12% за неделю. Краткосрочный прогноз: боковое движение в диапазоне 91–93 по USD/RUB.", status: "СТАТУС: ЗЕЛЁНЫЙ" },
+      10: { title: "ОБЪЁМЫ ТОРГОВ ВЫШЕ НОРМЫ НА 22%", date: "08.12.25 │ 19:00", content: "Среднесуточный объём торгов на Мосбирже за декабрь (первые 8 дней) составил 312 млрд рублей — на 22% выше ноябрьского значения и на 35% выше годового среднего. Наибольший рост — в сегменте ОФЗ (+41%) и деривативов (+29%). Прирост обеспечили как институциональные, так и розничные инвесторы (доля последних — 34%).", status: "СТАТУС: ЗЕЛЁНЫЙ" },
+      11: { title: "СПУТНИКОВЫЙ МОНИТОРИНГ ПОДТВЕРДИЛ", date: "07.12.25 │ 08:10", content: "Данные спутникового мониторинга (OrbitalScan v4.1) подтвердили рост экспорта нефти через порты Приморск и Усть-Луга: +6.2% по сравнению с ноябрём. Среднесуточный отгрузочный объём — 2.1 млн баррелей. Это соответствует 98% от максимальной пропускной способности терминалов. Наблюдается увеличение доли крупнотоннажных танкеров (VLCC).", status: "СТАТУС: ЗЕЛЁНЫЙ" },
+      12: { title: "КВАНТОВЫЙ АЛГОРИТМ ЗАПУЩЕН", date: "05.12.25 │ 15:30", content: "Квантовый вычислитель «СИГМА-7» (72 кубита) запущен в тестовом режиме для анализа корреляций между фьючерсами и спот-рынком. Первая итерация завершена за 47 миллисекунд (классический аналог — 3.2 сек). Точность прогноза на 15-минутный интервал — 88.4%. Полномасштабное внедрение запланировано на Q2 2026 после прохождения аудита Механикумом.", status: "СТАТУС: ЗЕЛЁНЫЙ" }
     };
 
+    // Обработчики новостей
     document.querySelectorAll('.news-item').forEach(item => {
       item.addEventListener('click', () => {
         const id = item.dataset.id;
@@ -459,13 +386,16 @@
         document.getElementById('modal-title').textContent = data.title;
         document.getElementById('modal-date').textContent = data.date;
         document.getElementById('modal-content').textContent = data.content;
+        
         const statusEl = document.getElementById('modal-status');
         statusEl.textContent = data.status;
         statusEl.className = 'modal-status' + (data.status.includes('ЖЁЛТЫЙ') ? ' warn' : '');
+        
         document.getElementById('modal-overlay').classList.add('active');
         
         const snd = document.getElementById('click-sound');
-        snd.currentTime = 0; snd.play().catch(() => {});
+        snd.currentTime = 0;
+        snd.play().catch(() => {});
       });
     });
 
@@ -491,14 +421,6 @@
     document.getElementById('from').addEventListener('change', convert);
     document.getElementById('exchange-btn').addEventListener('click', convert);
     convert();
-
-    // Реле — можно расширить фильтрацией карты
-    document.getElementById('relay-continent').addEventListener('change', () => {
-      // TODO: фильтрация точек по континенту
-    });
-    document.getElementById('relay-mineral').addEventListener('change', () => {
-      // TODO: фильтрация по ископаемому
-    });
   </script>
 
 </body>
