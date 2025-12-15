@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ТЕХ-ПАСПОРТ :: ЧЁРНЫЙ РЕЖИМ</title>
+  <title>ТЕХ-ПАСПОРТ :: АДАПТИВНЫЙ РЕЖИМ</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -30,24 +30,24 @@
   </div>
 
   <header>
-    <h1>ТЕХ-ПАСПОРТ v7.9.0</h1>
-    <div style="font-size:0.9rem;color:#777;margin-top:0.5rem;font-family:'Share Tech Mono',monospace;">
-      СИСТЕМА ФОНДОВОГО МОНИТОРИНГА :: РЕЖИМ: ЧЁРНЫЙ <span class="rt-indicator"></span>
+    <h1>ТЕХ-ПАСПОРТ v8.0</h1>
+    <div class="subtitle">
+      СИСТЕМА ГЛОБАЛЬНОГО МОНИТОРИНГА :: РЕЖИМ: ЧЁРНЫЙ <span class="rt-indicator"></span>
     </div>
   </header>
 
   <div class="container">
     <!-- Левая колонка -->
     <div>
-      <!-- Новости (12) -->
+      <!-- Новости (15 элементов) -->
       <section>
-        <h2>📡 ПОТОК НОВОСТЕЙ (12 ЭЛЕМЕНТОВ)</h2>
+        <h2>📡 ПОТОК НОВОСТЕЙ (15 ЭЛЕМЕНТОВ)</h2>
         <div class="news-panel" id="news-panel">
-          <!-- 12 новостей — генерируются скриптом или вручную -->
+          <!-- 15 новостей -->
           <div class="news-item" data-id="1">
             <div class="news-title">ИНДЕКС ММВБ: +2.1%</div>
             <div class="news-date">14.12.25 │ 09:48</div>
-            <div class="news-desc">Рост на фоне увеличения экспорта нефти. СИСТЕМА: СТАБИЛЬНА.</div>
+            <div class="news-desc">Рост на фоне экспорта нефти. СИСТЕМА: СТАБИЛЬНА.</div>
           </div>
           <div class="news-item" data-id="2">
             <div class="news-title">ФРС: СТАВКА БЕЗ ИЗМЕНЕНИЙ</div>
@@ -57,7 +57,7 @@
           <div class="news-item" data-id="3">
             <div class="news-title">КИТАЙ: НОВЫЙ ПАКЕТ СТИМУЛОВ</div>
             <div class="news-date">13.12.25 │ 18:15</div>
-            <div class="news-desc">Шанхайская биржа отреагировала ростом на 2.3%.</div>
+            <div class="news-desc">Шанхайский индекс: +2.3%. СИНХРОНИЗАЦИЯ ПРОТОКОЛОВ…</div>
           </div>
           <div class="news-item" data-id="4">
             <div class="news-title">GAZP: ДИВИДЕНДЫ УТВЕРЖДЕНЫ</div>
@@ -104,10 +104,25 @@
             <div class="news-date">05.12.25 │ 15:30</div>
             <div class="news-desc">«СИГМА-7» начал тестовый прогон на биржевых данных.</div>
           </div>
+          <div class="news-item" data-id="13">
+            <div class="news-title">ЭКСТРЕМАЛЬНЫЕ ПОГОДНЫЕ УСЛОВИЯ</div>
+            <div class="news-date">04.12.25 │ 14:20</div>
+            <div class="news-desc">Морозы в Азии усилили спрос на газ. Цены +4.2%.</div>
+          </div>
+          <div class="news-item" data-id="14">
+            <div class="news-title">НОВЫЙ ТРУБОПРОВОД ЗАПУЩЕН</div>
+            <div class="news-date">03.12.25 │ 11:45</div>
+            <div class="news-desc">«СИЛА СИБИРИ-2»: мощность 50 млрд м³/год.</div>
+          </div>
+          <div class="news-item" data-id="15">
+            <div class="news-title">ЛИТИЙ: ДЕФИЦИТ НА 18%</div>
+            <div class="news-date">02.12.25 │ 16:30</div>
+            <div class="news-desc">Рост цен на батареи. Производители ищут альтернативы.</div>
+          </div>
         </div>
       </section>
 
-      <!-- Лента 1 -->
+      <!-- Ленты -->
       <section>
         <h2>📸 ЛЕНТА: ИНФРАСТРУКТУРА</h2>
         <div class="photo-strip">
@@ -137,7 +152,6 @@
         </div>
       </section>
 
-      <!-- Лента 2 -->
       <section>
         <h2>📈 ЛЕНТА: РЫНКИ</h2>
         <div class="photo-strip">
@@ -167,39 +181,40 @@
         </div>
       </section>
 
-      <!-- НЕБОЛЬШАЯ КАРТА МИРА -->
+      <!-- УВЕЛИЧЕННЫЙ ЭКРАН РЕСУРСОВ -->
       <section>
         <h2>🌍 ГЕОЛОГИЧЕСКИЙ МОНИТОР</h2>
         <div class="map-panel">
           <div class="map-title">РЕЖИМ: АНАЛИЗ ▸ РЕСУРСЫ</div>
-          <svg class="map-svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
-            <!-- Контур Евразии (пример) -->
-            <path class="continent-outline" d="M200,150 L400,120 L550,140 L650,180 L620,240 L550,280 L450,300 L350,280 L250,260 L200,220 Z" />
+          <svg class="map-svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid meet">
+            <!-- Контур Евразии -->
+            <path class="continent-outline" d="M180,160 L380,130 L530,150 L630,190 L600,250 L530,290 L430,310 L330,290 L230,270 L180,230 Z" />
 
-            <!-- Точки ресурсов -->
-            <!-- Нефть: круг -->
-            <circle cx="580" cy="150" r="4" class="mineral-circle" />
-            <text x="580" y="144" class="mineral-label">[RU] ● 140 млрд</text>
+            <!-- ● Нефть -->
+            <circle cx="560" cy="160" r="6" class="mineral-circle" />
+            <text x="560" y="152" class="mineral-label">[RU] ● 140 млрд</text>
 
-            <!-- Газ: треугольник -->
-            <polygon points="620,190 616,198 624,198" class="mineral-triangle" />
-            <text x="620" y="186" class="mineral-label">[RU] ▲ 37 трлн м³</text>
+            <circle cx="620" cy="210" r="6" class="mineral-circle" />
+            <text x="620" y="202" class="mineral-label">[SA] ● 267 млрд</text>
 
-            <!-- Металлы: квадрат -->
-            <rect x="515" y="246" width="8" height="8" class="mineral-square" />
-            <text x="520" y="242" class="mineral-label">[CD] ■ 3.5 млн т</text>
+            <!-- ▲ Газ -->
+            <polygon points="600,200 594,212 606,212" class="mineral-triangle" />
+            <text x="600" y="192" class="mineral-label">[RU] ▲ 37 трлн м³</text>
 
-            <!-- Редкозёмы: ромб -->
-            <polygon points="660,170 656,174 660,178 664,174" class="mineral-diamond" />
-            <text x="660" y="166" class="mineral-label">[CN] ◆ 44 млн т</text>
+            <!-- ■ Металлы -->
+            <rect x="510" y="254" width="12" height="12" class="mineral-square" />
+            <text x="516" y="246" class="mineral-label">[CD] ■ 3.5 млн т</text>
 
-            <!-- Нефть: Сауд. Аравия -->
-            <circle cx="640" cy="200" r="5" class="mineral-circle" />
-            <text x="640" y="194" class="mineral-label">[SA] ● 267 млрд</text>
+            <!-- ◆ Редкозёмы -->
+            <polygon points="640,180 634,186 640,192 646,186" class="mineral-diamond" />
+            <text x="640" y="172" class="mineral-label">[CN] ◆ 44 млн т</text>
+
+            <!-- ● Нефть США -->
+            <circle cx="280" cy="220" r="5" class="mineral-circle" />
+            <text x="280" y="212" class="mineral-label">[US] ● 69 млрд</text>
           </svg>
         </div>
 
-        <!-- Реле -->
         <div class="relays">
           <div class="relay">
             <span class="relay-label">КОНТИНЕНТ</span>
@@ -224,8 +239,8 @@
       </section>
     </div>
 
-    <!-- Правая колонка — без изменений -->
-    <div>
+    <!-- Правая колонка -->
+    <div class="right-col">
       <section>
         <h2>💱 КУРСЫ ВАЛЮТ (ЦБ РФ)</h2>
         <ul class="rates">
@@ -251,7 +266,7 @@
       <section>
         <h2>📈 МОНИТОРИНГ АКТИВА</h2>
         <div class="graph-panel">
-          <div class="crt-screen" style="height:90px;border-radius:0;">
+          <div class="crt-screen graph-1">
             <div class="scanline"></div>
             <div class="graph-title">РЕЖИМ: ЛИНИЯ ▸ ON-LINE</div>
             <svg viewBox="0 0 400 60" style="display:block;width:100%;height:calc(100% - 24px);">
@@ -264,7 +279,7 @@
             </svg>
           </div>
 
-          <div class="crt-screen" style="height:75px;border-radius:0;">
+          <div class="crt-screen graph-2">
             <div class="scanline"></div>
             <div class="graph-title">РЕЖИМ: СТОЛБЦЫ ▸ ON-LINE</div>
             <svg viewBox="0 0 400 50" style="display:block;width:100%;height:calc(100% - 24px);">
@@ -280,7 +295,7 @@
             </svg>
           </div>
 
-          <div class="crt-screen" style="height:75px;border-radius:0;">
+          <div class="crt-screen graph-3">
             <div class="scanline"></div>
             <div class="graph-title">РЕЖИМ: ОРДЕРА ▸ ON-LINE</div>
             <svg viewBox="0 0 400 50" style="display:block;width:100%;height:calc(100% - 24px);">
@@ -300,7 +315,7 @@
             </svg>
           </div>
 
-          <div class="crt-screen" style="height:100px;border-radius:0;">
+          <div class="crt-screen graph-4">
             <div class="scanline"></div>
             <div class="graph-title">РЕЖИМ: ГЛУБИНА СТАКАНА ▸ ON-LINE</div>
             <svg viewBox="0 0 400 70" style="display:block;width:100%;height:calc(100% - 24px);">
@@ -344,8 +359,8 @@
   <script>
     const newsData = {
       1: { title: "ИНДЕКС ММВБ: +2.1%", date: "14.12.25 │ 09:48", content: "Индекс Московской биржи вырос на 2.1% за сутки...", status: "СТАТУС: ЗЕЛЁНЫЙ" },
-      2: { title: "ФРС: СТАВКА БЕЗ ИЗМЕНЕНИЙ", date: "14.12.25 │ 08:30", content: "Федеральная резервная система США сохранила ключевую ставку...", status: "СТАТУС: ЗЕЛЁНЫЙ" },
-      // ... остальные 10 — аналогично
+      2: { title: "ФРС: СТАВКА БЕЗ ИЗМЕНЕНИЙ", date: "14.12.25 │ 08:30", content: "Федеральная резервная система США сохранила...", status: "СТАТУС: ЗЕЛЁНЫЙ" },
+      // ... остальные — по аналогии
     };
 
     document.querySelectorAll('.news-item').forEach(item => {
@@ -363,12 +378,19 @@
         document.getElementById('modal-overlay').classList.add('active');
         
         const snd = document.getElementById('click-sound');
-        snd.currentTime = 0; snd.play().catch(() => {});
+        snd.currentTime = 0;
+        snd.play().catch(() => {});
       });
     });
 
     document.getElementById('close-modal').addEventListener('click', () => {
       document.getElementById('modal-overlay').classList.remove('active');
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && document.getElementById('modal-overlay').classList.contains('active')) {
+        document.getElementById('modal-overlay').classList.remove('active');
+      }
     });
 
     function convert() {
