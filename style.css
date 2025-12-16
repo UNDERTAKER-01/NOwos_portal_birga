@@ -1,4 +1,4 @@
-/* === ПОЛНОЭКРАННЫЙ РЕЖИМ (100vw) + 3 НОВЫХ ЭКРАНА + СИНТЕЗ РЕЧИ === */
+/* === ОБНОВЛЁННЫЙ СТИЛЬ: КОМПАКТНЫЙ ОБМЕННИК + 2 НОВЫХ ЭКРАНА === */
 
 :root {
   --bg: #000000;
@@ -22,7 +22,6 @@ body {
   overflow-x: hidden;
 }
 
-/* === ПОЛНОЭКРАННЫЙ КОНТЕЙНЕР === */
 .container {
   width: 100vw;
   max-width: none;
@@ -38,25 +37,13 @@ body {
 }
 
 @media (min-width: 600px) and (max-width: 899px) {
-  .container {
-    grid-template-columns: 1fr;
-  }
-  .right-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.2rem;
-  }
+  .container { grid-template-columns: 1fr; }
+  .right-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
 }
 
 @media (max-width: 599px) {
-  .container {
-    grid-template-columns: 1fr;
-  }
-  .right-col {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-  }
+  .container { grid-template-columns: 1fr; }
+  .right-col { display: flex; flex-direction: column; gap: 1.2rem; }
 }
 
 header {
@@ -100,25 +87,15 @@ section h2 {
   letter-spacing: 1px;
 }
 
-/* === НОВОСТИ === */
+/* === НОВОСТИ И ЛЕНТЫ — БЕЗ ИЗМЕНЕНИЙ === */
 .news-panel {
   overflow-y: auto;
   padding-right: 6px;
   max-height: 48vh;
 }
-
-.news-panel::-webkit-scrollbar {
-  width: 7px;
-}
-
-.news-panel::-webkit-scrollbar-track {
-  background: var(--panel);
-}
-
-.news-panel::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 3px;
-}
+.news-panel::-webkit-scrollbar { width: 7px; }
+.news-panel::-webkit-scrollbar-track { background: var(--panel); }
+.news-panel::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
 
 .news-item {
   margin-bottom: 1.1rem;
@@ -127,151 +104,11 @@ section h2 {
   cursor: pointer;
   font-size: clamp(0.85rem, 3vw, 0.95rem);
 }
+.news-item:hover { color: #fff; }
+.news-title { font-weight: bold; color: #fff; font-family: 'Orbitron', sans-serif; }
+.news-date { font-size: clamp(0.75rem, 2.6vw, 0.85rem); color: #777; }
+.news-desc { font-size: clamp(0.8rem, 2.8vw, 0.9rem); color: #aaa; margin-top: 0.3rem; }
 
-.news-item:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-}
-
-.news-item:hover {
-  color: #fff;
-}
-
-.news-title {
-  font-weight: bold;
-  color: #fff;
-  font-family: 'Orbitron', sans-serif;
-  font-size: clamp(1rem, 3.5vw, 1.1rem);
-}
-
-.news-date {
-  font-size: clamp(0.75rem, 2.6vw, 0.85rem);
-  color: #777;
-  margin: 0.2rem 0;
-}
-
-.news-desc {
-  font-size: clamp(0.8rem, 2.8vw, 0.9rem);
-  color: #aaa;
-  margin-top: 0.3rem;
-}
-
-/* === МОДАЛЬНОЕ ОКНО + КНОПКА ЧТЕНИЯ === */
-#modal-overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.9);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-#modal-overlay.active {
-  display: flex;
-}
-
-.modal {
-  width: min(96%, 800px);
-  background: var(--panel);
-  border: 2px solid var(--accent);
-  border-radius: 0;
-  position: relative;
-  max-height: 95vh;
-  overflow: hidden;
-}
-
-.modal-header {
-  background: #150a0a;
-  padding: 0.8rem 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid var(--accent);
-}
-
-.modal-title {
-  font-family: 'Orbitron', sans-serif;
-  font-size: clamp(1.3rem, 4.5vw, 1.6rem);
-  color: #fff;
-  max-width: 80%;
-}
-
-.close-btn, .speak-btn {
-  background: none;
-  border: 1px solid var(--accent);
-  color: var(--accent);
-  width: 34px;
-  height: 34px;
-  font-family: 'Share Tech Mono', monospace;
-  font-weight: bold;
-  font-size: 1.2rem;
-  cursor: pointer;
-  flex-shrink: 0;
-  margin-left: 0.5rem;
-}
-
-.speak-btn {
-  width: 90px;
-  font-size: 0.85rem;
-  letter-spacing: 1px;
-}
-
-.close-btn:hover, .speak-btn:hover {
-  background: var(--accent);
-  color: #000;
-}
-
-.modal-body {
-  padding: 1.4rem;
-  max-height: calc(95vh - 100px);
-  overflow-y: auto;
-  font-family: 'Share Tech Mono', monospace;
-  font-size: clamp(0.95rem, 3.2vw, 1.05rem);
-  line-height: 1.7;
-  color: #ddd;
-}
-
-.modal-body::-webkit-scrollbar {
-  width: 6px;
-}
-
-.modal-body::-webkit-scrollbar-track {
-  background: #080808;
-}
-
-.modal-body::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 3px;
-}
-
-.modal-date {
-  font-size: clamp(0.8rem, 3vw, 0.9rem);
-  color: #777;
-  margin-bottom: 0.8rem;
-  font-family: 'Share Tech Mono', monospace;
-}
-
-.modal-status {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.45rem 1rem;
-  background: rgba(0, 30, 0, 0.4);
-  border: 1px solid #0f0;
-  color: #0f0;
-  font-family: 'Share Tech Mono', monospace;
-  font-size: clamp(0.85rem, 3vw, 0.95rem);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.modal-status.warn {
-  border-color: #ff0;
-  color: #ff0;
-}
-
-/* === ЛЕНТЫ ФОТО === */
 .photo-strip {
   display: flex;
   overflow: hidden;
@@ -280,21 +117,9 @@ section h2 {
   background: #050505;
   border: 1px solid #222;
 }
-
-.strip-content {
-  display: flex;
-  animation: scroll 45s linear infinite;
-}
-
-.strip-content.reverse {
-  animation-direction: reverse;
-  animation-duration: 40s;
-}
-
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
+.strip-content { display: flex; animation: scroll 45s linear infinite; }
+.strip-content.reverse { animation-direction: reverse; animation-duration: 40s; }
+@keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
 .strip-item {
   width: clamp(95px, 20vw, 115px);
@@ -310,7 +135,6 @@ section h2 {
   color: #888;
   text-align: center;
 }
-
 .placeholder-img {
   background: #0a0;
   display: flex;
@@ -323,9 +147,78 @@ section h2 {
   width: 100%;
 }
 
-/* === ТРИ ЭКРАНА МОНИТОРИНГА === */
+/* === КУРСЫ === */
+.rates { list-style: none; }
+.rate { display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #2a2a2a; }
+.rate:last-child { border-bottom: none; }
+.currency-pair { font-weight: bold; }
+.rate-value { font-family: 'Courier New', monospace; }
+.up { color: #4caf50; }
+.down { color: #f44336; }
+
+/* === КОМПАКТНЫЙ ОБМЕННИК === */
+.converter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 80%; /* ← УМЕНЬШЕНО */
+  margin: 0 auto; /* центрирование */
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+label {
+  font-size: clamp(0.8rem, 2.8vw, 0.9rem);
+  color: #aaa;
+}
+
+input, select, button {
+  background: #1a1a1a;
+  color: white;
+  border: 1px solid #444;
+  padding: 0.55rem;
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  border-radius: 0;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+button {
+  background: var(--accent);
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #a00;
+}
+
+.result {
+  font-size: clamp(1.1rem, 4vw, 1.25rem);
+  font-weight: bold;
+  text-align: center;
+  padding: 0.8rem;
+  background: rgba(0, 30, 0, 0.4);
+  border-radius: 0;
+  margin-top: 0.4rem;
+  color: #0f0;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* === ЭКРАНЫ МОНИТОРИНГА === */
 .monitor-panel {
-  height: clamp(280px, 40vh, 400px);
+  height: clamp(260px, 38vh, 380px);
   background: #000;
   border: 1px solid #222;
   position: relative;
@@ -352,120 +245,63 @@ section h2 {
   height: 100%;
 }
 
-/* Общие стили для точек */
-.rig-point, .tanker-point {
-  cursor: pointer;
-}
-
-.rig-label, .tanker-label {
+/* Подписи на экранах */
+.monitor-label {
   font-family: 'Share Tech Mono', monospace;
-  font-size: clamp(7px, 2.4vw, 9px);
+  font-size: clamp(8px, 2.6vw, 10px);
   fill: #0f0;
   text-anchor: middle;
 }
 
-/* Локатор вышек */
+.monitor-label.warn {
+  fill: #ff0;
+}
+
+/* === НОВЫЕ ЭКРАНЫ: ЭЛЕКТРОЭНЕРГИЯ И НАСЕЛЕНИЕ === */
+.power-bar, .pop-bar {
+  fill: none;
+  stroke-width: 12;
+  stroke-linecap: round;
+}
+
+.power-fill { stroke: #0f0; }
+.power-bg { stroke: #050; }
+
+.pop-fill { stroke: #0ff; }
+.pop-bg { stroke: #040; }
+
+/* === СТАРЫЕ ЭКРАНЫ (геология, вышки, танкеры) — без изменений === */
 .rig-circle { fill: #0f0; r: 5; }
 .rig-circle.active { fill: #ff0; animation: pulse 2s infinite; }
+@keyframes pulse { 0% { r: 5; opacity: 1; } 50% { r: 8; opacity: 0.7; } 100% { r: 5; opacity: 1; } }
 
-@keyframes pulse {
-  0% { r: 5; opacity: 1; }
-  50% { r: 8; opacity: 0.7; }
-  100% { r: 5; opacity: 1; }
-}
-
-/* Мониторинг танкеров */
 .tanker-triangle { fill: #00f; }
 .tanker-triangle.moving { animation: move 15s linear infinite; }
+@keyframes move { 0% { transform: translate(0,0); } 25% { transform: translate(100px, 30px); } 50% { transform: translate(200px, -20px); } 75% { transform: translate(300px, 40px); } 100% { transform: translate(400px, 0); } }
 
-@keyframes move {
-  0% { transform: translate(0,0); }
-  25% { transform: translate(100px, 30px); }
-  50% { transform: translate(200px, -20px); }
-  75% { transform: translate(300px, 40px); }
-  100% { transform: translate(400px, 0); }
-}
+/* === МОДАЛЬНОЕ ОКНО И РЕЛЕ — БЕЗ ИЗМЕНЕНИЙ === */
+#modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); display: none; justify-content: center; align-items: center; z-index: 1000; }
+#modal-overlay.active { display: flex; }
+.modal { width: min(96%, 800px); background: var(--panel); border: 2px solid var(--accent); border-radius: 0; position: relative; max-height: 95vh; overflow: hidden; }
+.modal-header { background: #150a0a; padding: 0.8rem 1rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--accent); }
+.modal-title { font-family: 'Orbitron', sans-serif; font-size: clamp(1.3rem, 4.5vw, 1.6rem); color: #fff; max-width: 80%; }
+.close-btn, .speak-btn { background: none; border: 1px solid var(--accent); color: var(--accent); width: 34px; height: 34px; font-family: 'Share Tech Mono', monospace; font-weight: bold; font-size: 1.2rem; cursor: pointer; flex-shrink: 0; margin-left: 0.5rem; }
+.speak-btn { width: 90px; font-size: 0.85rem; letter-spacing: 1px; }
+.close-btn:hover, .speak-btn:hover { background: var(--accent); color: #000; }
+.modal-body { padding: 1.4rem; max-height: calc(95vh - 100px); overflow-y: auto; font-family: 'Share Tech Mono', monospace; font-size: clamp(0.95rem, 3.2vw, 1.05rem); line-height: 1.7; color: #ddd; }
+.modal-body::-webkit-scrollbar { width: 6px; }
+.modal-body::-webkit-scrollbar-track { background: #080808; }
+.modal-body::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+.modal-date { font-size: clamp(0.8rem, 3vw, 0.9rem); color: #777; margin-bottom: 0.8rem; font-family: 'Share Tech Mono', monospace; }
+.modal-status { display: inline-block; margin-top: 1rem; padding: 0.45rem 1rem; background: rgba(0, 30, 0, 0.4); border: 1px solid #0f0; color: #0f0; font-family: 'Share Tech Mono', monospace; font-size: clamp(0.85rem, 3vw, 0.95rem); text-transform: uppercase; letter-spacing: 1px; }
+.modal-status.warn { border-color: #ff0; color: #ff0; }
 
-/* === РЕЛЕ === */
-.relays {
-  display: flex;
-  gap: 0.8rem;
-  margin-top: 0.9rem;
-}
+.relays { display: flex; gap: 0.8rem; margin-top: 0.9rem; }
+.relay { flex: 1; background: #0c0c0c; border: 1px solid #444; padding: 0.55rem; font-family: 'Share Tech Mono', monospace; font-size: clamp(0.85rem, 3vw, 0.95rem); }
+.relay-label { display: block; color: #999; margin-bottom: 0.35rem; text-transform: uppercase; letter-spacing: 1px; font-size: clamp(0.75rem, 2.6vw, 0.85rem); }
+.relay-select { width: 100%; background: #151515; color: var(--fg); border: 1px solid #444; padding: 0.4rem; font-family: 'Share Tech Mono', monospace; font-size: clamp(0.9rem, 3.2vw, 1rem); }
 
-.relay {
-  flex: 1;
-  background: #0c0c0c;
-  border: 1px solid #444;
-  padding: 0.55rem;
-  font-family: 'Share Tech Mono', monospace;
-  font-size: clamp(0.85rem, 3vw, 0.95rem);
-}
-
-.relay-label {
-  display: block;
-  color: #999;
-  margin-bottom: 0.35rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: clamp(0.75rem, 2.6vw, 0.85rem);
-}
-
-.relay-select {
-  width: 100%;
-  background: #151515;
-  color: var(--fg);
-  border: 1px solid #444;
-  padding: 0.4rem;
-  font-family: 'Share Tech Mono', monospace;
-  font-size: clamp(0.9rem, 3.2vw, 1rem);
-}
-
-/* === ПРАВАЯ КОЛОНКА (без изменений) === */
-.rates { list-style: none; }
-.rate { display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #2a2a2a; }
-.rate:last-child { border-bottom: none; }
-.currency-pair { font-weight: bold; }
-.rate-value { font-family: 'Courier New', monospace; }
-.up { color: #4caf50; }
-.down { color: #f44336; }
-
-.converter { display: flex; flex-direction: column; gap: 0.9rem; }
-.input-group { display: flex; flex-direction: column; gap: 0.35rem; }
-label { font-size: clamp(0.85rem, 3vw, 0.95rem); color: #aaa; }
-input, select, button {
-  background: #1a1a1a;
-  color: white;
-  border: 1px solid #444;
-  padding: 0.6rem;
-  font-size: clamp(0.95rem, 3.2vw, 1.05rem);
-  border-radius: 0;
-  font-family: 'Share Tech Mono', monospace;
-}
-input:focus, select:focus { outline: none; border-color: var(--accent); }
-button {
-  background: var(--accent);
-  cursor: pointer;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: background 0.3s;
-}
-button:hover { background: #a00; }
-
-.result {
-  font-size: clamp(1.15rem, 4.2vw, 1.3rem);
-  font-weight: bold;
-  text-align: center;
-  padding: 0.85rem;
-  background: rgba(0, 30, 0, 0.4);
-  border-radius: 0;
-  margin-top: 0.5rem;
-  color: #0f0;
-  font-family: 'Orbitron', sans-serif;
-}
-
-/* Графики */
+/* === ГРАФИКИ === */
 .crt-screen {
   position: relative;
   background: #000;
