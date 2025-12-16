@@ -1,4 +1,4 @@
-/* === ОБНОВЛЁННЫЙ СТИЛЬ: КОМПАКТНЫЙ ОБМЕННИК + 2 НОВЫХ ЭКРАНА === */
+/* === ФИНАЛЬНАЯ ВЕРСИЯ БЕЗ ОБМЕННИКА === */
 
 :root {
   --bg: #000000;
@@ -38,7 +38,7 @@ body {
 
 @media (min-width: 600px) and (max-width: 899px) {
   .container { grid-template-columns: 1fr; }
-  .right-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .right-col { display: flex; flex-direction: column; gap: 1.2rem; }
 }
 
 @media (max-width: 599px) {
@@ -156,66 +156,6 @@ section h2 {
 .up { color: #4caf50; }
 .down { color: #f44336; }
 
-/* === КОМПАКТНЫЙ ОБМЕННИК === */
-.converter {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  max-width: 80%; /* ← УМЕНЬШЕНО */
-  margin: 0 auto; /* центрирование */
-}
-
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-label {
-  font-size: clamp(0.8rem, 2.8vw, 0.9rem);
-  color: #aaa;
-}
-
-input, select, button {
-  background: #1a1a1a;
-  color: white;
-  border: 1px solid #444;
-  padding: 0.55rem;
-  font-size: clamp(0.9rem, 3vw, 1rem);
-  border-radius: 0;
-  font-family: 'Share Tech Mono', monospace;
-}
-
-input:focus, select:focus {
-  outline: none;
-  border-color: var(--accent);
-}
-
-button {
-  background: var(--accent);
-  cursor: pointer;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: background 0.3s;
-}
-
-button:hover {
-  background: #a00;
-}
-
-.result {
-  font-size: clamp(1.1rem, 4vw, 1.25rem);
-  font-weight: bold;
-  text-align: center;
-  padding: 0.8rem;
-  background: rgba(0, 30, 0, 0.4);
-  border-radius: 0;
-  margin-top: 0.4rem;
-  color: #0f0;
-  font-family: 'Orbitron', sans-serif;
-}
-
 /* === ЭКРАНЫ МОНИТОРИНГА === */
 .monitor-panel {
   height: clamp(260px, 38vh, 380px);
@@ -245,7 +185,6 @@ button:hover {
   height: 100%;
 }
 
-/* Подписи на экранах */
 .monitor-label {
   font-family: 'Share Tech Mono', monospace;
   font-size: clamp(8px, 2.6vw, 10px);
@@ -257,7 +196,7 @@ button:hover {
   fill: #ff0;
 }
 
-/* === НОВЫЕ ЭКРАНЫ: ЭЛЕКТРОЭНЕРГИЯ И НАСЕЛЕНИЕ === */
+/* Диаграммы */
 .power-bar, .pop-bar {
   fill: none;
   stroke-width: 12;
@@ -270,7 +209,7 @@ button:hover {
 .pop-fill { stroke: #0ff; }
 .pop-bg { stroke: #040; }
 
-/* === СТАРЫЕ ЭКРАНЫ (геология, вышки, танкеры) — без изменений === */
+/* Старые экраны */
 .rig-circle { fill: #0f0; r: 5; }
 .rig-circle.active { fill: #ff0; animation: pulse 2s infinite; }
 @keyframes pulse { 0% { r: 5; opacity: 1; } 50% { r: 8; opacity: 0.7; } 100% { r: 5; opacity: 1; } }
@@ -279,7 +218,7 @@ button:hover {
 .tanker-triangle.moving { animation: move 15s linear infinite; }
 @keyframes move { 0% { transform: translate(0,0); } 25% { transform: translate(100px, 30px); } 50% { transform: translate(200px, -20px); } 75% { transform: translate(300px, 40px); } 100% { transform: translate(400px, 0); } }
 
-/* === МОДАЛЬНОЕ ОКНО И РЕЛЕ — БЕЗ ИЗМЕНЕНИЙ === */
+/* === МОДАЛЬНОЕ ОКНО === */
 #modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); display: none; justify-content: center; align-items: center; z-index: 1000; }
 #modal-overlay.active { display: flex; }
 .modal { width: min(96%, 800px); background: var(--panel); border: 2px solid var(--accent); border-radius: 0; position: relative; max-height: 95vh; overflow: hidden; }
@@ -296,12 +235,13 @@ button:hover {
 .modal-status { display: inline-block; margin-top: 1rem; padding: 0.45rem 1rem; background: rgba(0, 30, 0, 0.4); border: 1px solid #0f0; color: #0f0; font-family: 'Share Tech Mono', monospace; font-size: clamp(0.85rem, 3vw, 0.95rem); text-transform: uppercase; letter-spacing: 1px; }
 .modal-status.warn { border-color: #ff0; color: #ff0; }
 
+/* === РЕЛЕ (геология) === */
 .relays { display: flex; gap: 0.8rem; margin-top: 0.9rem; }
 .relay { flex: 1; background: #0c0c0c; border: 1px solid #444; padding: 0.55rem; font-family: 'Share Tech Mono', monospace; font-size: clamp(0.85rem, 3vw, 0.95rem); }
 .relay-label { display: block; color: #999; margin-bottom: 0.35rem; text-transform: uppercase; letter-spacing: 1px; font-size: clamp(0.75rem, 2.6vw, 0.85rem); }
 .relay-select { width: 100%; background: #151515; color: var(--fg); border: 1px solid #444; padding: 0.4rem; font-family: 'Share Tech Mono', monospace; font-size: clamp(0.9rem, 3.2vw, 1rem); }
 
-/* === ГРАФИКИ === */
+/* === ГРАФИКИ — УВЕЛИЧЕНЫ === */
 .crt-screen {
   position: relative;
   background: #000;
@@ -332,11 +272,16 @@ button:hover {
   font-family: 'Share Tech Mono', monospace;
 }
 
-.graph-panel { display: flex; flex-direction: column; gap: 0.7rem; }
-.crt-screen.graph-1 { height: clamp(85px, 14.5vh, 100px); }
-.crt-screen.graph-2 { height: clamp(70px, 12.5vh, 85px); }
-.crt-screen.graph-3 { height: clamp(70px, 12.5vh, 85px); }
-.crt-screen.graph-4 { height: clamp(95px, 16vh, 115px); }
+.graph-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.crt-screen.graph-1 { height: clamp(110px, 18vh, 130px); }
+.crt-screen.graph-2 { height: clamp(95px, 16vh, 115px); }
+.crt-screen.graph-3 { height: clamp(95px, 16vh, 115px); }
+.crt-screen.graph-4 { height: clamp(120px, 20vh, 140px); }
 
 .rt-indicator {
   display: inline-block;
