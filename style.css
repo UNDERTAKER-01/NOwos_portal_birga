@@ -1,4 +1,4 @@
-/* === ПОЛНОСТЬЮ АДАПТИВНАЯ ВЕРСИЯ (v8.0) === */
+/* === АДАПТИВНАЯ ВЕРСИЯ v8.1 — С УМЕНЬШЕННОЙ ШИРИНОЙ И УВЕЛИЧЕННОЙ ВЫСОТОЙ КАРТЫ === */
 
 :root {
   --bg: #000000;
@@ -44,7 +44,6 @@ h1 {
   margin-top: 0.4rem;
 }
 
-/* === АДАПТИВНАЯ СЕТКА === */
 .container {
   max-width: 1300px;
   margin: 0 auto;
@@ -53,35 +52,20 @@ h1 {
   gap: 1.2rem;
 }
 
-/* Desktop: 2 колонки */
 @media (min-width: 900px) {
   .container {
     grid-template-columns: 2fr 1fr;
   }
 }
 
-/* Tablet: левая колонка = новости + ленты + карта, правая = графики */
 @media (min-width: 600px) and (max-width: 899px) {
-  .container {
-    grid-template-columns: 1fr;
-  }
-  .right-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.2rem;
-  }
+  .container { grid-template-columns: 1fr; }
+  .right-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
 }
 
-/* Mobile: всё в один столбец */
 @media (max-width: 599px) {
-  .container {
-    grid-template-columns: 1fr;
-  }
-  .right-col {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-  }
+  .container { grid-template-columns: 1fr; }
+  .right-col { display: flex; flex-direction: column; gap: 1.2rem; }
 }
 
 section {
@@ -102,18 +86,14 @@ section h2 {
   letter-spacing: 1px;
 }
 
-/* === НОВОСТИ (15 элементов) === */
 .news-panel {
   overflow-y: auto;
   padding-right: 6px;
   max-height: 50vh;
 }
 
-/* На десктопе — высота фиксированная, на моб. — динамическая */
 @media (min-width: 900px) {
-  .news-panel {
-    height: calc(100vh - 520px);
-  }
+  .news-panel { height: calc(100vh - 520px); }
 }
 
 .news-panel::-webkit-scrollbar {
@@ -166,7 +146,6 @@ section h2 {
   margin-top: 0.3rem;
 }
 
-/* === МОДАЛЬНОЕ ОКНО === */
 #modal-overlay {
   position: fixed;
   top: 0; left: 0;
@@ -274,7 +253,6 @@ section h2 {
   color: #ff0;
 }
 
-/* === ЛЕНТЫ ФОТОГРАФИЙ === */
 .photo-strip {
   display: flex;
   overflow: hidden;
@@ -333,14 +311,23 @@ section h2 {
   height: clamp(36px, 7vh, 44px);
 }
 
-/* === УВЕЛИЧЕННЫЙ ЭКРАН РЕСУРСОВ (340px) === */
+/* === ГЕОЛОГИЧЕСКИЙ МОНИТОР — ИЗМЕНЕНИЯ === */
+.map-panel-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.7rem;
+}
+
 .map-panel {
-  height: clamp(260px, 42vh, 340px);
+  /* Ширина уменьшена до 70% */
+  width: clamp(90%, 70vw, 70%);
+  /* Высота увеличена до 420px */
+  height: clamp(320px, 52vh, 420px);
   background: #000;
   border: 1px solid #222;
   position: relative;
   overflow: hidden;
-  margin-top: 0.7rem;
+  border-radius: 0;
 }
 
 .map-svg {
@@ -362,28 +349,28 @@ section h2 {
   letter-spacing: 1px;
 }
 
+/* Континенты — УКРУПНЕНЫ и ДЕТАЛИЗИРОВАНЫ */
 .continent-outline {
   fill: none;
   stroke: #0f0;
-  stroke-width: 2;
-  stroke-dasharray: 5, 3;
-  opacity: 0.7;
+  stroke-width: 2.5;
+  stroke-dasharray: 6, 4;
+  opacity: 0.75;
 }
 
-/* Точки ресурсов — УВЕЛИЧЕНЫ */
-.mineral-circle { fill: #f44; r: 6; }          /* Нефть */
-.mineral-triangle { fill: #ff0; }              /* Газ — polygon 8px */
-.mineral-square { fill: #0ff; width: 10px; height: 10px; } /* Металлы */
-.mineral-diamond { fill: #f0f; }               /* Редкозёмы */
+/* Точки — УВЕЛИЧЕНЫ */
+.mineral-circle { fill: #f44; r: 7; }          /* ● Нефть */
+.mineral-triangle { fill: #ff0; }              /* ▲ Газ */
+.mineral-square { fill: #0ff; }                /* ■ Металлы */
+.mineral-diamond { fill: #f0f; }               /* ◆ Редкозёмы */
 
 .mineral-label {
   font-family: 'Share Tech Mono', monospace;
-  font-size: clamp(7px, 2.4vw, 9px);
+  font-size: clamp(8px, 2.6vw, 10px); /* +1px */
   fill: #f44;
   text-anchor: middle;
 }
 
-/* === РЕЛЕ === */
 .relays {
   display: flex;
   gap: 0.8rem;
@@ -418,7 +405,6 @@ section h2 {
   font-size: clamp(0.85rem, 3vw, 0.95rem);
 }
 
-/* === ПРАВАЯ КОЛОНКА (графики, курсы, обменник) === */
 .rates { list-style: none; }
 .rate {
   display: flex;
@@ -474,7 +460,6 @@ button:hover { background: #a00; }
   font-family: 'Orbitron', sans-serif;
 }
 
-/* === ГРАФИКИ === */
 .crt-screen {
   position: relative;
   background: #000;
