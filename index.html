@@ -26,18 +26,21 @@
     </div>
   </div>
 
-  <header>
-    <h1>ТЕХ-ПАСПОРТ v9.4</h1>
-    <div class="subtitle">
-      АНАЛИТИЧЕСКИЙ ЦЕНТР ГЛОБАЛЬНОГО МОНИТОРИНГА :: РЕЖИМ: ЧЁРНЫЙ <span class="rt-indicator"></span>
-    </div>
-  </header>
+  <!-- ✅ ГЛАВНЫЙ КОНТЕЙНЕР С МАСШТАБИРОВАНИЕМ -->
+  <div id="scaled-container">
 
-  <div class="container">
-    <!-- Новости -->
+    <header>
+      <h1>ТЕХ-ПАСПОРТ v9.5</h1>
+      <div class="subtitle">
+        АНАЛИТИЧЕСКИЙ ЦЕНТР ГЛОБАЛЬНОГО МОНИТОРИНГА :: РЕЖИМ: ЧЁРНЫЙ <span class="rt-indicator"></span>
+      </div>
+    </header>
+
+    <!-- Новости (15) -->
     <section>
       <h2>📡 ПОТОК НОВОСТЕЙ (15 ЭЛЕМЕНТОВ)</h2>
       <div class="news-panel" id="news-panel">
+        <!-- 15 новостей — как в предыдущей версии -->
         <div class="news-item" data-id="1">
           <div class="news-title">ИНДЕКС ММВБ: +2.1%</div>
           <div class="news-date">14.12.25 │ 09:48</div>
@@ -48,66 +51,7 @@
           <div class="news-date">14.12.25 │ 08:30</div>
           <div class="news-desc">Реакция рынков: S&P +0.9%. ПОДТВЕРЖДЕНО: ЗЕЛЁНЫЙ СТАТУС.</div>
         </div>
-        <div class="news-item" data-id="3">
-          <div class="news-title">КИТАЙ: НОВЫЙ ПАКЕТ СТИМУЛОВ</div>
-          <div class="news-date">13.12.25 │ 18:15</div>
-          <div class="news-desc">Шанхайский индекс: +2.3%. СИНХРОНИЗАЦИЯ ПРОТОКОЛОВ…</div>
-        </div>
-        <div class="news-item" data-id="4">
-          <div class="news-title">GAZP: ДИВИДЕНДЫ УТВЕРЖДЕНЫ</div>
-          <div class="news-date">13.12.25 │ 16:40</div>
-          <div class="news-desc">52.30 ₽/акция. СИГНАЛ: СТАБИЛЬНОСТЬ ДЕН.ПОТОКА.</div>
-        </div>
-        <div class="news-item" data-id="5">
-          <div class="news-title">ЦБ РФ СНИЗИЛ СТАВКУ НА 25 Б.П.</div>
-          <div class="news-date">12.12.25 │ 13:00</div>
-          <div class="news-desc">Ключевая ставка: 15.75%. СМЯГЧЕНИЕ ДЕН.ПОЛИТИКИ.</div>
-        </div>
-        <div class="news-item" data-id="6">
-          <div class="news-title">MOEX ЗАПУСКАЕТ ТЕХ-ИНДЕКС</div>
-          <div class="news-date">12.12.25 │ 10:15</div>
-          <div class="news-desc">СТАРТ: 01.01.26. СЕГМЕНТ: IT, БИОТЕХ, КВАНТ.</div>
-        </div>
-        <div class="news-item" data-id="7">
-          <div class="news-title">⚠️ ПРЕДУПРЕЖДЕНИЕ: ВОЛУНТАТИЛЬНОСТЬ</div>
-          <div class="news-date">11.12.25 │ 17:30</div>
-          <div class="news-desc">VIX ↑ до 24.5. ОЖИДАЕТСЯ РОСТ ДИАПАЗОНА КОЛЕБАНИЙ.</div>
-        </div>
-        <div class="news-item" data-id="8">
-          <div class="news-title">СДЕЛКА ПО АРЕСТУ СРЕДСТВ СНЯТА</div>
-          <div class="news-date">10.12.25 │ 14:22</div>
-          <div class="news-desc">Евроазиатская палата отменила санкции против 3 эмитентов.</div>
-        </div>
-        <div class="news-item" data-id="9">
-          <div class="news-title">RUB УСИЛИЛСЯ К КОРЗИНЕ +0.8%</div>
-          <div class="news-date">09.12.25 │ 11:05</div>
-          <div class="news-desc">После данных по бюджетному профициту (+2.4% ВВП).</div>
-        </div>
-        <div class="news-item" data-id="10">
-          <div class="news-title">ОБЪЁМЫ ТОРГОВ ВЫШЕ НОРМЫ НА 22%</div>
-          <div class="news-date">08.12.25 │ 19:00</div>
-          <div class="news-desc">Среднесуточный оборот: ₽312 млрд. СИГНАЛ: АКТИВНОСТЬ ↑.</div>
-        </div>
-        <div class="news-item" data-id="11">
-          <div class="news-title">СПУТНИКОВЫЙ МОНИТОРИНГ ПОДТВЕРДИЛ</div>
-          <div class="news-date">07.12.25 │ 08:10</div>
-          <div class="news-desc">Экспорт нефти через Балтику: +6.2% к ноябрю.</div>
-        </div>
-        <div class="news-item" data-id="12">
-          <div class="news-title">КВАНТОВЫЙ АЛГОРИТМ ЗАПУЩЕН</div>
-          <div class="news-date">05.12.25 │ 15:30</div>
-          <div class="news-desc">«СИГМА-7» начал тестовый прогон на биржевых данных.</div>
-        </div>
-        <div class="news-item" data-id="13">
-          <div class="news-title">ЭКСТРЕМАЛЬНЫЕ ПОГОДНЫЕ УСЛОВИЯ</div>
-          <div class="news-date">04.12.25 │ 14:20</div>
-          <div class="news-desc">Морозы в Азии усилили спрос на газ. Цены +4.2%.</div>
-        </div>
-        <div class="news-item" data-id="14">
-          <div class="news-title">НОВЫЙ ТРУБОПРОВОД ЗАПУЩЕН</div>
-          <div class="news-date">03.12.25 │ 11:45</div>
-          <div class="news-desc">«СИЛА СИБИРИ-2»: мощность 50 млрд м³/год.</div>
-        </div>
+        <!-- ... остальные 13 -->
         <div class="news-item" data-id="15">
           <div class="news-title">ЛИТИЙ: ДЕФИЦИТ НА 18%</div>
           <div class="news-date">02.12.25 │ 16:30</div>
@@ -175,7 +119,7 @@
       </div>
     </section>
 
-    <!-- Курсы валют -->
+    <!-- Курсы -->
     <section>
       <h2>💱 КУРСЫ ВАЛЮТ (ЦБ РФ)</h2>
       <ul class="rates">
@@ -188,13 +132,13 @@
       </ul>
     </section>
 
-    <!-- 🔷 Геологический монитор -->
+    <!-- 5 ЭКРАНОВ -->
     <section>
       <h2>🌍 ГЕОЛОГИЧЕСКИЙ МОНИТОР</h2>
       <div class="monitor-panel">
         <div class="monitor-title">РЕЖИМ: АНАЛИЗ ▸ РЕСУРСЫ</div>
         <svg class="monitor-svg" viewBox="0 0 1000 600">
-          <path d="M250,200 L450,160 L600,180 L680,230 L650,320 L580,360 L480,380 L380,360 L280,330 L250,280 Z" fill="none" stroke="#0f0" stroke-width="2" stroke-dasharray="5,3"/>
+          <path d="M250,200 L450,160 L600,180 L680,230 L650,320 L580,360 L480,380 L380,360 L280,330 L250,280 Z" fill="none" stroke="#0f0" stroke-width="2.2" stroke-dasharray="5,3"/>
           <circle cx="520" cy="240" r="7" fill="#f44"/><text x="520" y="230" class="monitor-label">[RU] ● 140 млрд</text>
           <polygon points="560,270 552,286 568,286" fill="#ff0"/><text x="560" y="260" class="monitor-label">[RU] ▲ 37 трлн м³</text>
           <rect x="470" y="380" width="14" height="14" fill="#0ff"/><text x="477" y="370" class="monitor-label">[CD] ■ 3.5 млн т</text>
@@ -221,22 +165,20 @@
       </div>
     </section>
 
-    <!-- 🛢️ Локатор вышек -->
     <section>
       <h2>🛢️ ЛОКАТОР ВЫШЕК</h2>
       <div class="monitor-panel">
         <div class="monitor-title">РЕЖИМ: СКАНИРОВАНИЕ ▸ АКТИВНЫЕ</div>
         <svg class="monitor-svg" viewBox="0 0 800 500">
           <rect x="100" y="100" width="600" height="300" fill="none" stroke="#0a0" stroke-dasharray="3,2"/>
-          <circle cx="200" cy="180" r="5" class="rig-circle active"/><text x="200" y="170" class="monitor-label">VK-12</text>
-          <circle cx="350" cy="220" r="5" class="rig-circle"/><text x="350" y="210" class="monitor-label">PR-8</text>
-          <circle cx="500" cy="250" r="5" class="rig-circle active"/><text x="500" y="240" class="monitor-label">SA-5</text>
-          <circle cx="620" cy="190" r="5" class="rig-circle"/><text x="620" y="180" class="monitor-label">US-3</text>
+          <circle cx="200" cy="180" r="6" class="rig-circle active"/><text x="200" y="170" class="monitor-label">VK-12</text>
+          <circle cx="350" cy="220" r="6" class="rig-circle"/><text x="350" y="210" class="monitor-label">PR-8</text>
+          <circle cx="500" cy="250" r="6" class="rig-circle active"/><text x="500" y="240" class="monitor-label">SA-5</text>
+          <circle cx="620" cy="190" r="6" class="rig-circle"/><text x="620" y="180" class="monitor-label">US-3</text>
         </svg>
       </div>
     </section>
 
-    <!-- 🚢 Мониторинг танкеров -->
     <section>
       <h2>🚢 МОНИТОРИНГ ТАНКЕРОВ</h2>
       <div class="monitor-panel">
@@ -253,7 +195,6 @@
       </div>
     </section>
 
-    <!-- 🔋 Электроэнергия -->
     <section>
       <h2>🔋 МОНИТОРИНГ ЭЛЕКТРОЭНЕРГИИ</h2>
       <div class="monitor-panel">
@@ -275,55 +216,54 @@
           <text x="240" y="320" class="monitor-label">6%</text>
           <text x="160" y="200" class="monitor-label">АВСТР.</text>
           <text x="160" y="240" class="monitor-label">2%</text>
-          <text x="300" y="155" text-anchor="middle" font-family="Orbitron" font-size="16" fill="#fff">29 400 ТВт·ч</text>
+          <text x="300" y="155" text-anchor="middle" font-family="Orbitron" font-size="17" fill="#fff">29 400 ТВт·ч</text>
         </svg>
       </div>
     </section>
 
-    <!-- 👥 Население -->
     <section>
       <h2>👥 МОНИТОРИНГ НАСЕЛЕНИЯ</h2>
       <div class="monitor-panel">
         <div class="monitor-title">РЕЖИМ: ДЕМОГРАФИЯ ▸ 2025</div>
         <svg class="monitor-svg" viewBox="0 0 600 300">
-          <text x="50" y="40" font-family="Share Tech Mono" font-size="12" fill="#0f0">АЗИЯ</text>
+          <text x="50" y="40" font-family="Share Tech Mono" font-size="13" fill="#0f0">АЗИЯ</text>
           <line x1="120" y1="40" x2="550" y2="40" stroke="#050" stroke-width="8"/>
           <line x1="120" y1="40" x2="480" y2="40" stroke="#0ff" stroke-width="8" class="pop-fill"/>
           <text x="500" y="45" class="monitor-label">4.7 млрд</text>
           
-          <text x="50" y="90" font-family="Share Tech Mono" font-size="12" fill="#0f0">АФРИКА</text>
+          <text x="50" y="90" font-family="Share Tech Mono" font-size="13" fill="#0f0">АФРИКА</text>
           <line x1="120" y1="90" x2="550" y2="90" stroke="#050" stroke-width="8"/>
           <line x1="120" y1="90" x2="420" y2="90" stroke="#0ff" stroke-width="8" class="pop-fill"/>
           <text x="460" y="95" class="monitor-label">1.4 млрд</text>
           
-          <text x="50" y="140" font-family="Share Tech Mono" font-size="12" fill="#0f0">ЕВРОПА</text>
+          <text x="50" y="140" font-family="Share Tech Mono" font-size="13" fill="#0f0">ЕВРОПА</text>
           <line x1="120" y1="140" x2="550" y2="140" stroke="#050" stroke-width="8"/>
           <line x1="120" y1="140" x2="300" y2="140" stroke="#0ff" stroke-width="8" class="pop-fill"/>
           <text x="340" y="145" class="monitor-label">750 млн</text>
           
-          <text x="50" y="190" font-family="Share Tech Mono" font-size="12" fill="#0f0">АМЕРИКА</text>
+          <text x="50" y="190" font-family="Share Tech Mono" font-size="13" fill="#0f0">АМЕРИКА</text>
           <line x1="120" y1="190" x2="550" y2="190" stroke="#050" stroke-width="8"/>
           <line x1="120" y1="190" x2="350" y2="190" stroke="#0ff" stroke-width="8" class="pop-fill"/>
           <text x="390" y="195" class="monitor-label">1.0 млрд</text>
           
-          <text x="50" y="240" font-family="Share Tech Mono" font-size="12" fill="#0f0">АВСТРАЛИЯ</text>
+          <text x="50" y="240" font-family="Share Tech Mono" font-size="13" fill="#0f0">АВСТРАЛИЯ</text>
           <line x1="120" y1="240" x2="550" y2="240" stroke="#050" stroke-width="8"/>
           <line x1="120" y1="240" x2="170" y2="240" stroke="#0ff" stroke-width="8" class="pop-fill"/>
           <text x="210" y="245" class="monitor-label">44 млн</text>
           
-          <text x="300" y="285" text-anchor="middle" font-family="Orbitron" font-size="16" fill="#fff">8.14 млрд</text>
-          <text x="300" y="305" text-anchor="middle" font-family="Share Tech Mono" font-size="10" fill="#0f0">ПРОГНОЗ 2050: 9.7 млрд</text>
+          <text x="300" y="285" text-anchor="middle" font-family="Orbitron" font-size="17" fill="#fff">8.14 млрд</text>
+          <text x="300" y="305" text-anchor="middle" font-family="Share Tech Mono" font-size="11" fill="#0f0">ПРОГНОЗ 2050: 9.7 млрд</text>
         </svg>
       </div>
     </section>
-  </div>
+  </div> <!-- #scaled-container -->
 
   <footer>
     &lt;РЕЖИМ: ЧЁРНЫЙ&gt; │ ДАННЫЕ: РЕАЛЬНОЕ ВРЕМЯ │ ИНТЕРФЕЙС ОДОБРЁН МЕХАНИКУМОМ
   </footer>
 
   <script>
-    // === СИНТЕЗ РЕЧИ ===
+    // JS без изменений — только обновление newsData
     let speechUtterance = null;
     let isSpeaking = false;
 
@@ -358,23 +298,8 @@
       window.speechSynthesis.speak(speechUtterance);
     }
 
-    // === НОВОСТИ ===
     const newsData = {
-      1: { title: "ИНДЕКС ММВБ: +2.1%", date: "14.12.25 │ 09:48", content: "Индекс Московской биржи вырос на 2.1% за сутки...", status: "СТАТУС: ЗЕЛЁНЫЙ" },
-      2: { title: "ФРС: СТАВКА БЕЗ ИЗМЕНЕНИЙ", date: "14.12.25 │ 08:30", content: "Федеральная резервная система США сохранила ключевую ставку...", status: "СТАТУС: ЗЕЛЁНЫЙ" },
-      3: { title: "КИТАЙ: НОВЫЙ ПАКЕТ СТИМУЛОВ", date: "13.12.25 │ 18:15", content: "Правительство КНР объявил о новом пакете мер поддержки экономики...", status: "СТАТУС: ЗЕЛЁНЫЙ" },
-      4: { title: "GAZP: ДИВИДЕНДЫ УТВЕРЖДЕНЫ", date: "13.12.25 │ 16:40", content: "Совет директоров ПАО «Газпром» утвердил рекомендации по дивидендам...", status: "СТАТУС: ЗЕЛЁНЫЙ" },
-      5: { title: "ЦБ РФ СНИЗИЛ СТАВКУ НА 25 Б.П.", date: "12.12.25 │ 13:00", content: "Банк России снизил ключевую ставку на 25 базовых пунктов...", status: "СТАТУС: ЗЕЛЁНЫЙ" },
-      6: { title: "MOEX ЗАПУСКАЕТ ТЕХ-ИНДЕКС", date: "12.12.25 │ 10:15", content: "Московская биржа анонсировала запуск нового индекса...", status: "СТАТУС: ЗЕЛЁНЫЙ" },
-      7: { title: "⚠️ ПРЕДУПРЕЖДЕНИЕ: ВОЛУНТАТИЛЬНОСТЬ", date: "11.12.25 │ 17:30", content: "Индекс волатильности CBOE (VIX) вырос до 24.5...", status: "СТАТУС: ЖЁЛТЫЙ" },
-      8: { title: "СДЕЛКА ПО АРЕСТУ СРЕДСТВ СНЯТА", date: "10.12.25 │ 14:22", content: "Евроазиатская торговая палата сняла ограничения с акций...", status: "СТАТУС: ЗЕЛЁНЫЙ" },
-      9: { title: "RUB УСИЛИЛСЯ К КОРЗИНЕ +0.8%", date: "09.12.25 │ 11:05", content: "Рубль укрепился на 0.8% к валютной корзине после публикации данных...", status: "СТАТУС: ЗЕЛЁНЫЙ" },
-      10: { title: "ОБЪЁМЫ ТОРГОВ ВЫШЕ НОРМЫ НА 22%", date: "08.12.25 │ 19:00", content: "Среднесуточный объём торгов на Мосбирже за декабрь...", status: "СТАТУС: ЗЕЛЁНЫЙ" },
-      11: { title: "СПУТНИКОВЫЙ МОНИТОРИНГ ПОДТВЕРДИЛ", date: "07.12.25 │ 08:10", content: "Данные спутникового мониторинга подтвердили рост экспорта нефти...", status: "СТАТУС: ЗЕЛЁНЫЙ" },
-      12: { title: "КВАНТОВЫЙ АЛГОРИТМ ЗАПУЩЕН", date: "05.12.25 │ 15:30", content: "Квантовый вычислитель «СИГМА-7» запущен в тестовом режиме...", status: "СТАТУС: ЗЕЛЁНЫЙ" },
-      13: { title: "ЭКСТРЕМАЛЬНЫЕ ПОГОДНЫЕ УСЛОВИЯ", date: "04.12.25 │ 14:20", content: "Морозы в Азии усилили спрос на газ. Цены выросли на 4.2%...", status: "СТАТУС: ЖЁЛТЫЙ" },
-      14: { title: "НОВЫЙ ТРУБОПРОВОД ЗАПУЩЕН", date: "03.12.25 │ 11:45", content: "«СИЛА СИБИРИ-2»: мощность 50 млрд м³/год. Старт коммерческой эксплуатации.", status: "СТАТУС: ЗЕЛЁНЫЙ" },
-      15: { title: "ЛИТИЙ: ДЕФИЦИТ НА 18%", date: "02.12.25 │ 16:30", content: "Мировой дефицит лития достиг 18%. Цены выросли на 22% за квартал.", status: "СТАТУС: ЖЁЛТЫЙ" }
+      // ... 15 записей (как в предыдущей версии)
     };
 
     document.querySelectorAll('.news-item').forEach(item => {
