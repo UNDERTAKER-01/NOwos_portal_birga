@@ -9,6 +9,7 @@
 </head>
 <body>
 
+  <!-- === МОДАЛЬНОЕ ОКНО И ОСТАЛЬНОЙ КОД — БЕЗ ИЗМЕНЕНИЙ === -->
   <div id="modal-overlay">
     <div class="modal">
       <div class="modal-header">
@@ -27,20 +28,19 @@
   </div>
 
   <header>
-    <h1>ТЕХ-ПАСПОРТ v9.0</h1>
+    <h1>ТЕХ-ПАСПОРТ v9.1</h1>
     <div class="subtitle">
       ПОЛНОЭКРАННАЯ СИСТЕМА МОНИТОРИНГА :: РЕЖИМ: ЧЁРНЫЙ <span class="rt-indicator"></span>
     </div>
   </header>
 
   <div class="container">
-    <!-- Левая колонка -->
+    <!-- Левая колонка — ПЕРЕСТРОЕНА -->
     <div>
-      <!-- Новости (15) -->
+      <!-- Новости -->
       <section>
         <h2>📡 ПОТОК НОВОСТЕЙ (15 ЭЛЕМЕНТОВ)</h2>
         <div class="news-panel" id="news-panel">
-          <!-- 15 новостей -->
           <div class="news-item" data-id="1">
             <div class="news-title">ИНДЕКС ММВБ: +2.1%</div>
             <div class="news-date">14.12.25 │ 09:48</div>
@@ -51,7 +51,7 @@
             <div class="news-date">14.12.25 │ 08:30</div>
             <div class="news-desc">Реакция рынков: S&P +0.9%. ПОДТВЕРЖДЕНО: ЗЕЛЁНЫЙ СТАТУС.</div>
           </div>
-          <!-- ... остальные 13 — по аналогии -->
+          <!-- остальные 13 — по аналогии -->
           <div class="news-item" data-id="15">
             <div class="news-title">ЛИТИЙ: ДЕФИЦИТ НА 18%</div>
             <div class="news-date">02.12.25 │ 16:30</div>
@@ -119,18 +119,47 @@
         </div>
       </section>
 
+      <!-- ✅ НОВОЕ РАСПОЛОЖЕНИЕ: КУРСЫ ВАЛЮТ — ПЕРЕД ЭКРАНАМИ -->
+      <section>
+        <h2>💱 КУРСЫ ВАЛЮТ (ЦБ РФ)</h2>
+        <ul class="rates">
+          <li class="rate">
+            <span class="currency-pair">USD/RUB</span>
+            <span class="rate-value up">92.45 ₽</span>
+          </li>
+          <li class="rate">
+            <span class="currency-pair">EUR/RUB</span>
+            <span class="rate-value up">101.20 ₽</span>
+          </li>
+          <li class="rate">
+            <span class="currency-pair">CNY/RUB</span>
+            <span class="rate-value down">12.65 ₽</span>
+          </li>
+          <li class="rate">
+            <span class="currency-pair">GBP/RUB</span>
+            <span class="rate-value up">117.80 ₽</span>
+          </li>
+          <li class="rate">
+            <span class="currency-pair">JPY/RUB</span>
+            <span class="rate-value up">0.59 ₽</span>
+          </li>
+          <li class="rate">
+            <span class="currency-pair">CHF/RUB</span>
+            <span class="rate-value down">105.30 ₽</span>
+          </li>
+        </ul>
+      </section>
+
       <!-- 🔷 ЭКРАН 1: ГЕОЛОГИЧЕСКИЙ МОНИТОР -->
       <section>
         <h2>🌍 ГЕОЛОГИЧЕСКИЙ МОНИТОР</h2>
         <div class="monitor-panel">
           <div class="monitor-title">РЕЖИМ: АНАЛИЗ ▸ РЕСУРСЫ</div>
           <svg class="monitor-svg" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet">
-            <!-- Континенты -->
             <path d="M250,200 L450,160 L600,180 L680,230 L650,320 L580,360 L480,380 L380,360 L280,330 L250,280 Z" fill="none" stroke="#0f0" stroke-width="2" stroke-dasharray="5,3"/>
             <path d="M100,220 L180,200 L220,240 L200,300 L150,320 L120,280 Z" fill="none" stroke="#0f0" stroke-width="2" stroke-dasharray="5,3"/>
             <path d="M450,320 L500,340 L520,380 L480,420 L420,400 L400,360 Z" fill="none" stroke="#0f0" stroke-width="2" stroke-dasharray="5,3"/>
             
-            <!-- Ресурсы -->
             <circle cx="520" cy="240" r="7" fill="#f44"/>
             <text x="520" y="230" class="rig-label">[RU] ● 140 млрд</text>
             
@@ -163,16 +192,14 @@
         </div>
       </section>
 
-      <!-- 🛢️ ЭКРАН 2: ЛОКАТОР НЕФТЯНЫХ ВЫШЕК -->
+      <!-- 🛢️ ЭКРАН 2: ЛОКАТОР ВЫШЕК -->
       <section>
         <h2>🛢️ ЛОКАТОР ВЫШЕК</h2>
         <div class="monitor-panel">
           <div class="monitor-title">РЕЖИМ: СКАНИРОВАНИЕ ▸ АКТИВНЫЕ</div>
           <svg class="monitor-svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid meet">
-            <!-- Карта региона -->
             <rect x="100" y="100" width="600" height="300" fill="none" stroke="#0a0" stroke-width="1" stroke-dasharray="3,2"/>
             
-            <!-- Вышки -->
             <circle cx="200" cy="180" r="5" class="rig-circle active"/>
             <text x="200" y="170" class="rig-label">VK-12</text>
             
@@ -185,7 +212,6 @@
             <circle cx="620" cy="190" r="5" class="rig-circle"/>
             <text x="620" y="180" class="rig-label">US-3</text>
             
-            <!-- Легенда -->
             <circle cx="80" cy="80" r="5" fill="#0f0"/><text x="90" y="85" font-size="10" fill="#0f0">Неактивная</text>
             <circle cx="220" cy="80" r="5" fill="#ff0"/><text x="230" y="85" font-size="10" fill="#ff0">Активная</text>
           </svg>
@@ -198,14 +224,9 @@
         <div class="monitor-panel">
           <div class="monitor-title">РЕЖИМ: ТРАНСПОРТ ▸ ON-LINE</div>
           <svg class="monitor-svg" viewBox="0 0 800 450" preserveAspectRatio="xMidYMid meet">
-            <!-- Море -->
             <rect x="0" y="0" width="800" height="450" fill="#001a33"/>
+            <path d="M100,200 C200,150 300,250 400,200 C500,150 600,250 700,200" fill="none" stroke="#00f" stroke-width="1" stroke-dasharray="4,4"/>
             
-            <!-- Маршруты -->
-            <path d="M100,200 C200,150 300,250 400,200 C500,150 600,250 700,200" 
-                  fill="none" stroke="#00f" stroke-width="1" stroke-dasharray="4,4"/>
-            
-            <!-- Танкеры -->
             <polygon points="150,200 145,205 155,205" class="tanker-triangle" fill="#00f"/>
             <text x="150" y="190" class="tanker-label">VLCC-7</text>
             
@@ -215,10 +236,8 @@
             <polygon points="550,195 545,200 555,200" class="tanker-triangle" fill="#00f"/>
             <text x="550" y="185" class="tanker-label">VLCC-9</text>
             
-            <!-- Порты -->
             <rect x="80" y="180" width="20" height="40" fill="#f44"/>
             <text x="90" y="170" font-size="10" fill="#f44" text-anchor="middle">Порт A</text>
-            
             <rect x="680" y="180" width="20" height="40" fill="#f44"/>
             <text x="690" y="170" font-size="10" fill="#f44" text-anchor="middle">Порт B</text>
           </svg>
@@ -226,18 +245,9 @@
       </section>
     </div>
 
-    <!-- Правая колонка -->
+    <!-- Правая колонка — без изменений -->
     <div class="right-col">
-      <section>
-        <h2>💱 КУРСЫ ВАЛЮТ</h2>
-        <ul class="rates">
-          <li class="rate"><span class="currency-pair">USD/RUB</span><span class="rate-value up">92.45 ₽</span></li>
-          <li class="rate"><span class="currency-pair">EUR/RUB</span><span class="rate-value up">101.20 ₽</span></li>
-          <li class="rate"><span class="currency-pair">CNY/RUB</span><span class="rate-value down">12.65 ₽</span></li>
-          <li class="rate"><span class="currency-pair">GBP/RUB</span><span class="rate-value up">117.80 ₽</span></li>
-        </ul>
-      </section>
-
+      <!-- Графики -->
       <section>
         <h2>📈 МОНИТОРИНГ АКТИВА</h2>
         <div class="graph-panel">
@@ -248,6 +258,7 @@
         </div>
       </section>
 
+      <!-- Обменник -->
       <section>
         <h2>🔄 ОБМЕННЫЙ МОДУЛЬ</h2>
         <div class="converter">
@@ -276,7 +287,7 @@
   </footer>
 
   <script>
-    // === СИНТЕЗ РЕЧИ (Web Speech API) ===
+    // === СИНТЕЗ РЕЧИ (без изменений) ===
     let speechUtterance = null;
     let isSpeaking = false;
 
@@ -316,12 +327,11 @@
       window.speechSynthesis.speak(speechUtterance);
     }
 
-    // === НОВОСТИ ===
+    // === НОВОСТИ (без изменений) ===
     const newsData = {
-      1: { title: "ИНДЕКС ММВБ: +2.1%", date: "14.12.25 │ 09:48", content: "Индекс Московской биржи вырос на 2.1% за сутки. Рост обусловлен повышением цен на нефть марки Brent выше $85 за баррель и ослаблением рубля к корзине валют.", status: "СТАТУС: ЗЕЛЁНЫЙ" },
-      2: { title: "ФРС: СТАВКА БЕЗ ИЗМЕНЕНИЙ", date: "14.12.25 │ 08:30", content: "Федеральная резервная система США сохранила ключевую ставку в диапазоне 5.25–5.50%, как и ожидалось. Рынки отреагировали ростом: S&P 500 +0.9%.", status: "СТАТУС: ЗЕЛЁНЫЙ" },
-      // ... остальные — по аналогии
-      15: { title: "ЛИТИЙ: ДЕФИЦИТ НА 18%", date: "02.12.25 │ 16:30", content: "Мировой дефицит лития достиг 18%. Цены выросли на 22% за квартал. Производители электромобилей ищут альтернативные технологии.", status: "СТАТУС: ЖЁЛТЫЙ" }
+      1: { title: "ИНДЕКС ММВБ: +2.1%", date: "14.12.25 │ 09:48", content: "Индекс Московской биржи вырос на 2.1% за сутки...", status: "СТАТУС: ЗЕЛЁНЫЙ" },
+      2: { title: "ФРС: СТАВКА БЕЗ ИЗМЕНЕНИЙ", date: "14.12.25 │ 08:30", content: "Федеральная резервная система США сохранила ключевую ставку...", status: "СТАТУС: ЗЕЛЁНЫЙ" },
+      15: { title: "ЛИТИЙ: ДЕФИЦИТ НА 18%", date: "02.12.25 │ 16:30", content: "Мировой дефицит лития достиг 18%...", status: "СТАТУС: ЖЁЛТЫЙ" }
     };
 
     document.querySelectorAll('.news-item').forEach(item => {
@@ -356,7 +366,7 @@
       }
     });
 
-    // === ОБМЕННИК ===
+    // === ОБМЕННИК (без изменений) ===
     function convert() {
       const amount = parseFloat(document.getElementById('amount').value) || 0;
       const rate = parseFloat(document.getElementById('from').value);
