@@ -1,4 +1,4 @@
-/* === ФИНАЛЬНАЯ ВЕРСИЯ: ТОЛЬКО АНАЛИТИКА, БЕЗ ГРАФИКОВ И ОБМЕННИКА === */
+/* === ФИНАЛЬНАЯ ВЕРСИЯ: УВЕЛИЧЕННЫЙ МАСШТАБ + УМЕНЬШЕННАЯ ШИРИНА === */
 
 :root {
   --bg: #000000;
@@ -22,10 +22,13 @@ body {
   overflow-x: hidden;
 }
 
-/* === ТОЛЬКО ОДНА КОЛОНКА === */
-.container {
-  width: 100vw;
-  max-width: none;
+/* === ГЛАВНЫЙ КОНТЕЙНЕР: 1600px + масштаб 1.1 === */
+#scaled-container {
+  width: 1600px; /* ← УМЕНЬШЕНО с 100vw */
+  max-width: 1600px;
+  margin: 0 auto; /* центрирование */
+  transform: scale(1.1); /* ← УВЕЛИЧЕН МАСШТАБ */
+  transform-origin: top center;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -40,16 +43,16 @@ header {
 }
 
 h1 {
-  font-size: clamp(1.8rem, 4.5vw, 2.4rem);
+  font-size: clamp(2.0rem, 4.8vw, 2.6rem); /* немного увеличено */
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #fff;
-  text-shadow: 0 0 12px rgba(192, 0, 0, 0.7);
+  text-shadow: 0 0 14px rgba(192, 0, 0, 0.8);
   margin: 0.5rem 0;
 }
 
 .subtitle {
-  font-size: clamp(0.8rem, 2.8vw, 0.95rem);
+  font-size: clamp(0.9rem, 3.0vw, 1.05rem);
   color: #777;
   font-family: 'Share Tech Mono', monospace;
   margin-top: 0.4rem;
@@ -57,7 +60,7 @@ h1 {
 
 section {
   background: var(--panel);
-  padding: 1rem;
+  padding: 1.1rem; /* немного увеличено */
   border-radius: 0;
   border: 1px solid var(--border);
 }
@@ -65,7 +68,7 @@ section {
 section h2 {
   color: var(--accent);
   margin-bottom: 0.9rem;
-  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  font-size: clamp(1.3rem, 4.2vw, 1.6rem);
   border-bottom: 1px solid var(--border);
   padding-bottom: 0.4rem;
   font-family: 'Cinzel', serif;
@@ -79,46 +82,46 @@ section h2 {
   padding-right: 6px;
   max-height: 48vh;
 }
-.news-panel::-webkit-scrollbar { width: 7px; }
+.news-panel::-webkit-scrollbar { width: 8px; }
 .news-panel::-webkit-scrollbar-track { background: var(--panel); }
 .news-panel::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
 
 .news-item {
-  margin-bottom: 1.1rem;
-  padding-bottom: 0.9rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 1.0rem;
   border-bottom: 1px dashed var(--border);
   cursor: pointer;
-  font-size: clamp(0.85rem, 3vw, 0.95rem);
+  font-size: clamp(0.9rem, 3.2vw, 1.0rem);
 }
 .news-item:hover { color: #fff; }
-.news-title { font-weight: bold; color: #fff; font-family: 'Orbitron', sans-serif; }
-.news-date { font-size: clamp(0.75rem, 2.6vw, 0.85rem); color: #777; }
-.news-desc { font-size: clamp(0.8rem, 2.8vw, 0.9rem); color: #aaa; margin-top: 0.3rem; }
+.news-title { font-weight: bold; color: #fff; font-family: 'Orbitron', sans-serif; font-size: clamp(1.05rem, 3.6vw, 1.15rem); }
+.news-date { font-size: clamp(0.8rem, 2.8vw, 0.9rem); color: #777; }
+.news-desc { font-size: clamp(0.85rem, 3.0vw, 0.95rem); color: #aaa; margin-top: 0.3rem; }
 
 /* === ЛЕНТЫ === */
 .photo-strip {
   display: flex;
   overflow: hidden;
-  height: clamp(65px, 13vh, 80px);
+  height: clamp(70px, 14vh, 85px);
   margin: 0.7rem 0;
   background: #050505;
   border: 1px solid #222;
 }
-.strip-content { display: flex; animation: scroll 45s linear infinite; }
-.strip-content.reverse { animation-direction: reverse; animation-duration: 40s; }
+.strip-content { display: flex; animation: scroll 42s linear infinite; }
+.strip-content.reverse { animation-direction: reverse; animation-duration: 37s; }
 @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
 .strip-item {
-  width: clamp(95px, 20vw, 115px);
+  width: clamp(100px, 21vw, 120px);
   height: 100%;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 3px 2px;
+  padding: 4px 3px;
   font-family: 'Share Tech Mono', monospace;
-  font-size: clamp(0.7rem, 2.6vw, 0.8rem);
+  font-size: clamp(0.75rem, 2.8vw, 0.85rem);
   color: #888;
   text-align: center;
 }
@@ -129,23 +132,23 @@ section h2 {
   justify-content: center;
   color: #050;
   font-family: 'Share Tech Mono', monospace;
-  font-size: clamp(6px, 2.2vw, 8px);
-  height: clamp(40px, 8vh, 48px);
+  font-size: clamp(7px, 2.4vw, 9px);
+  height: clamp(44px, 8.5vh, 52px);
   width: 100%;
 }
 
 /* === КУРСЫ === */
 .rates { list-style: none; }
-.rate { display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #2a2a2a; }
+.rate { display: flex; justify-content: space-between; padding: 0.65rem 0; border-bottom: 1px solid #2a2a2a; }
 .rate:last-child { border-bottom: none; }
 .currency-pair { font-weight: bold; }
-.rate-value { font-family: 'Courier New', monospace; }
+.rate-value { font-family: 'Courier New', monospace; font-size: clamp(1.0rem, 3.2vw, 1.1rem); }
 .up { color: #4caf50; }
 .down { color: #f44336; }
 
 /* === ЭКРАНЫ МОНИТОРИНГА === */
 .monitor-panel {
-  height: clamp(260px, 38vh, 380px);
+  height: clamp(280px, 40vh, 400px);
   background: #000;
   border: 1px solid #222;
   position: relative;
@@ -155,12 +158,12 @@ section h2 {
 
 .monitor-title {
   position: absolute;
-  top: 8px;
+  top: 10px;
   left: 0;
   width: 100%;
   text-align: center;
   font-family: 'Share Tech Mono', monospace;
-  font-size: clamp(0.8rem, 3vw, 0.9rem);
+  font-size: clamp(0.85rem, 3.2vw, 0.95rem);
   color: #0f0;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -174,7 +177,7 @@ section h2 {
 
 .monitor-label {
   font-family: 'Share Tech Mono', monospace;
-  font-size: clamp(8px, 2.6vw, 10px);
+  font-size: clamp(8.5px, 2.8vw, 10.5px);
   fill: #0f0;
   text-anchor: middle;
 }
@@ -183,10 +186,9 @@ section h2 {
   fill: #ff0;
 }
 
-/* Диаграммы */
 .power-bar, .pop-bar {
   fill: none;
-  stroke-width: 12;
+  stroke-width: 13;
   stroke-linecap: round;
 }
 
@@ -196,13 +198,12 @@ section h2 {
 .pop-fill { stroke: #0ff; }
 .pop-bg { stroke: #040; }
 
-/* Старые экраны */
-.rig-circle { fill: #0f0; r: 5; }
+.rig-circle { fill: #0f0; r: 6; }
 .rig-circle.active { fill: #ff0; animation: pulse 2s infinite; }
-@keyframes pulse { 0% { r: 5; opacity: 1; } 50% { r: 8; opacity: 0.7; } 100% { r: 5; opacity: 1; } }
+@keyframes pulse { 0% { r: 6; opacity: 1; } 50% { r: 9; opacity: 0.7; } 100% { r: 6; opacity: 1; } }
 
 .tanker-triangle { fill: #00f; }
-.tanker-triangle.moving { animation: move 15s linear infinite; }
+.tanker-triangle.moving { animation: move 14s linear infinite; }
 @keyframes move { 0% { transform: translate(0,0); } 25% { transform: translate(100px, 30px); } 50% { transform: translate(200px, -20px); } 75% { transform: translate(300px, 40px); } 100% { transform: translate(400px, 0); } }
 
 /* === МОДАЛЬНОЕ ОКНО === */
@@ -210,7 +211,7 @@ section h2 {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.92);
   display: none;
   justify-content: center;
   align-items: center;
@@ -222,7 +223,7 @@ section h2 {
 }
 
 .modal {
-  width: min(96%, 800px);
+  width: min(96%, 850px);
   background: var(--panel);
   border: 2px solid var(--accent);
   border-radius: 0;
@@ -233,7 +234,7 @@ section h2 {
 
 .modal-header {
   background: #150a0a;
-  padding: 0.8rem 1rem;
+  padding: 0.9rem 1.1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -242,7 +243,7 @@ section h2 {
 
 .modal-title {
   font-family: 'Orbitron', sans-serif;
-  font-size: clamp(1.3rem, 4.5vw, 1.6rem);
+  font-size: clamp(1.4rem, 4.8vw, 1.7rem);
   color: #fff;
   max-width: 80%;
 }
@@ -251,19 +252,19 @@ section h2 {
   background: none;
   border: 1px solid var(--accent);
   color: var(--accent);
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   font-family: 'Share Tech Mono', monospace;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   cursor: pointer;
   flex-shrink: 0;
   margin-left: 0.5rem;
 }
 
 .speak-btn {
-  width: 90px;
-  font-size: 0.85rem;
+  width: 100px;
+  font-size: 0.9rem;
   letter-spacing: 1px;
 }
 
@@ -273,17 +274,17 @@ section h2 {
 }
 
 .modal-body {
-  padding: 1.4rem;
-  max-height: calc(95vh - 100px);
+  padding: 1.5rem;
+  max-height: calc(95vh - 105px);
   overflow-y: auto;
   font-family: 'Share Tech Mono', monospace;
-  font-size: clamp(0.95rem, 3.2vw, 1.05rem);
+  font-size: clamp(1.0rem, 3.4vw, 1.1rem);
   line-height: 1.7;
   color: #ddd;
 }
 
 .modal-body::-webkit-scrollbar {
-  width: 6px;
+  width: 7px;
 }
 
 .modal-body::-webkit-scrollbar-track {
@@ -296,7 +297,7 @@ section h2 {
 }
 
 .modal-date {
-  font-size: clamp(0.8rem, 3vw, 0.9rem);
+  font-size: clamp(0.85rem, 3.2vw, 0.95rem);
   color: #777;
   margin-bottom: 0.8rem;
   font-family: 'Share Tech Mono', monospace;
@@ -305,12 +306,12 @@ section h2 {
 .modal-status {
   display: inline-block;
   margin-top: 1rem;
-  padding: 0.45rem 1rem;
+  padding: 0.5rem 1.1rem;
   background: rgba(0, 30, 0, 0.4);
   border: 1px solid #0f0;
   color: #0f0;
   font-family: 'Share Tech Mono', monospace;
-  font-size: clamp(0.85rem, 3vw, 0.95rem);
+  font-size: clamp(0.9rem, 3.2vw, 1.0rem);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -320,10 +321,10 @@ section h2 {
   color: #ff0;
 }
 
-/* === РЕЛЕ (геология) === */
+/* === РЕЛЕ === */
 .relays {
   display: flex;
-  gap: 0.8rem;
+  gap: 0.9rem;
   margin-top: 0.9rem;
 }
 
@@ -331,18 +332,18 @@ section h2 {
   flex: 1;
   background: #0c0c0c;
   border: 1px solid #444;
-  padding: 0.55rem;
+  padding: 0.6rem;
   font-family: 'Share Tech Mono', monospace;
-  font-size: clamp(0.85rem, 3vw, 0.95rem);
+  font-size: clamp(0.9rem, 3.2vw, 1.0rem);
 }
 
 .relay-label {
   display: block;
   color: #999;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.4rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: clamp(0.75rem, 2.6vw, 0.85rem);
+  font-size: clamp(0.8rem, 2.8vw, 0.9rem);
 }
 
 .relay-select {
@@ -350,20 +351,20 @@ section h2 {
   background: #151515;
   color: var(--fg);
   border: 1px solid #444;
-  padding: 0.4rem;
+  padding: 0.45rem;
   font-family: 'Share Tech Mono', monospace;
-  font-size: clamp(0.9rem, 3.2vw, 1rem);
+  font-size: clamp(0.95rem, 3.4vw, 1.05rem);
 }
 
-/* === ОСТАЛЬНОЕ === */
+/* === ПРОЧЕЕ === */
 .rt-indicator {
   display: inline-block;
-  width: 9px;
-  height: 9px;
+  width: 10px;
+  height: 10px;
   background: #0f0;
   border-radius: 50%;
   margin-left: 6px;
-  animation: blink 1.3s infinite;
+  animation: blink 1.2s infinite;
 }
 
 @keyframes blink {
@@ -373,8 +374,8 @@ section h2 {
 
 footer {
   text-align: center;
-  padding: 1rem;
-  font-size: clamp(0.8rem, 3vw, 0.95rem);
+  padding: 1.1rem;
+  font-size: clamp(0.85rem, 3.2vw, 1.0rem);
   color: #666;
   margin-top: 1rem;
   border-top: 1px solid var(--border);
