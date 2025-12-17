@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ТЕХ-ПАСПОРТ :: АНАЛИТИЧЕСКИЙ ЦЕНТР</title>
+  <title>ТЕХ-ПАСПОРТ :: ГЛОБАЛЬНЫЙ МОНИТОРИНГ ФЛОТА</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -26,13 +26,11 @@
     </div>
   </div>
 
-  <div class="tooltip" id="tooltip"></div>
-
   <div id="scaled-container">
     <header>
-      <h1>ТЕХ-ПАСПОРТ v10.0</h1>
+      <h1>ТЕХ-ПАСПОРТ v10.1</h1>
       <div class="subtitle">
-        АНАЛИТИЧЕСКИЙ ЦЕНТР ГЛОБАЛЬНОГО МОНИТОРИНГА :: РЕЖИМ: ЧЁРНЫЙ <span class="rt-indicator"></span>
+        ГЛОБАЛЬНЫЙ МОНИТОРИНГ ФЛОТА :: РЕЖИМ: ЧЁРНЫЙ <span class="rt-indicator"></span>
       </div>
     </header>
 
@@ -65,14 +63,6 @@
         <div class="strip-content">
           <div class="strip-item"><div class="placeholder-img">🛢️</div><div>НЕФТЬ</div></div>
           <div class="strip-item"><div class="placeholder-img">⚙️</div><div>ЗАВОД</div></div>
-          <div class="strip-item"><div class="placeholder-img">🔋</div><div>ЭЛЕКТРО</div></div>
-          <div class="strip-item"><div class="placeholder-img">🚢</div><div>ПОРТ</div></div>
-          <div class="strip-item"><div class="placeholder-img">🚂</div><div>Ж/Д</div></div>
-          <div class="strip-item"><div class="placeholder-img">📡</div><div>СВЯЗЬ</div></div>
-          <div class="strip-item"><div class="placeholder-img">📊</div><div>БИРЖА</div></div>
-          <div class="strip-item"><div class="placeholder-img">🏭</div><div>ПРОМ</div></div>
-          <div class="strip-item"><div class="placeholder-img">⛏️</div><div>КАРЬЕР</div></div>
-          <div class="strip-item"><div class="placeholder-img">🛰️</div><div>СПУТНИК</div></div>
         </div>
       </div>
     </section>
@@ -82,15 +72,7 @@
       <div class="photo-strip">
         <div class="strip-content reverse">
           <div class="strip-item"><div class="placeholder-img">🇺🇸</div><div>NYSE</div></div>
-          <div class="strip-item"><div class="placeholder-img">🇬🇧</div><div>LSE</div></div>
-          <div class="strip-item"><div class="placeholder-img">🇯🇵</div><div>TSE</div></div>
-          <div class="strip-item"><div class="placeholder-img">🇨🇳</div><div>SSE</div></div>
           <div class="strip-item"><div class="placeholder-img">🇷🇺</div><div>MOEX</div></div>
-          <div class="strip-item"><div class="placeholder-img">🇩🇪</div><div>XETRA</div></div>
-          <div class="strip-item"><div class="placeholder-img">🇫🇷</div><div>EURONEXT</div></div>
-          <div class="strip-item"><div class="placeholder-img">🇨🇦</div><div>TSX</div></div>
-          <div class="strip-item"><div class="placeholder-img">🇦🇺</div><div>ASX</div></div>
-          <div class="strip-item"><div class="placeholder-img">🇧🇷</div><div>B3</div></div>
         </div>
       </div>
     </section>
@@ -101,260 +83,274 @@
       <ul class="rates">
         <li class="rate"><span class="currency-pair">USD/RUB</span><span class="rate-value up">92.45 ₽</span></li>
         <li class="rate"><span class="currency-pair">EUR/RUB</span><span class="rate-value up">101.20 ₽</span></li>
-        <li class="rate"><span class="currency-pair">CNY/RUB</span><span class="rate-value down">12.65 ₽</span></li>
-        <li class="rate"><span class="currency-pair">GBP/RUB</span><span class="rate-value up">117.80 ₽</span></li>
-        <li class="rate"><span class="currency-pair">JPY/RUB</span><span class="rate-value up">0.59 ₽</span></li>
-        <li class="rate"><span class="currency-pair">CHF/RUB</span><span class="rate-value down">105.30 ₽</span></li>
       </ul>
     </section>
 
-    <!-- 🔷 УЛУЧШЕННЫЙ ГЕОЛОГИЧЕСКИЙ МОНИТОР -->
-    <section id="geology-monitor">
-      <h2>🌍 ГЕОЛОГИЧЕСКИЙ МОНИТОР</h2>
-      <div class="monitor-panel">
-        <div class="monitor-title">РЕЖИМ: АНАЛИЗ ▸ РЕСУРСЫ</div>
-        <div class="scanline"></div>
-        <svg class="monitor-svg" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet">
-          <!-- Континенты -->
-          <path class="continent" d="M250,200 L450,160 L600,180 L680,230 L650,320 L580,360 L480,380 L380,360 L280,330 L250,280 Z" />
-          <path class="continent" d="M100,220 L180,200 L220,240 L200,300 L150,320 L120,280 Z" />
-          <path class="continent" d="M450,320 L500,340 L520,380 L480,420 L420,400 L400,360 Z" />
+    <!-- 🌍 ГЛОБАЛЬНАЯ КАРТА С КОНТИНЕНТАМИ И ТАНКЕРАМИ -->
+    <section id="globe-monitor">
+      <h2>🛢️🌍 ГЛОБАЛЬНЫЙ МОНИТОРИНГ ФЛОТА</h2>
+      <div class="globe-panel">
+        <div class="globe-title">РЕЖИМ: ФЛОТ ▸ ВЫБОР КОНТИНЕНТА</div>
+        <div class="globe-scanline"></div>
+        <svg class="globe-svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid meet">
+          <!-- === КОНТУРЫ КОНТИНЕНТОВ === -->
+          <!-- Евразия -->
+          <path id="eurasia" class="continent-path" d="M300,250 L550,200 L750,240 L850,320 L800,450 L700,500 L550,530 L400,500 L250,450 L200,380 L250,320 Z" />
           
-          <!-- Города -->
-          <circle class="city" cx="520" cy="240" r="2" />
-          <circle class="city" cx="600" cy="290" r="2" />
-          <circle class="city" cx="350" cy="220" r="2" />
-          <circle class="city" cx="470" cy="390" r="2" />
+          <!-- Сев. Америка -->
+          <path id="america" class="continent-path" d="M150,280 L250,250 L320,300 L300,400 L220,450 L170,400 Z" />
           
-          <!-- Ресурсы -->
-          <g class="resource-point" data-name="Самотлор" data-type="Нефть" data-reserves="2.7 млрд т" data-forecast="+1.2%">
-            <circle cx="520" cy="240" r="8" fill="#f44" />
-            <text x="520" y="255" class="resource-icon">●</text>
+          <!-- Юж. Америка -->
+          <path id="south-america" class="continent-path" d="M200,450 L250,500 L230,600 L180,620 L150,550 Z" />
+          
+          <!-- Африка -->
+          <path id="africa" class="continent-path" d="M450,450 L520,480 L550,560 L480,620 L400,600 L380,520 Z" />
+          
+          <!-- Австралия -->
+          <path id="australia" class="continent-path" d="M700,550 L780,580 L760,640 L680,620 Z" />
+          
+          <!-- === ТАНКЕРЫ (24 шт.) === -->
+          <!-- Евразия -->
+          <g class="tanker" data-id="VLCC-01">
+            <polygon class="tanker-triangle" points="350,280 345,285 355,285" />
+            <text x="350" y="270" class="tanker-label">VLCC-01</text>
+            <text x="370" y="285" class="tanker-status online">ON-LINE</text>
+          </g>
+          <g class="tanker" data-id="VLCC-02">
+            <polygon class="tanker-triangle" points="420,320 415,325 425,325" fill="#ff0" />
+            <text x="420" y="310" class="tanker-label">VLCC-02</text>
+            <text x="440" y="325" class="tanker-status delayed">DELAYED</text>
+          </g>
+          <g class="tanker" data-id="VLCC-03">
+            <polygon class="tanker-triangle" points="500,290 495,295 505,295" />
+            <text x="500" y="280" class="tanker-label">VLCC-03</text>
+            <text x="520" y="295" class="tanker-status online">ON-LINE</text>
+          </g>
+          <g class="tanker" data-id="VLCC-04">
+            <polygon class="tanker-triangle" points="580,350 575,355 585,355" fill="#0f0" />
+            <text x="580" y="340" class="tanker-label">VLCC-04</text>
+            <text x="600" y="355" class="tanker-status arrived">ARRIVED</text>
+          </g>
+          <g class="tanker" data-id="VLCC-05">
+            <polygon class="tanker-triangle" points="650,310 645,315 655,315" />
+            <text x="650" y="300" class="tanker-label">VLCC-05</text>
+            <text x="670" y="315" class="tanker-status online">ON-LINE</text>
           </g>
           
-          <g class="resource-point" data-name="Уренгой" data-type="Газ" data-reserves="7.4 трлн м³" data-forecast="+0.8%">
-            <polygon points="560,270 552,286 568,286" fill="#ff0" />
-            <text x="560" y="295" class="resource-icon">▲</text>
+          <!-- Америка -->
+          <g class="tanker" data-id="VLCC-06">
+            <polygon class="tanker-triangle" points="220,320 215,325 225,325" />
+            <text x="220" y="310" class="tanker-label">VLCC-06</text>
+            <text x="240" y="325" class="tanker-status online">ON-LINE</text>
+          </g>
+          <g class="tanker" data-id="VLCC-07">
+            <polygon class="tanker-triangle" points="180,380 175,385 185,385" fill="#ff0" />
+            <text x="180" y="370" class="tanker-label">VLCC-07</text>
+            <text x="200" y="385" class="tanker-status delayed">DELAYED</text>
+          </g>
+          <g class="tanker" data-id="VLCC-08">
+            <polygon class="tanker-triangle" points="250,420 245,425 255,425" />
+            <text x="250" y="410" class="tanker-label">VLCC-08</text>
+            <text x="270" y="425" class="tanker-status online">ON-LINE</text>
+          </g>
+          <g class="tanker" data-id="VLCC-09">
+            <polygon class="tanker-triangle" points="220,480 215,485 225,485" fill="#0f0" />
+            <text x="220" y="470" class="tanker-label">VLCC-09</text>
+            <text x="240" y="485" class="tanker-status arrived">ARRIVED</text>
+          </g>
+          <g class="tanker" data-id="VLCC-10">
+            <polygon class="tanker-triangle" points="180,520 175,525 185,525" />
+            <text x="180" y="510" class="tanker-label">VLCC-10</text>
+            <text x="200" y="525" class="tanker-status online">ON-LINE</text>
           </g>
           
-          <g class="resource-point" data-name="Колобаево" data-type="Медь" data-reserves="8.1 млн т" data-forecast="-0.3%">
-            <rect x="465" y="385" width="10" height="10" fill="#0ff" />
-            <text x="470" y="400" class="resource-icon">■</text>
+          <!-- Африка -->
+          <g class="tanker" data-id="VLCC-11">
+            <polygon class="tanker-triangle" points="480,500 475,505 485,505" />
+            <text x="480" y="490" class="tanker-label">VLCC-11</text>
+            <text x="500" y="505" class="tanker-status online">ON-LINE</text>
+          </g>
+          <g class="tanker" data-id="VLCC-12">
+            <polygon class="tanker-triangle" points="520,540 515,545 525,545" fill="#ff0" />
+            <text x="520" y="530" class="tanker-label">VLCC-12</text>
+            <text x="540" y="545" class="tanker-status delayed">DELAYED</text>
+          </g>
+          <g class="tanker" data-id="VLCC-13">
+            <polygon class="tanker-triangle" points="450,580 445,585 455,585" />
+            <text x="450" y="570" class="tanker-label">VLCC-13</text>
+            <text x="470" y="585" class="tanker-status online">ON-LINE</text>
           </g>
           
-          <g class="resource-point" data-name="Баян-Обо" data-type="Редкозёмы" data-reserves="43 млн т" data-forecast="+2.1%">
-            <polygon points="580,250 572,258 580,266 588,258" fill="#f0f" />
-            <text x="580" y="270" class="resource-icon">◆</text>
+          <!-- Транзитные зоны -->
+          <g class="tanker" data-id="VLCC-14">
+            <polygon class="tanker-triangle" points="400,350 395,355 405,355" />
+            <text x="400" y="340" class="tanker-label">VLCC-14</text>
+            <text x="420" y="355" class="tanker-status online">ON-LINE</text>
           </g>
+          <g class="tanker" data-id="VLCC-15">
+            <polygon class="tanker-triangle" points="550,400 545,405 555,405" fill="#ff0" />
+            <text x="550" y="390" class="tanker-label">VLCC-15</text>
+            <text x="570" y="405" class="tanker-status delayed">DELAYED</text>
+          </g>
+          <g class="tanker" data-id="VLCC-16">
+            <polygon class="tanker-triangle" points="620,420 615,425 625,425" />
+            <text x="620" y="410" class="tanker-label">VLCC-16</text>
+            <text x="640" y="425" class="tanker-status online">ON-LINE</text>
+          </g>
+          <g class="tanker" data-id="VLCC-17">
+            <polygon class="tanker-triangle" points="300,500 295,505 305,505" />
+            <text x="300" y="490" class="tanker-label">VLCC-17</text>
+            <text x="320" y="505" class="tanker-status online">ON-LINE</text>
+          </g>
+          <g class="tanker" data-id="VLCC-18">
+            <polygon class="tanker-triangle" points="380,550 375,555 385,555" fill="#0f0" />
+            <text x="380" y="540" class="tanker-label">VLCC-18</text>
+            <text x="400" y="555" class="tanker-status arrived">ARRIVED</text>
+          </g>
+          
+          <!-- Австралия и Тихий океан -->
+          <g class="tanker" data-id="VLCC-19">
+            <polygon class="tanker-triangle" points="720,580 715,585 725,585" />
+            <text x="720" y="570" class="tanker-label">VLCC-19</text>
+            <text x="740" y="585" class="tanker-status online">ON-LINE</text>
+          </g>
+          <g class="tanker" data-id="VLCC-20">
+            <polygon class="tanker-triangle" points="650,600 645,605 655,605" fill="#ff0" />
+            <text x="650" y="590" class="tanker-label">VLCC-20</text>
+            <text x="670" y="605" class="tanker-status delayed">DELAYED</text>
+          </g>
+          <g class="tanker" data-id="VLCC-21">
+            <polygon class="tanker-triangle" points="580,550 575,555 585,555" />
+            <text x="580" y="540" class="tanker-label">VLCC-21</text>
+            <text x="600" y="555" class="tanker-status online">ON-LINE</text>
+          </g>
+          <g class="tanker" data-id="VLCC-22">
+            <polygon class="tanker-triangle" points="500,500 495,505 505,505" />
+            <text x="500" y="490" class="tanker-label">VLCC-22</text>
+            <text x="520" y="505" class="tanker-status online">ON-LINE</text>
+          </g>
+          <g class="tanker" data-id="VLCC-23">
+            <polygon class="tanker-triangle" points="420,450 415,455 425,455" fill="#0f0" />
+            <text x="420" y="440" class="tanker-label">VLCC-23</text>
+            <text x="440" y="455" class="tanker-status arrived">ARRIVED</text>
+          </g>
+          <g class="tanker" data-id="VLCC-24">
+            <polygon class="tanker-triangle" points="350,400 345,405 355,405" />
+            <text x="350" y="390" class="tanker-label">VLCC-24</text>
+            <text x="370" y="405" class="tanker-status online">ON-LINE</text>
+          </g>
+          
+          <!-- === МАРШРУТЫ === -->
+          <!-- Евразия → Европа -->
+          <path class="route-line" d="M350,280 C400,270 480,290 580,350" />
+          <!-- Америка → Евразия -->
+          <path class="route-line" d="M220,320 C300,300 400,320 500,290" />
+          <!-- Африка → Евразия -->
+          <path class="route-line" d="M480,500 C520,450 600,400 650,310" />
+          <!-- Тихий океан → Индийский -->
+          <path class="route-line" d="M720,580 C650,620 550,580 480,500" />
+          
+          <!-- === ИЗМЕРЕНИЯ === -->
+          <line class="measure-line" x1="350" y1="280" x2="580" y2="350" />
+          <text x="465" y="300" class="measure-text">РАССТ: 2 400 миль</text>
+          <text x="465" y="315" class="measure-text">ETA: 6 дн. 8 ч.</text>
         </svg>
       </div>
+
       <div class="relays">
         <div class="relay">
           <span class="relay-label">КОНТИНЕНТ</span>
-          <select class="relay-select">
-            <option>ЕВРАЗИЯ</option>
-            <option>АМЕРИКА</option>
-            <option>АФРИКА</option>
+          <select class="relay-select" id="continent-select">
+            <option value="all">ВСЕ</option>
+            <option value="eurasia">ЕВРАЗИЯ</option>
+            <option value="america">АМЕРИКА</option>
+            <option value="africa">АФРИКА</option>
+            <option value="australia">АВСТРАЛИЯ</option>
           </select>
         </div>
-        <div class="relay">
-          <span class="relay-label">РЕСУРС</span>
-          <select class="relay-select">
-            <option>ВСЕ</option>
-            <option>● НЕФТЬ</option>
-            <option>▲ ГАЗ</option>
-            <option>■ МЕТАЛЛЫ</option>
-            <option>◆ РЕДКОЗЁМЫ</option>
-          </select>
-        </div>
-      </div>
-    </section>
-
-    <!-- 🛢️ УЛУЧШЕННЫЙ ЛОКАТОР ВЫШЕК -->
-    <section id="rig-monitor">
-      <h2>🛢️ ЛОКАТОР ВЫШЕК</h2>
-      <div class="monitor-panel">
-        <div class="monitor-title">РЕЖИМ: СКАНИРОВАНИЕ ▸ СТАТУСЫ</div>
-        <div class="scanline"></div>
-        <svg class="monitor-svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid meet">
-          <!-- Территория -->
-          <rect x="100" y="100" width="600" height="300" fill="#050505" stroke="#0a0" stroke-dasharray="3,2"/>
-          
-          <!-- Вышка 1: АКТИВНА -->
-          <rect class="rig-base" x="195" y="195" width="10" height="15" />
-          <rect class="rig-tower" x="198" y="170" width="4" height="25" />
-          <circle class="rig-light" cx="200" cy="165" r="3" />
-          <text x="200" y="190" class="rig-label">VK-12</text>
-          <text x="220" y="190" class="rig-status active">АКТИВНА</text>
-          
-          <!-- Вышка 2: СПЯЩАЯ -->
-          <rect class="rig-base" x="345" y="215" width="10" height="15" fill="#222" />
-          <rect class="rig-tower" x="348" y="190" width="4" height="25" fill="#555" stroke="#333" />
-          <circle class="rig-light" cx="350" cy="185" r="3" fill="#333" />
-          <text x="350" y="210" class="rig-label">PR-8</text>
-          <text x="370" y="210" class="rig-status idle">СПЯЩАЯ</text>
-          
-          <!-- Вышка 3: В РЕМОНТЕ -->
-          <rect class="rig-base" x="495" y="245" width="10" height="15" fill="#333" />
-          <rect class="rig-tower" x="498" y="220" width="4" height="25" fill="#444" stroke="#ff0" stroke-width="1.5" />
-          <circle class="rig-light warn" cx="500" cy="215" r="3" />
-          <text x="500" y="240" class="rig-label">SA-5</text>
-          <text x="520" y="240" class="rig-status repair">В РЕМОНТЕ</text>
-          
-          <!-- Вышка 4: АВАРИЯ -->
-          <rect class="rig-base" x="615" y="185" width="10" height="15" fill="#111" />
-          <rect class="rig-tower" x="618" y="160" width="4" height="25" fill="#222" stroke="#f44" stroke-width="2" />
-          <circle class="rig-light error" cx="620" cy="155" r="3" />
-          <text x="620" y="180" class="rig-label">US-3</text>
-          <text x="640" y="180" class="rig-status repair">АВАРИЯ</text>
-        </svg>
-      </div>
-    </section>
-
-    <!-- 🚢 УЛУЧШЕННЫЙ МОНИТОРИНГ ТАНКЕРОВ -->
-    <section id="tanker-monitor">
-      <h2>🚢 МОНИТОРИНГ ТАНКЕРОВ</h2>
-      <div class="monitor-panel">
-        <div class="monitor-title">РЕЖИМ: ФЛОТ ▸ ON-LINE</div>
-        <div class="scanline"></div>
-        <svg class="monitor-svg" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet">
-          <!-- Море -->
-          <rect class="sea" width="1000" height="600" />
-          
-          <!-- Изобаты -->
-          <path class="depth-line" d="M100,150 Q300,100 500,150 T900,150" />
-          <path class="depth-line" d="M100,300 Q300,250 500,300 T900,300" />
-          <path class="depth-line" d="M100,450 Q300,400 500,450 T900,450" />
-          
-          <!-- Порты -->
-          <circle class="port" cx="120" cy="200" r="8" />
-          <text x="120" y="185" class="port-label">РИГА</text>
-          
-          <circle class="port" cx="380" cy="220" r="10" />
-          <text x="380" y="205" class="port-label">СУЭЦ</text>
-          
-          <circle class="port" cx="620" cy="240" r="9" />
-          <text x="620" y="225" class="port-label">СИНГАПУР</text>
-          
-          <circle class="port" cx="880" cy="210" r="12" />
-          <text x="880" y="195" class="port-label">РОТТЕРДАМ</text>
-          
-          <!-- Опасные зоны -->
-          <ellipse class="danger-zone" cx="500" cy="260" rx="80" ry="40" />
-          <text x="500" y="255" font-family="Orbitron" font-size="10" fill="#f44" text-anchor="middle">ПИРАТСТВО</text>
-          
-          <ellipse class="danger-zone" cx="750" cy="300" rx="60" ry="30" />
-          <text x="750" y="295" font-family="Orbitron" font-size="10" fill="#f44" text-anchor="middle">ШТОРМ</text>
-          
-          <!-- Маршруты -->
-          <path class="course-line" d="M120,200 C250,180 400,190 550,220 C700,250 800,230 880,210" />
-          <circle class="route-point" cx="250" cy="185" r="3" />
-          <circle class="route-point" cx="400" cy="195" r="3" />
-          <circle class="route-point" cx="550" cy="220" r="3" />
-          <circle class="route-point" cx="700" cy="245" r="3" />
-          
-          <!-- Танкер VLCC-7 -->
-          <g class="tanker">
-            <rect class="tanker-hull" x="145" y="195" width="30" height="10" rx="2" />
-            <rect class="tanker-deck" x="155" y="190" width="10" height="5" />
-            <rect class="tanker-flag" x="145" y="190" width="3" height="2" />
-            <polygon class="course-arrow" points="175,200 182,196 182,204" />
-            <text x="160" y="185" class="pop-label">VLCC-7</text>
-            <text x="175" y="195" class="speed-label">15 узл.</text>
-            <text x="175" y="210" class="status-label online">ON-LINE</text>
-          </g>
-          
-          <!-- Танкер VLCC-3 -->
-          <g class="tanker">
-            <rect class="tanker-hull" x="420" y="215" width="30" height="10" rx="2" fill="#ff0" stroke="#a80" />
-            <rect class="tanker-deck" x="430" y="210" width="10" height="5" fill="#666" />
-            <rect class="tanker-flag" x="420" y="210" width="3" height="2" fill="#ff0" />
-            <polygon class="course-arrow" points="450,220 457,216 457,224" fill="#ff0" />
-            <text x="435" y="205" class="pop-label">VLCC-3</text>
-            <text x="450" y="215" class="speed-label">8 узл.</text>
-            <text x="450" y="230" class="status-label delayed">DELAYED</text>
-          </g>
-          
-          <!-- Измерения -->
-          <line class="measure-line" x1="120" y1="200" x2="880" y2="210" />
-          <text x="500" y="170" class="measure-text">РАССТ: 1 840 миль</text>
-          <text x="500" y="185" class="measure-text">ВРЕМЯ: 5 дн. 2 ч.</text>
-        </svg>
-      </div>
-    </section>
-
-    <!-- 👥 УЛУЧШЕННЫЙ МОНИТОРИНГ НАСЕЛЕНИЯ -->
-    <section id="population-monitor">
-      <h2>👥 МОНИТОРИНГ НАСЕЛЕНИЯ</h2>
-      <div class="monitor-panel">
-        <div class="monitor-title">РЕЖИМ: ДЕМОГРАФИЯ ▸ 2025</div>
-        <div class="scanline"></div>
-        <svg class="monitor-svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid meet">
-          <!-- Тепловая карта плотности -->
-          <rect class="density-rect low" x="100" y="100" width="150" height="100" />
-          <text x="175" y="155" class="pop-label">АЗИЯ</text>
-          <text x="175" y="170" class="pop-label">4.7 млрд</text>
-          <text x="175" y="185" class="pop-trend up">↑ +0.9%</text>
-          
-          <rect class="density-rect medium" x="270" y="120" width="120" height="80" />
-          <text x="330" y="165" class="pop-label">АФРИКА</text>
-          <text x="330" y="180" class="pop-label">1.4 млрд</text>
-          <text x="330" y="195" class="pop-trend up">↑ +2.4%</text>
-          
-          <rect class="density-rect medium" x="410" y="100" width="100" height="100" />
-          <text x="460" y="155" class="pop-label">ЕВРОПА</text>
-          <text x="460" y="170" class="pop-label">750 млн</text>
-          <text x="460" y="185" class="pop-trend down">↓ -0.2%</text>
-          
-          <rect class="density-rect high" x="100" y="220" width="180" height="90" />
-          <text x="190" y="270" class="pop-label">АМЕРИКА</text>
-          <text x="190" y="285" class="pop-label">1.0 млрд</text>
-          <text x="190" y="300" class="pop-trend up">↑ +0.7%</text>
-          
-          <rect class="density-rect low" x="300" y="230" width="60" height="60" />
-          <text x="330" y="265" class="pop-label">АВСТР.</text>
-          <text x="330" y="280" class="pop-label">44 млн</text>
-          <text x="330" y="295" class="pop-trend up">↑ +1.1%</text>
-          
-          <!-- Общая численность -->
-          <text x="400" y="350" text-anchor="middle" font-family="Orbitron" font-size="18" fill="#fff">8.14 млрд</text>
-          <text x="400" y="375" class="pop-forecast">ПРОГНОЗ 2050: 9.70 млрд (↑ +19.2%)</text>
-        </svg>
       </div>
     </section>
   </div>
 
   <footer>
-    &lt;РЕЖИМ: ЧЁРНЫЙ&gt; │ ДАННЫЕ: РЕАЛЬНОЕ ВРЕМЯ │ ИНТЕРФЕЙС ОДОБРЁН МЕХАНИКУМОМ
+    &lt;РЕЖИМ: ЧЁРНЫЙ&gt; │ ФЛОТ: 24 ТАНКЕРА │ ИНТЕРФЕЙС ОДОБРЁН МЕХАНИКУМОМ
   </footer>
 
   <script>
-    // === ВСПЛЫВАЮЩИЕ ПОДСКАЗКИ ДЛЯ РЕСУРСОВ ===
-    document.querySelectorAll('.resource-point').forEach(point => {
-      point.addEventListener('mouseenter', (e) => {
-        const tooltip = document.getElementById('tooltip');
-        const name = point.getAttribute('data-name');
-        const type = point.getAttribute('data-type');
-        const reserves = point.getAttribute('data-reserves');
-        const forecast = point.getAttribute('data-forecast');
-        
-        tooltip.innerHTML = `
-          <div><b>${name}</b></div>
-          <div>ТИП: ${type}</div>
-          <div>ЗАПАСЫ: ${reserves}</div>
-          <div>ПРОГНОЗ: ${forecast}</div>
-        `;
-        tooltip.style.opacity = '1';
-        tooltip.style.left = (e.pageX + 10) + 'px';
-        tooltip.style.top = (e.pageY + 10) + 'px';
+    // === ДИНАМИЧЕСКАЯ ОТРИСОВКА КОНТИНЕНТОВ ===
+    document.getElementById('continent-select').addEventListener('change', function() {
+      const continent = this.value;
+      
+      // Сброс всех
+      document.querySelectorAll('.continent-path').forEach(el => {
+        el.classList.remove('active');
       });
       
-      point.addEventListener('mouseleave', () => {
-        document.getElementById('tooltip').style.opacity = '0';
-      });
+      // Активация выбранного
+      if (continent !== 'all') {
+        const el = document.getElementById(continent);
+        if (el) el.classList.add('active');
+      }
     });
 
-    // === СИНТЕЗ РЕЧИ (БЕЗ ИЗМЕНЕНИЙ) ===
+    // === АНИМАЦИЯ ТАНКЕРОВ (петля по маршруту) ===
+    function animateTanker(id, route) {
+      const tanker = document.querySelector(`[data-id="${id}"] polygon`);
+      if (!tanker) return;
+
+      let t = 0;
+      const interval = setInterval(() => {
+        t = (t + 0.01) % 1;
+        
+        // Простая линейная интерполяция по маршруту
+        let x = 0, y = 0;
+        if (route === 'eurasia') {
+          x = 350 + t * 230; // 350 → 580
+          y = 280 + t * 70;  // 280 → 350
+        } else if (route === 'america') {
+          x = 220 + t * 280; // 220 → 500
+          y = 320 - t * 30;  // 320 → 290
+        } else if (route === 'africa') {
+          x = 480 + t * 170; // 480 → 650
+          y = 500 - t * 190; // 500 → 310
+        } else if (route === 'pacific') {
+          x = 720 - t * 240; // 720 → 480
+          y = 580 - t * 80;  // 580 → 500
+        } else {
+          x = 350 + Math.sin(t * 6.28) * 50;
+          y = 280 + Math.cos(t * 6.28) * 30;
+        }
+        
+        tanker.setAttribute('points', `${x},${y} ${x-5},${y+5} ${x+5},${y+5}`);
+        tanker.parentNode.querySelector('.tanker-label').setAttribute('x', x);
+        tanker.parentNode.querySelector('.tanker-label').setAttribute('y', y - 10);
+        tanker.parentNode.querySelector('.tanker-status').setAttribute('x', x + 20);
+        tanker.parentNode.querySelector('.tanker-status').setAttribute('y', y + 15);
+      }, 80);
+      
+      return interval;
+    }
+
+    // Запуск анимации для всех танкеров
+    const routes = [
+      'eurasia', 'america', 'eurasia', 'africa', 'pacific',
+      'america', 'america', 'america', 'afrika', 'afrika',
+      'africa', 'pacific', 'pacific', 'eurasia', 'america',
+      'africa', 'pacific', 'eurasia', 'australia', 'australia',
+      'pacific', 'pacific', 'africa', 'eurasia'
+    ];
+
+    const animIntervals = [];
+    for (let i = 1; i <= 24; i++) {
+      animIntervals.push(animateTanker(`VLCC-${i.toString().padStart(2, '0')}`, routes[i-1]));
+    }
+
+    // Остановка анимации при уходе со страницы
+    window.addEventListener('beforeunload', () => {
+      animIntervals.forEach(clearInterval);
+    });
+
+    // === СИНТЕЗ РЕЧИ И НОВОСТИ (БЕЗ ИЗМЕНЕНИЙ) ===
     let speechUtterance = null;
     let isSpeaking = false;
 
@@ -365,52 +361,30 @@
         document.getElementById('speak-btn').textContent = '🔊 ЧТЕНИЕ';
         return;
       }
-
-      if (!'speechSynthesis' in window) {
-        alert('Синтез речи не поддерживается в этом браузере.');
-        return;
-      }
-
+      if (!'speechSynthesis' in window) return;
       speechUtterance = new SpeechSynthesisUtterance(text);
-      speechUtterance.lang = 'ru-RU';
-      speechUtterance.rate = 0.9;
-      speechUtterance.pitch = 1.0;
-
-      speechUtterance.onstart = () => {
-        isSpeaking = true;
-        document.getElementById('speak-btn').textContent = '⏹ ОСТАНОВИТЬ';
-      };
-
-      speechUtterance.onend = () => {
-        isSpeaking = false;
-        document.getElementById('speak-btn').textContent = '🔊 ЧТЕНИЕ';
-      };
-
+      speechUtterance.lang = 'ru-RU'; speechUtterance.rate = 0.9;
+      speechUtterance.onstart = () => { isSpeaking = true; document.getElementById('speak-btn').textContent = '⏹ ОСТАНОВИТЬ'; };
+      speechUtterance.onend = () => { isSpeaking = false; document.getElementById('speak-btn').textContent = '🔊 ЧТЕНИЕ'; };
       window.speechSynthesis.speak(speechUtterance);
     }
 
-    // === НОВОСТИ (БЕЗ ИЗМЕНЕНИЙ) ===
     document.querySelectorAll('.news-item').forEach(item => {
       item.addEventListener('click', () => {
-        const snd = document.getElementById('click-sound');
-        if (snd) { snd.currentTime = 0; snd.play().catch(() => {}); }
+        const snd = new Audio();
+        snd.src = "data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YToFAGNsaWNr";
+        snd.play().catch(() => {});
       });
     });
 
     document.getElementById('close-modal')?.addEventListener('click', () => {
       document.getElementById('modal-overlay')?.classList.remove('active');
-      if (isSpeaking) {
-        window.speechSynthesis.cancel();
-        isSpeaking = false;
-        document.getElementById('speak-btn').textContent = '🔊 ЧТЕНИЕ';
-      }
+      if (isSpeaking) { window.speechSynthesis.cancel(); isSpeaking = false; document.getElementById('speak-btn').textContent = '🔊 ЧТЕНИЕ'; }
     });
 
     document.getElementById('speak-btn')?.addEventListener('click', () => {
       const text = document.getElementById('modal-content')?.textContent;
-      if (text && text !== 'Содержимое загружается...') {
-        speak(text);
-      }
+      if (text && text !== 'Содержимое загружается...') speak(text);
     });
   </script>
 
