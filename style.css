@@ -1,4 +1,4 @@
-/* === ФИНАЛЬНАЯ ВЕРСИЯ: УВЕЛИЧЕННЫЙ МАСШТАБ + УМЕНЬШЕННАЯ ШИРИНА === */
+/* === УЛУЧШЕННЫЕ ЭКРАНЫ МОНИТОРИНГА (v10.0) === */
 
 :root {
   --bg: #000000;
@@ -22,12 +22,11 @@ body {
   overflow-x: hidden;
 }
 
-/* === ГЛАВНЫЙ КОНТЕЙНЕР: 1600px + масштаб 1.1 === */
 #scaled-container {
-  width: 1600px; /* ← УМЕНЬШЕНО с 100vw */
+  width: 1600px;
   max-width: 1600px;
-  margin: 0 auto; /* центрирование */
-  transform: scale(1.1); /* ← УВЕЛИЧЕН МАСШТАБ */
+  margin: 0 auto;
+  transform: scale(1.1);
   transform-origin: top center;
   padding: 1rem;
   display: flex;
@@ -43,7 +42,7 @@ header {
 }
 
 h1 {
-  font-size: clamp(2.0rem, 4.8vw, 2.6rem); /* немного увеличено */
+  font-size: clamp(2.0rem, 4.8vw, 2.6rem);
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #fff;
@@ -60,7 +59,7 @@ h1 {
 
 section {
   background: var(--panel);
-  padding: 1.1rem; /* немного увеличено */
+  padding: 1.1rem;
   border-radius: 0;
   border: 1px solid var(--border);
 }
@@ -76,7 +75,7 @@ section h2 {
   letter-spacing: 1px;
 }
 
-/* === НОВОСТИ === */
+/* === НОВОСТИ И ЛЕНТЫ — БЕЗ ИЗМЕНЕНИЙ === */
 .news-panel {
   overflow-y: auto;
   padding-right: 6px;
@@ -94,11 +93,10 @@ section h2 {
   font-size: clamp(0.9rem, 3.2vw, 1.0rem);
 }
 .news-item:hover { color: #fff; }
-.news-title { font-weight: bold; color: #fff; font-family: 'Orbitron', sans-serif; font-size: clamp(1.05rem, 3.6vw, 1.15rem); }
+.news-title { font-weight: bold; color: #fff; font-family: 'Orbitron', sans-serif; }
 .news-date { font-size: clamp(0.8rem, 2.8vw, 0.9rem); color: #777; }
 .news-desc { font-size: clamp(0.85rem, 3.0vw, 0.95rem); color: #aaa; margin-top: 0.3rem; }
 
-/* === ЛЕНТЫ === */
 .photo-strip {
   display: flex;
   overflow: hidden;
@@ -146,9 +144,9 @@ section h2 {
 .up { color: #4caf50; }
 .down { color: #f44336; }
 
-/* === ЭКРАНЫ МОНИТОРИНГА === */
+/* === ОБЩИЕ СТИЛИ ДЛЯ ЭКРАНОВ === */
 .monitor-panel {
-  height: clamp(280px, 40vh, 400px);
+  height: clamp(340px, 48vh, 480px);
   background: #000;
   border: 1px solid #222;
   position: relative;
@@ -167,6 +165,7 @@ section h2 {
   color: #0f0;
   text-transform: uppercase;
   letter-spacing: 1px;
+  text-shadow: 0 0 6px rgba(0, 255, 0, 0.4);
 }
 
 .monitor-svg {
@@ -182,31 +181,242 @@ section h2 {
   text-anchor: middle;
 }
 
-.monitor-label.warn {
-  fill: #ff0;
-}
-
-.power-bar, .pop-bar {
+/* === УЛУЧШЕННЫЙ ГЕОЛОГИЧЕСКИЙ МОНИТОР === */
+.continent {
   fill: none;
-  stroke-width: 13;
-  stroke-linecap: round;
+  stroke: #0a0;
+  stroke-width: 1.2;
+  stroke-dasharray: 4, 3;
 }
 
-.power-fill { stroke: #0f0; }
-.power-bg { stroke: #050; }
+.city {
+  fill: #050;
+  stroke: #0a0;
+  stroke-width: 0.5;
+}
 
-.pop-fill { stroke: #0ff; }
-.pop-bg { stroke: #040; }
+.resource-point {
+  cursor: pointer;
+  stroke: #000;
+  stroke-width: 1;
+}
 
-.rig-circle { fill: #0f0; r: 6; }
-.rig-circle.active { fill: #ff0; animation: pulse 2s infinite; }
-@keyframes pulse { 0% { r: 6; opacity: 1; } 50% { r: 9; opacity: 0.7; } 100% { r: 6; opacity: 1; } }
+.resource-point:hover {
+  stroke: #fff;
+  stroke-width: 2;
+}
 
-.tanker-triangle { fill: #00f; }
-.tanker-triangle.moving { animation: move 14s linear infinite; }
-@keyframes move { 0% { transform: translate(0,0); } 25% { transform: translate(100px, 30px); } 50% { transform: translate(200px, -20px); } 75% { transform: translate(300px, 40px); } 100% { transform: translate(400px, 0); } }
+.resource-icon {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 12px;
+  fill: #f44;
+  text-anchor: middle;
+}
 
-/* === МОДАЛЬНОЕ ОКНО === */
+.tooltip {
+  position: absolute;
+  background: rgba(0, 10, 0, 0.9);
+  border: 1px solid #0f0;
+  padding: 0.5rem;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 12px;
+  color: #0f0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+/* === УЛУЧШЕННЫЙ ЛОКАТОР ВЫШЕК === */
+.rig-base {
+  fill: #444;
+  stroke: #222;
+  stroke-width: 1;
+}
+
+.rig-tower {
+  fill: #fff;
+  stroke: #bbb;
+  stroke-width: 0.5;
+}
+
+.rig-light {
+  fill: #0f0;
+}
+
+.rig-light.warn { fill: #ff0; animation: blink 1s infinite; }
+.rig-light.error { fill: #f44; animation: blink 0.5s infinite; }
+
+@keyframes blink {
+  50% { opacity: 0.3; }
+}
+
+.rig-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  fill: #fff;
+  text-anchor: middle;
+}
+
+.rig-status {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 8px;
+  font-weight: bold;
+  text-anchor: start;
+}
+
+.rig-status.active { fill: #0f0; }
+.rig-status.idle { fill: #888; }
+.rig-status.repair { fill: #ff0; }
+
+/* === УЛУЧШЕННЫЙ МОНИТОРИНГ ТАНКЕРОВ === */
+.sea {
+  fill: #000a15;
+}
+
+.depth-line {
+  fill: none;
+  stroke: #020;
+  stroke-width: 0.5;
+  stroke-dasharray: 2, 2;
+}
+
+.port {
+  fill: #b00;
+  stroke: #500;
+  stroke-width: 1;
+}
+
+.port-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 9px;
+  fill: #f44;
+  text-anchor: middle;
+}
+
+.tanker {
+  cursor: pointer;
+}
+
+.tanker-hull {
+  fill: #08f;
+  stroke: #048;
+  stroke-width: 1;
+}
+
+.tanker-deck {
+  fill: #444;
+}
+
+.tanker-flag {
+  fill: #f00;
+}
+
+.course-line {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1;
+  stroke-dasharray: 3, 2;
+}
+
+.course-arrow {
+  fill: #fff;
+}
+
+.speed-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 8px;
+  fill: #0f0;
+  text-anchor: start;
+}
+
+.status-label {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 8px;
+  font-weight: bold;
+  text-anchor: end;
+}
+
+.status-label.online { fill: #0f0; }
+.status-label.delayed { fill: #ff0; }
+.status-label.arrived { fill: #0f0; }
+
+.danger-zone {
+  fill: #f44;
+  fill-opacity: 0.1;
+  stroke: #f44;
+  stroke-dasharray: 4, 4;
+}
+
+.route-point {
+  fill: #0f0;
+  stroke: #050;
+  stroke-width: 1;
+}
+
+.measure-line {
+  fill: none;
+  stroke: #0f0;
+  stroke-width: 0.8;
+  stroke-dasharray: 3, 2;
+}
+
+.measure-text {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 8px;
+  fill: #0f0;
+  text-anchor: middle;
+}
+
+/* === УЛУЧШЕННЫЙ МОНИТОРИНГ НАСЕЛЕНИЯ === */
+.density-rect {
+  stroke: #050;
+  stroke-width: 0.5;
+}
+
+.density-rect.low { fill: #080; }
+.density-rect.medium { fill: #0f0; }
+.density-rect.high { fill: #ff0; }
+.density-rect.critical { fill: #f44; }
+
+.pop-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  fill: #fff;
+  text-anchor: middle;
+}
+
+.pop-trend {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 8px;
+  font-weight: bold;
+  text-anchor: start;
+}
+
+.pop-trend.up { fill: #4caf50; }
+.pop-trend.down { fill: #f44336; }
+
+.pop-forecast {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 9px;
+  fill: #0a0;
+  text-anchor: middle;
+}
+
+/* CRT эффекты */
+.scanline {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 2px;
+  background: rgba(0, 220, 0, 0.15);
+  animation: scanline 5s linear infinite;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+/* === МОДАЛЬНОЕ ОКНО И ПРОЧЕЕ — БЕЗ ИЗМЕНЕНИЙ === */
 #modal-overlay {
   position: fixed;
   top: 0; left: 0;
@@ -321,7 +531,6 @@ section h2 {
   color: #ff0;
 }
 
-/* === РЕЛЕ === */
 .relays {
   display: flex;
   gap: 0.9rem;
@@ -356,7 +565,6 @@ section h2 {
   font-size: clamp(0.95rem, 3.4vw, 1.05rem);
 }
 
-/* === ПРОЧЕЕ === */
 .rt-indicator {
   display: inline-block;
   width: 10px;
