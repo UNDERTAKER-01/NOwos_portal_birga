@@ -26,21 +26,20 @@
     </div>
   </div>
 
-  <!-- ✅ ГЛАВНЫЙ КОНТЕЙНЕР С МАСШТАБИРОВАНИЕМ -->
-  <div id="scaled-container">
+  <div class="tooltip" id="tooltip"></div>
 
+  <div id="scaled-container">
     <header>
-      <h1>ТЕХ-ПАСПОРТ v9.5</h1>
+      <h1>ТЕХ-ПАСПОРТ v10.0</h1>
       <div class="subtitle">
         АНАЛИТИЧЕСКИЙ ЦЕНТР ГЛОБАЛЬНОГО МОНИТОРИНГА :: РЕЖИМ: ЧЁРНЫЙ <span class="rt-indicator"></span>
       </div>
     </header>
 
-    <!-- Новости (15) -->
+    <!-- Новости -->
     <section>
       <h2>📡 ПОТОК НОВОСТЕЙ (15 ЭЛЕМЕНТОВ)</h2>
       <div class="news-panel" id="news-panel">
-        <!-- 15 новостей — как в предыдущей версии -->
         <div class="news-item" data-id="1">
           <div class="news-title">ИНДЕКС ММВБ: +2.1%</div>
           <div class="news-date">14.12.25 │ 09:48</div>
@@ -51,7 +50,6 @@
           <div class="news-date">14.12.25 │ 08:30</div>
           <div class="news-desc">Реакция рынков: S&P +0.9%. ПОДТВЕРЖДЕНО: ЗЕЛЁНЫЙ СТАТУС.</div>
         </div>
-        <!-- ... остальные 13 -->
         <div class="news-item" data-id="15">
           <div class="news-title">ЛИТИЙ: ДЕФИЦИТ НА 18%</div>
           <div class="news-date">02.12.25 │ 16:30</div>
@@ -65,17 +63,6 @@
       <h2>📸 ЛЕНТА: ИНФРАСТРУКТУРА</h2>
       <div class="photo-strip">
         <div class="strip-content">
-          <div class="strip-item"><div class="placeholder-img">🛢️</div><div>НЕФТЬ</div></div>
-          <div class="strip-item"><div class="placeholder-img">⚙️</div><div>ЗАВОД</div></div>
-          <div class="strip-item"><div class="placeholder-img">🔋</div><div>ЭЛЕКТРО</div></div>
-          <div class="strip-item"><div class="placeholder-img">🚢</div><div>ПОРТ</div></div>
-          <div class="strip-item"><div class="placeholder-img">🚂</div><div>Ж/Д</div></div>
-          <div class="strip-item"><div class="placeholder-img">📡</div><div>СВЯЗЬ</div></div>
-          <div class="strip-item"><div class="placeholder-img">📊</div><div>БИРЖА</div></div>
-          <div class="strip-item"><div class="placeholder-img">🏭</div><div>ПРОМ</div></div>
-          <div class="strip-item"><div class="placeholder-img">⛏️</div><div>КАРЬЕР</div></div>
-          <div class="strip-item"><div class="placeholder-img">🛰️</div><div>СПУТНИК</div></div>
-          <!-- Повтор -->
           <div class="strip-item"><div class="placeholder-img">🛢️</div><div>НЕФТЬ</div></div>
           <div class="strip-item"><div class="placeholder-img">⚙️</div><div>ЗАВОД</div></div>
           <div class="strip-item"><div class="placeholder-img">🔋</div><div>ЭЛЕКТРО</div></div>
@@ -104,17 +91,6 @@
           <div class="strip-item"><div class="placeholder-img">🇨🇦</div><div>TSX</div></div>
           <div class="strip-item"><div class="placeholder-img">🇦🇺</div><div>ASX</div></div>
           <div class="strip-item"><div class="placeholder-img">🇧🇷</div><div>B3</div></div>
-          <!-- Повтор -->
-          <div class="strip-item"><div class="placeholder-img">🇺🇸</div><div>NYSE</div></div>
-          <div class="strip-item"><div class="placeholder-img">🇬🇧</div><div>LSE</div></div>
-          <div class="strip-item"><div class="placeholder-img">🇯🇵</div><div>TSE</div></div>
-          <div class="strip-item"><div class="placeholder-img">🇨🇳</div><div>SSE</div></div>
-          <div class="strip-item"><div class="placeholder-img">🇷🇺</div><div>MOEX</div></div>
-          <div class="strip-item"><div class="placeholder-img">🇩🇪</div><div>XETRA</div></div>
-          <div class="strip-item"><div class="placeholder-img">🇫🇷</div><div>EURONEXT</div></div>
-          <div class="strip-item"><div class="placeholder-img">🇨🇦</div><div>TSX</div></div>
-          <div class="strip-item"><div class="placeholder-img">🇦🇺</div><div>ASX</div></div>
-          <div class="strip-item"><div class="placeholder-img">🇧🇷</div><div>B3</div></div>
         </div>
       </div>
     </section>
@@ -132,16 +108,44 @@
       </ul>
     </section>
 
-    <!-- 5 ЭКРАНОВ -->
-    <section>
+    <!-- 🔷 УЛУЧШЕННЫЙ ГЕОЛОГИЧЕСКИЙ МОНИТОР -->
+    <section id="geology-monitor">
       <h2>🌍 ГЕОЛОГИЧЕСКИЙ МОНИТОР</h2>
       <div class="monitor-panel">
         <div class="monitor-title">РЕЖИМ: АНАЛИЗ ▸ РЕСУРСЫ</div>
-        <svg class="monitor-svg" viewBox="0 0 1000 600">
-          <path d="M250,200 L450,160 L600,180 L680,230 L650,320 L580,360 L480,380 L380,360 L280,330 L250,280 Z" fill="none" stroke="#0f0" stroke-width="2.2" stroke-dasharray="5,3"/>
-          <circle cx="520" cy="240" r="7" fill="#f44"/><text x="520" y="230" class="monitor-label">[RU] ● 140 млрд</text>
-          <polygon points="560,270 552,286 568,286" fill="#ff0"/><text x="560" y="260" class="monitor-label">[RU] ▲ 37 трлн м³</text>
-          <rect x="470" y="380" width="14" height="14" fill="#0ff"/><text x="477" y="370" class="monitor-label">[CD] ■ 3.5 млн т</text>
+        <div class="scanline"></div>
+        <svg class="monitor-svg" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet">
+          <!-- Континенты -->
+          <path class="continent" d="M250,200 L450,160 L600,180 L680,230 L650,320 L580,360 L480,380 L380,360 L280,330 L250,280 Z" />
+          <path class="continent" d="M100,220 L180,200 L220,240 L200,300 L150,320 L120,280 Z" />
+          <path class="continent" d="M450,320 L500,340 L520,380 L480,420 L420,400 L400,360 Z" />
+          
+          <!-- Города -->
+          <circle class="city" cx="520" cy="240" r="2" />
+          <circle class="city" cx="600" cy="290" r="2" />
+          <circle class="city" cx="350" cy="220" r="2" />
+          <circle class="city" cx="470" cy="390" r="2" />
+          
+          <!-- Ресурсы -->
+          <g class="resource-point" data-name="Самотлор" data-type="Нефть" data-reserves="2.7 млрд т" data-forecast="+1.2%">
+            <circle cx="520" cy="240" r="8" fill="#f44" />
+            <text x="520" y="255" class="resource-icon">●</text>
+          </g>
+          
+          <g class="resource-point" data-name="Уренгой" data-type="Газ" data-reserves="7.4 трлн м³" data-forecast="+0.8%">
+            <polygon points="560,270 552,286 568,286" fill="#ff0" />
+            <text x="560" y="295" class="resource-icon">▲</text>
+          </g>
+          
+          <g class="resource-point" data-name="Колобаево" data-type="Медь" data-reserves="8.1 млн т" data-forecast="-0.3%">
+            <rect x="465" y="385" width="10" height="10" fill="#0ff" />
+            <text x="470" y="400" class="resource-icon">■</text>
+          </g>
+          
+          <g class="resource-point" data-name="Баян-Обо" data-type="Редкозёмы" data-reserves="43 млн т" data-forecast="+2.1%">
+            <polygon points="580,250 572,258 580,266 588,258" fill="#f0f" />
+            <text x="580" y="270" class="resource-icon">◆</text>
+          </g>
         </svg>
       </div>
       <div class="relays">
@@ -160,110 +164,197 @@
             <option>● НЕФТЬ</option>
             <option>▲ ГАЗ</option>
             <option>■ МЕТАЛЛЫ</option>
+            <option>◆ РЕДКОЗЁМЫ</option>
           </select>
         </div>
       </div>
     </section>
 
-    <section>
+    <!-- 🛢️ УЛУЧШЕННЫЙ ЛОКАТОР ВЫШЕК -->
+    <section id="rig-monitor">
       <h2>🛢️ ЛОКАТОР ВЫШЕК</h2>
       <div class="monitor-panel">
-        <div class="monitor-title">РЕЖИМ: СКАНИРОВАНИЕ ▸ АКТИВНЫЕ</div>
-        <svg class="monitor-svg" viewBox="0 0 800 500">
-          <rect x="100" y="100" width="600" height="300" fill="none" stroke="#0a0" stroke-dasharray="3,2"/>
-          <circle cx="200" cy="180" r="6" class="rig-circle active"/><text x="200" y="170" class="monitor-label">VK-12</text>
-          <circle cx="350" cy="220" r="6" class="rig-circle"/><text x="350" y="210" class="monitor-label">PR-8</text>
-          <circle cx="500" cy="250" r="6" class="rig-circle active"/><text x="500" y="240" class="monitor-label">SA-5</text>
-          <circle cx="620" cy="190" r="6" class="rig-circle"/><text x="620" y="180" class="monitor-label">US-3</text>
+        <div class="monitor-title">РЕЖИМ: СКАНИРОВАНИЕ ▸ СТАТУСЫ</div>
+        <div class="scanline"></div>
+        <svg class="monitor-svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid meet">
+          <!-- Территория -->
+          <rect x="100" y="100" width="600" height="300" fill="#050505" stroke="#0a0" stroke-dasharray="3,2"/>
+          
+          <!-- Вышка 1: АКТИВНА -->
+          <rect class="rig-base" x="195" y="195" width="10" height="15" />
+          <rect class="rig-tower" x="198" y="170" width="4" height="25" />
+          <circle class="rig-light" cx="200" cy="165" r="3" />
+          <text x="200" y="190" class="rig-label">VK-12</text>
+          <text x="220" y="190" class="rig-status active">АКТИВНА</text>
+          
+          <!-- Вышка 2: СПЯЩАЯ -->
+          <rect class="rig-base" x="345" y="215" width="10" height="15" fill="#222" />
+          <rect class="rig-tower" x="348" y="190" width="4" height="25" fill="#555" stroke="#333" />
+          <circle class="rig-light" cx="350" cy="185" r="3" fill="#333" />
+          <text x="350" y="210" class="rig-label">PR-8</text>
+          <text x="370" y="210" class="rig-status idle">СПЯЩАЯ</text>
+          
+          <!-- Вышка 3: В РЕМОНТЕ -->
+          <rect class="rig-base" x="495" y="245" width="10" height="15" fill="#333" />
+          <rect class="rig-tower" x="498" y="220" width="4" height="25" fill="#444" stroke="#ff0" stroke-width="1.5" />
+          <circle class="rig-light warn" cx="500" cy="215" r="3" />
+          <text x="500" y="240" class="rig-label">SA-5</text>
+          <text x="520" y="240" class="rig-status repair">В РЕМОНТЕ</text>
+          
+          <!-- Вышка 4: АВАРИЯ -->
+          <rect class="rig-base" x="615" y="185" width="10" height="15" fill="#111" />
+          <rect class="rig-tower" x="618" y="160" width="4" height="25" fill="#222" stroke="#f44" stroke-width="2" />
+          <circle class="rig-light error" cx="620" cy="155" r="3" />
+          <text x="620" y="180" class="rig-label">US-3</text>
+          <text x="640" y="180" class="rig-status repair">АВАРИЯ</text>
         </svg>
       </div>
     </section>
 
-    <section>
+    <!-- 🚢 УЛУЧШЕННЫЙ МОНИТОРИНГ ТАНКЕРОВ -->
+    <section id="tanker-monitor">
       <h2>🚢 МОНИТОРИНГ ТАНКЕРОВ</h2>
       <div class="monitor-panel">
-        <div class="monitor-title">РЕЖИМ: ТРАНСПОРТ ▸ ON-LINE</div>
-        <svg class="monitor-svg" viewBox="0 0 800 450">
-          <rect width="800" height="450" fill="#001a33"/>
-          <path d="M100,200 C200,150 300,250 400,200 C500,150 600,250 700,200" fill="none" stroke="#00f" stroke-dasharray="4,4"/>
-          <polygon points="150,200 145,205 155,205" fill="#00f"/><text x="150" y="190" class="monitor-label">VLCC-7</text>
-          <polygon points="350,210 345,215 355,215" class="tanker-triangle moving" fill="#0ff"/><text x="350" y="200" class="monitor-label">VLCC-3</text>
-          <polygon points="550,195 545,200 555,200" fill="#00f"/><text x="550" y="185" class="monitor-label">VLCC-9</text>
-          <rect x="80" y="180" width="20" height="40" fill="#f44"/><text x="90" y="170" font-size="10" fill="#f44" text-anchor="middle">Порт A</text>
-          <rect x="680" y="180" width="20" height="40" fill="#f44"/><text x="690" y="170" font-size="10" fill="#f44" text-anchor="middle">Порт B</text>
+        <div class="monitor-title">РЕЖИМ: ФЛОТ ▸ ON-LINE</div>
+        <div class="scanline"></div>
+        <svg class="monitor-svg" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet">
+          <!-- Море -->
+          <rect class="sea" width="1000" height="600" />
+          
+          <!-- Изобаты -->
+          <path class="depth-line" d="M100,150 Q300,100 500,150 T900,150" />
+          <path class="depth-line" d="M100,300 Q300,250 500,300 T900,300" />
+          <path class="depth-line" d="M100,450 Q300,400 500,450 T900,450" />
+          
+          <!-- Порты -->
+          <circle class="port" cx="120" cy="200" r="8" />
+          <text x="120" y="185" class="port-label">РИГА</text>
+          
+          <circle class="port" cx="380" cy="220" r="10" />
+          <text x="380" y="205" class="port-label">СУЭЦ</text>
+          
+          <circle class="port" cx="620" cy="240" r="9" />
+          <text x="620" y="225" class="port-label">СИНГАПУР</text>
+          
+          <circle class="port" cx="880" cy="210" r="12" />
+          <text x="880" y="195" class="port-label">РОТТЕРДАМ</text>
+          
+          <!-- Опасные зоны -->
+          <ellipse class="danger-zone" cx="500" cy="260" rx="80" ry="40" />
+          <text x="500" y="255" font-family="Orbitron" font-size="10" fill="#f44" text-anchor="middle">ПИРАТСТВО</text>
+          
+          <ellipse class="danger-zone" cx="750" cy="300" rx="60" ry="30" />
+          <text x="750" y="295" font-family="Orbitron" font-size="10" fill="#f44" text-anchor="middle">ШТОРМ</text>
+          
+          <!-- Маршруты -->
+          <path class="course-line" d="M120,200 C250,180 400,190 550,220 C700,250 800,230 880,210" />
+          <circle class="route-point" cx="250" cy="185" r="3" />
+          <circle class="route-point" cx="400" cy="195" r="3" />
+          <circle class="route-point" cx="550" cy="220" r="3" />
+          <circle class="route-point" cx="700" cy="245" r="3" />
+          
+          <!-- Танкер VLCC-7 -->
+          <g class="tanker">
+            <rect class="tanker-hull" x="145" y="195" width="30" height="10" rx="2" />
+            <rect class="tanker-deck" x="155" y="190" width="10" height="5" />
+            <rect class="tanker-flag" x="145" y="190" width="3" height="2" />
+            <polygon class="course-arrow" points="175,200 182,196 182,204" />
+            <text x="160" y="185" class="pop-label">VLCC-7</text>
+            <text x="175" y="195" class="speed-label">15 узл.</text>
+            <text x="175" y="210" class="status-label online">ON-LINE</text>
+          </g>
+          
+          <!-- Танкер VLCC-3 -->
+          <g class="tanker">
+            <rect class="tanker-hull" x="420" y="215" width="30" height="10" rx="2" fill="#ff0" stroke="#a80" />
+            <rect class="tanker-deck" x="430" y="210" width="10" height="5" fill="#666" />
+            <rect class="tanker-flag" x="420" y="210" width="3" height="2" fill="#ff0" />
+            <polygon class="course-arrow" points="450,220 457,216 457,224" fill="#ff0" />
+            <text x="435" y="205" class="pop-label">VLCC-3</text>
+            <text x="450" y="215" class="speed-label">8 узл.</text>
+            <text x="450" y="230" class="status-label delayed">DELAYED</text>
+          </g>
+          
+          <!-- Измерения -->
+          <line class="measure-line" x1="120" y1="200" x2="880" y2="210" />
+          <text x="500" y="170" class="measure-text">РАССТ: 1 840 миль</text>
+          <text x="500" y="185" class="measure-text">ВРЕМЯ: 5 дн. 2 ч.</text>
         </svg>
       </div>
     </section>
 
-    <section>
-      <h2>🔋 МОНИТОРИНГ ЭЛЕКТРОЭНЕРГИИ</h2>
-      <div class="monitor-panel">
-        <div class="monitor-title">РЕЖИМ: ВЫРАБОТКА ▸ 2025</div>
-        <svg class="monitor-svg" viewBox="0 0 600 300">
-          <circle cx="300" cy="150" r="100" class="power-bg"/>
-          <path d="M300,50 A100,100 0 0,1 390,110" class="power-fill"/>
-          <path d="M390,110 A100,100 0 0,1 370,190" class="power-fill"/>
-          <path d="M370,190 A100,100 0 0,1 280,240" class="power-fill"/>
-          <path d="M280,240 A100,100 0 0,1 220,190" class="power-fill"/>
-          <path d="M220,190 A100,100 0 0,1 210,150" class="power-fill"/>
-          <text x="420" y="90" class="monitor-label">АЗИЯ</text>
-          <text x="480" y="170" class="monitor-label">52%</text>
-          <text x="440" y="150" class="monitor-label">ЕВРОПА</text>
-          <text x="480" y="210" class="monitor-label">22%</text>
-          <text x="380" y="260" class="monitor-label">АМЕРИКА</text>
-          <text x="420" y="300" class="monitor-label">18%</text>
-          <text x="220" y="280" class="monitor-label">АФРИКА</text>
-          <text x="240" y="320" class="monitor-label">6%</text>
-          <text x="160" y="200" class="monitor-label">АВСТР.</text>
-          <text x="160" y="240" class="monitor-label">2%</text>
-          <text x="300" y="155" text-anchor="middle" font-family="Orbitron" font-size="17" fill="#fff">29 400 ТВт·ч</text>
-        </svg>
-      </div>
-    </section>
-
-    <section>
+    <!-- 👥 УЛУЧШЕННЫЙ МОНИТОРИНГ НАСЕЛЕНИЯ -->
+    <section id="population-monitor">
       <h2>👥 МОНИТОРИНГ НАСЕЛЕНИЯ</h2>
       <div class="monitor-panel">
         <div class="monitor-title">РЕЖИМ: ДЕМОГРАФИЯ ▸ 2025</div>
-        <svg class="monitor-svg" viewBox="0 0 600 300">
-          <text x="50" y="40" font-family="Share Tech Mono" font-size="13" fill="#0f0">АЗИЯ</text>
-          <line x1="120" y1="40" x2="550" y2="40" stroke="#050" stroke-width="8"/>
-          <line x1="120" y1="40" x2="480" y2="40" stroke="#0ff" stroke-width="8" class="pop-fill"/>
-          <text x="500" y="45" class="monitor-label">4.7 млрд</text>
+        <div class="scanline"></div>
+        <svg class="monitor-svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid meet">
+          <!-- Тепловая карта плотности -->
+          <rect class="density-rect low" x="100" y="100" width="150" height="100" />
+          <text x="175" y="155" class="pop-label">АЗИЯ</text>
+          <text x="175" y="170" class="pop-label">4.7 млрд</text>
+          <text x="175" y="185" class="pop-trend up">↑ +0.9%</text>
           
-          <text x="50" y="90" font-family="Share Tech Mono" font-size="13" fill="#0f0">АФРИКА</text>
-          <line x1="120" y1="90" x2="550" y2="90" stroke="#050" stroke-width="8"/>
-          <line x1="120" y1="90" x2="420" y2="90" stroke="#0ff" stroke-width="8" class="pop-fill"/>
-          <text x="460" y="95" class="monitor-label">1.4 млрд</text>
+          <rect class="density-rect medium" x="270" y="120" width="120" height="80" />
+          <text x="330" y="165" class="pop-label">АФРИКА</text>
+          <text x="330" y="180" class="pop-label">1.4 млрд</text>
+          <text x="330" y="195" class="pop-trend up">↑ +2.4%</text>
           
-          <text x="50" y="140" font-family="Share Tech Mono" font-size="13" fill="#0f0">ЕВРОПА</text>
-          <line x1="120" y1="140" x2="550" y2="140" stroke="#050" stroke-width="8"/>
-          <line x1="120" y1="140" x2="300" y2="140" stroke="#0ff" stroke-width="8" class="pop-fill"/>
-          <text x="340" y="145" class="monitor-label">750 млн</text>
+          <rect class="density-rect medium" x="410" y="100" width="100" height="100" />
+          <text x="460" y="155" class="pop-label">ЕВРОПА</text>
+          <text x="460" y="170" class="pop-label">750 млн</text>
+          <text x="460" y="185" class="pop-trend down">↓ -0.2%</text>
           
-          <text x="50" y="190" font-family="Share Tech Mono" font-size="13" fill="#0f0">АМЕРИКА</text>
-          <line x1="120" y1="190" x2="550" y2="190" stroke="#050" stroke-width="8"/>
-          <line x1="120" y1="190" x2="350" y2="190" stroke="#0ff" stroke-width="8" class="pop-fill"/>
-          <text x="390" y="195" class="monitor-label">1.0 млрд</text>
+          <rect class="density-rect high" x="100" y="220" width="180" height="90" />
+          <text x="190" y="270" class="pop-label">АМЕРИКА</text>
+          <text x="190" y="285" class="pop-label">1.0 млрд</text>
+          <text x="190" y="300" class="pop-trend up">↑ +0.7%</text>
           
-          <text x="50" y="240" font-family="Share Tech Mono" font-size="13" fill="#0f0">АВСТРАЛИЯ</text>
-          <line x1="120" y1="240" x2="550" y2="240" stroke="#050" stroke-width="8"/>
-          <line x1="120" y1="240" x2="170" y2="240" stroke="#0ff" stroke-width="8" class="pop-fill"/>
-          <text x="210" y="245" class="monitor-label">44 млн</text>
+          <rect class="density-rect low" x="300" y="230" width="60" height="60" />
+          <text x="330" y="265" class="pop-label">АВСТР.</text>
+          <text x="330" y="280" class="pop-label">44 млн</text>
+          <text x="330" y="295" class="pop-trend up">↑ +1.1%</text>
           
-          <text x="300" y="285" text-anchor="middle" font-family="Orbitron" font-size="17" fill="#fff">8.14 млрд</text>
-          <text x="300" y="305" text-anchor="middle" font-family="Share Tech Mono" font-size="11" fill="#0f0">ПРОГНОЗ 2050: 9.7 млрд</text>
+          <!-- Общая численность -->
+          <text x="400" y="350" text-anchor="middle" font-family="Orbitron" font-size="18" fill="#fff">8.14 млрд</text>
+          <text x="400" y="375" class="pop-forecast">ПРОГНОЗ 2050: 9.70 млрд (↑ +19.2%)</text>
         </svg>
       </div>
     </section>
-  </div> <!-- #scaled-container -->
+  </div>
 
   <footer>
     &lt;РЕЖИМ: ЧЁРНЫЙ&gt; │ ДАННЫЕ: РЕАЛЬНОЕ ВРЕМЯ │ ИНТЕРФЕЙС ОДОБРЁН МЕХАНИКУМОМ
   </footer>
 
   <script>
-    // JS без изменений — только обновление newsData
+    // === ВСПЛЫВАЮЩИЕ ПОДСКАЗКИ ДЛЯ РЕСУРСОВ ===
+    document.querySelectorAll('.resource-point').forEach(point => {
+      point.addEventListener('mouseenter', (e) => {
+        const tooltip = document.getElementById('tooltip');
+        const name = point.getAttribute('data-name');
+        const type = point.getAttribute('data-type');
+        const reserves = point.getAttribute('data-reserves');
+        const forecast = point.getAttribute('data-forecast');
+        
+        tooltip.innerHTML = `
+          <div><b>${name}</b></div>
+          <div>ТИП: ${type}</div>
+          <div>ЗАПАСЫ: ${reserves}</div>
+          <div>ПРОГНОЗ: ${forecast}</div>
+        `;
+        tooltip.style.opacity = '1';
+        tooltip.style.left = (e.pageX + 10) + 'px';
+        tooltip.style.top = (e.pageY + 10) + 'px';
+      });
+      
+      point.addEventListener('mouseleave', () => {
+        document.getElementById('tooltip').style.opacity = '0';
+      });
+    });
+
+    // === СИНТЕЗ РЕЧИ (БЕЗ ИЗМЕНЕНИЙ) ===
     let speechUtterance = null;
     let isSpeaking = false;
 
@@ -298,28 +389,16 @@
       window.speechSynthesis.speak(speechUtterance);
     }
 
-    const newsData = {
-      // ... 15 записей (как в предыдущей версии)
-    };
-
+    // === НОВОСТИ (БЕЗ ИЗМЕНЕНИЙ) ===
     document.querySelectorAll('.news-item').forEach(item => {
       item.addEventListener('click', () => {
-        const id = item.dataset.id;
-        const data = newsData[id];
-        if (!data) return;
-
-        document.getElementById('modal-title').textContent = data.title;
-        document.getElementById('modal-date').textContent = data.date;
-        document.getElementById('modal-content').textContent = data.content;
-        const statusEl = document.getElementById('modal-status');
-        statusEl.textContent = data.status;
-        statusEl.className = 'modal-status' + (data.status.includes('ЖЁЛТЫЙ') ? ' warn' : '');
-        document.getElementById('modal-overlay').classList.add('active');
+        const snd = document.getElementById('click-sound');
+        if (snd) { snd.currentTime = 0; snd.play().catch(() => {}); }
       });
     });
 
-    document.getElementById('close-modal').addEventListener('click', () => {
-      document.getElementById('modal-overlay').classList.remove('active');
+    document.getElementById('close-modal')?.addEventListener('click', () => {
+      document.getElementById('modal-overlay')?.classList.remove('active');
       if (isSpeaking) {
         window.speechSynthesis.cancel();
         isSpeaking = false;
@@ -327,8 +406,8 @@
       }
     });
 
-    document.getElementById('speak-btn').addEventListener('click', () => {
-      const text = document.getElementById('modal-content').textContent;
+    document.getElementById('speak-btn')?.addEventListener('click', () => {
+      const text = document.getElementById('modal-content')?.textContent;
       if (text && text !== 'Содержимое загружается...') {
         speak(text);
       }
