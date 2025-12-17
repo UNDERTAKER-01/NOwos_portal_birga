@@ -1,6 +1,1 @@
-document.getElementById('status-filter').addEventListener('change', () => {
-  const status = this.value;
-  document.querySelectorAll('.rig').forEach(rig => {
-    rig.style.display = status === 'all' || rig.classList.contains(status) ? 'block' : 'none';
-  });
-});
+
